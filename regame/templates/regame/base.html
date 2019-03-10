@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}Regame{% endblock %}</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<header id="top_bar">
+{% if user.is_authenticated %}
+Logged as {{ user.username }}.
+<a href="{% url 'logout' %}">Sign out</a>
+{% else %}
+<a href="{% url 'login' %}">Sign in</a>
+or
+<a href="{% url 'django_registration_register' %}">Sign up</a>
+{% endif %}
+		</header>
+		{% block content %}{% endblock %}
+	</body>
+</html>
