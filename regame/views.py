@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import NewMatchForm
 from .models import Match
 
+def error(request, message, code=200):
+    return render(request, 'regame/error.html', {'message': message}, status=code)
+
 @login_required()
 def newmatch(request):
     if request.method == 'POST':
