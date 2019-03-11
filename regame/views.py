@@ -14,14 +14,17 @@ def newmatch(request):
     context = {}
     if request.method == 'POST':
         form = NewMatchForm(request.POST)
-        if form.is_valid():
-            try:
-                competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
-                match = Match(player1=request.user, player2=competitor)
-                match.save()
-                return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
-            except get_user_model().DoesNotExist:
-                context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
+        if not form.is_valid():
+            return error(request, 'Something went wrong.')
+        try:
+            competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
+        except get_user_model().DoesNotExist:
+            competitor = None
+            context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
+        if competitor:
+            match = Match(player1=request.user, player2=competitor)
+            match.save()
+            return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
         form = NewMatchForm()
     context['form'] = form
