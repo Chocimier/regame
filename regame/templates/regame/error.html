@@ -1,7 +1,10 @@
 {% extends "regame/base.html" %}
 
+{% block title %}Error{% endblock %}
+
 {% block content %}
 
 <p>{{message}} I'm sorry.</p>
+<p>Go back to <a href="{% url 'main' %}">main page</a>.</p>
 
 {% endblock %}
