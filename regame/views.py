@@ -1,8 +1,27 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from .forms import NewMatchForm
+from .models import Match
 
-def challenge():
-    return render(request, 'regame/challenge.html')
+@login_required()
+def newmatch(request):
+    if request.method == 'POST':
+        form = NewMatchForm(request.POST)
+        if form.is_valid():
+            # TODO: validate user
+            competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
+            match = Match(player1=request.user, player2=competitor)
+            match.save()
+            return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+    else:
+        form = NewMatchForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'regame/new_match.html', context)
 
 def match(request, no):
     return HttpResponse(str(no))
