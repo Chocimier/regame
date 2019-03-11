@@ -1,5 +1,7 @@
 {% extends "regame/base.html" %}
 
+{% block title %}{{ competitor.username }} vs {{ player.username }} match{% endblock %}
+
 {% block content %}
 
 <p>{{ player.username }} vs {{ competitor.username }}</p>
