@@ -11,19 +11,20 @@ def error(request, message, code=200):
 
 @login_required()
 def newmatch(request):
+    context = {}
     if request.method == 'POST':
         form = NewMatchForm(request.POST)
         if form.is_valid():
-            # TODO: validate user
-            competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
-            match = Match(player1=request.user, player2=competitor)
-            match.save()
-            return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+            try:
+                competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
+                match = Match(player1=request.user, player2=competitor)
+                match.save()
+                return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+            except get_user_model().DoesNotExist:
+                context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
     else:
         form = NewMatchForm()
-    context = {
-        'form': form,
-    }
+    context['form'] = form
     return render(request, 'regame/new_match.html', context)
 
 @login_required()
