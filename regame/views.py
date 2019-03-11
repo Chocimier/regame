@@ -26,8 +26,19 @@ def newmatch(request):
     }
     return render(request, 'regame/new_match.html', context)
 
+@login_required()
 def match(request, no):
-    return HttpResponse(str(no))
+    try:
+        match = Match.objects.get(id=no)
+    except Match.DoesNotExist:
+        return error(request, 'No such match.', 404)
+    if request.user != match.player1 and request.user != match.player2:
+        return error(request, 'You do not play that match.', 403)
+    context = {
+        'player': match.player1,
+        'competitor': match.player2,
+    }
+    return render(request, 'regame/match.html', context)
 
 def main(request):
     return render(request, 'regame/main.html')
