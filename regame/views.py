@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import NewMatchForm
 from .models import Match, PossessedCard, CardLocation
-from .processes import creatematch
+from .processes import creatematch, competitor
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -39,13 +39,13 @@ def match(request, no):
     if request.user != match.player1 and request.user != match.player2:
         return error(request, 'You do not play that match.', 403)
     player = request.user
-    competitor = match.player1 if player == match.player2 else match.player2
+    other = competitor(match, player)
     context = {
         'player': player,
-        'competitor': competitor,
+        'competitor': other,
         'ownhandcards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND),
         'owntablecards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE),
-        'competitortablecards': PossessedCard.objects.filter(match=match, player=competitor, location=CardLocation.TABLE),
+        'competitortablecards': PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE),
     }
     return render(request, 'regame/match.html', context)
 

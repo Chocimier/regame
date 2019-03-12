@@ -16,3 +16,6 @@ def creatematch(player1, player2):
                 posessed = PossessedCard(match=match, player=player, location=location, index=i, card=card)
                 posessed.save()
     return match
+
+def competitor(match, player):
+    return match.player1 if player == match.player2 else match.player2
