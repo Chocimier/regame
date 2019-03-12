@@ -1,0 +1,8002 @@
+[
+  {
+    "model": "regame.Card",
+    "pk": 1,
+    "fields": {
+      "text": "k190",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 2,
+    "fields": {
+      "text": "SFX3",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 3,
+    "fields": {
+      "text": "n_Bc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 4,
+    "fields": {
+      "text": "xF-T@",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 5,
+    "fields": {
+      "text": "yUI21q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 6,
+    "fields": {
+      "text": "B9CgKY",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 7,
+    "fields": {
+      "text": "a4zp",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 8,
+    "fields": {
+      "text": "MVaD",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 9,
+    "fields": {
+      "text": "x8k4Q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 10,
+    "fields": {
+      "text": "3a$3",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 11,
+    "fields": {
+      "text": "I3wX",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 12,
+    "fields": {
+      "text": "xORn%K-",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 13,
+    "fields": {
+      "text": "yj4G7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 14,
+    "fields": {
+      "text": "B#AJO",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 15,
+    "fields": {
+      "text": "%Q6o",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 16,
+    "fields": {
+      "text": "tgm1J",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 17,
+    "fields": {
+      "text": "h0CI",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 18,
+    "fields": {
+      "text": "AVfZm",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 19,
+    "fields": {
+      "text": "htqD",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 20,
+    "fields": {
+      "text": "xm%V",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 21,
+    "fields": {
+      "text": "NlLjghfj",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 22,
+    "fields": {
+      "text": "$%Cbnb",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 23,
+    "fields": {
+      "text": "7N81tR",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 24,
+    "fields": {
+      "text": "w_on",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 25,
+    "fields": {
+      "text": "A0%1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 26,
+    "fields": {
+      "text": "1yRN",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 27,
+    "fields": {
+      "text": "rBPk",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 28,
+    "fields": {
+      "text": "DKQd",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 29,
+    "fields": {
+      "text": "0yks",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 30,
+    "fields": {
+      "text": "J0URa",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 31,
+    "fields": {
+      "text": "_cb$A",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 32,
+    "fields": {
+      "text": "tMPFJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 33,
+    "fields": {
+      "text": "ws9w",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 34,
+    "fields": {
+      "text": "PoJ4Yc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 35,
+    "fields": {
+      "text": "YiwdD@fa",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 36,
+    "fields": {
+      "text": "#C2G1",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 37,
+    "fields": {
+      "text": "0o$0",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 38,
+    "fields": {
+      "text": "jwgt",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 39,
+    "fields": {
+      "text": "fzzBbI",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 40,
+    "fields": {
+      "text": "HThD",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 41,
+    "fields": {
+      "text": "2yToN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 42,
+    "fields": {
+      "text": "anqFs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 43,
+    "fields": {
+      "text": "X4swxGO",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 44,
+    "fields": {
+      "text": "BJT@",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 45,
+    "fields": {
+      "text": "6JazJeA5h@",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 46,
+    "fields": {
+      "text": "ue6t",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 47,
+    "fields": {
+      "text": "W_ej#UCV",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 48,
+    "fields": {
+      "text": "A#@4",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 49,
+    "fields": {
+      "text": "S%DHt5F0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 50,
+    "fields": {
+      "text": "JnCl",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 51,
+    "fields": {
+      "text": "A#ObdNBp",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 52,
+    "fields": {
+      "text": "dtkF",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 53,
+    "fields": {
+      "text": "MUO4",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 54,
+    "fields": {
+      "text": "TV$Me",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 55,
+    "fields": {
+      "text": "i_Xy",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 56,
+    "fields": {
+      "text": "L0p$Y",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 57,
+    "fields": {
+      "text": "@prEr",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 58,
+    "fields": {
+      "text": "EosnN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 59,
+    "fields": {
+      "text": "mW7o",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 60,
+    "fields": {
+      "text": "-E4x",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 61,
+    "fields": {
+      "text": "N75P",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 62,
+    "fields": {
+      "text": "Wloa",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 63,
+    "fields": {
+      "text": "T8Q!2",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 64,
+    "fields": {
+      "text": "6qbk",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 65,
+    "fields": {
+      "text": "yawgi",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 66,
+    "fields": {
+      "text": "#zvK",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 67,
+    "fields": {
+      "text": "OaH9",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 68,
+    "fields": {
+      "text": "SDQpg5Iv",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 69,
+    "fields": {
+      "text": "Z@YDs",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 70,
+    "fields": {
+      "text": "#G4f",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 71,
+    "fields": {
+      "text": "uX_Zd5",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 72,
+    "fields": {
+      "text": "CbhL",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 73,
+    "fields": {
+      "text": "#H9ZBdR",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 74,
+    "fields": {
+      "text": "9dm1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 75,
+    "fields": {
+      "text": "j5Z8",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 76,
+    "fields": {
+      "text": "U-vok",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 77,
+    "fields": {
+      "text": "Upb^goR",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 78,
+    "fields": {
+      "text": "Uvl55",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 79,
+    "fields": {
+      "text": "^wDq",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 80,
+    "fields": {
+      "text": "uSLR1bRa",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 81,
+    "fields": {
+      "text": "Ds3csoC",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 82,
+    "fields": {
+      "text": "Y5CnQ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 83,
+    "fields": {
+      "text": "_8wlr",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 84,
+    "fields": {
+      "text": "HjD#YD",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 85,
+    "fields": {
+      "text": "ho@W3J",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 86,
+    "fields": {
+      "text": "dfW7I",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 87,
+    "fields": {
+      "text": "wO^1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 88,
+    "fields": {
+      "text": "LuZQ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 89,
+    "fields": {
+      "text": "k3JDrv",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 90,
+    "fields": {
+      "text": "caXf",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 91,
+    "fields": {
+      "text": "@6F0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 92,
+    "fields": {
+      "text": "HtNg",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 93,
+    "fields": {
+      "text": "S!x78C",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 94,
+    "fields": {
+      "text": "4ijT",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 95,
+    "fields": {
+      "text": "Gvq4",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 96,
+    "fields": {
+      "text": "OWmeHvA",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 97,
+    "fields": {
+      "text": "HKFk",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 98,
+    "fields": {
+      "text": "7cxjkE",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 99,
+    "fields": {
+      "text": "UrYl",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 100,
+    "fields": {
+      "text": "Z^#O",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 101,
+    "fields": {
+      "text": "Kfa#",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 102,
+    "fields": {
+      "text": "j#!@0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 103,
+    "fields": {
+      "text": "a9d3W@u",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 104,
+    "fields": {
+      "text": "tyqvWYs",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 105,
+    "fields": {
+      "text": "bmEy",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 106,
+    "fields": {
+      "text": "Iklxb",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 107,
+    "fields": {
+      "text": "aW$6k",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 108,
+    "fields": {
+      "text": "et6A",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 109,
+    "fields": {
+      "text": "m0@8",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 110,
+    "fields": {
+      "text": "$c0SB",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 111,
+    "fields": {
+      "text": "Aes2",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 112,
+    "fields": {
+      "text": "@6%%ycMk",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 113,
+    "fields": {
+      "text": "i_dl-Q",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 114,
+    "fields": {
+      "text": "wrvf",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 115,
+    "fields": {
+      "text": "o$xd",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 116,
+    "fields": {
+      "text": "uADSJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 117,
+    "fields": {
+      "text": "8pkL",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 118,
+    "fields": {
+      "text": "Wkdu",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 119,
+    "fields": {
+      "text": "NVf^v",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 120,
+    "fields": {
+      "text": "6Q2_Uc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 121,
+    "fields": {
+      "text": "s#q#",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 122,
+    "fields": {
+      "text": "%7Cf",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 123,
+    "fields": {
+      "text": "kowu",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 124,
+    "fields": {
+      "text": "LrLjH",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 125,
+    "fields": {
+      "text": "jWqtv",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 126,
+    "fields": {
+      "text": "Q5Dk",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 127,
+    "fields": {
+      "text": "uvW5",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 128,
+    "fields": {
+      "text": "@HPW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 129,
+    "fields": {
+      "text": "6EMQ",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 130,
+    "fields": {
+      "text": "Eymz",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 131,
+    "fields": {
+      "text": "kUM!jT",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 132,
+    "fields": {
+      "text": "^Ie%",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 133,
+    "fields": {
+      "text": "ie2SM",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 134,
+    "fields": {
+      "text": "ukNk",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 135,
+    "fields": {
+      "text": "SzdH",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 136,
+    "fields": {
+      "text": "ulzO",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 137,
+    "fields": {
+      "text": "8756O",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 138,
+    "fields": {
+      "text": "0VFW!pD",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 139,
+    "fields": {
+      "text": "A$tv",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 140,
+    "fields": {
+      "text": "uV6C",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 141,
+    "fields": {
+      "text": "RVG7",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 142,
+    "fields": {
+      "text": "xrgH",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 143,
+    "fields": {
+      "text": "SGFJ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 144,
+    "fields": {
+      "text": "Si%I9E",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 145,
+    "fields": {
+      "text": "9cCp",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 146,
+    "fields": {
+      "text": "e#6wdi",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 147,
+    "fields": {
+      "text": "^W#Zd",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 148,
+    "fields": {
+      "text": "mEZz",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 149,
+    "fields": {
+      "text": "lCKB",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 150,
+    "fields": {
+      "text": "gWl^h",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 151,
+    "fields": {
+      "text": "99bBH1B@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 152,
+    "fields": {
+      "text": "CTzj",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 153,
+    "fields": {
+      "text": "qSC7o",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 154,
+    "fields": {
+      "text": "Ir_F",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 155,
+    "fields": {
+      "text": "%EW7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 156,
+    "fields": {
+      "text": "GTJM^",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 157,
+    "fields": {
+      "text": "cT8qCLR",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 158,
+    "fields": {
+      "text": "gbG2g9X",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 159,
+    "fields": {
+      "text": "eu8%Z",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 160,
+    "fields": {
+      "text": "nBDh",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 161,
+    "fields": {
+      "text": "T5EP",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 162,
+    "fields": {
+      "text": "cb^@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 163,
+    "fields": {
+      "text": "S5$sd",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 164,
+    "fields": {
+      "text": "Y6uWe",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 165,
+    "fields": {
+      "text": "uxZ8!z",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 166,
+    "fields": {
+      "text": "cwAiOA!",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 167,
+    "fields": {
+      "text": "IjnmcN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 168,
+    "fields": {
+      "text": "D$a@g",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 169,
+    "fields": {
+      "text": "d9-K",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 170,
+    "fields": {
+      "text": "hXaT",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 171,
+    "fields": {
+      "text": "fv68FB",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 172,
+    "fields": {
+      "text": "cEyd",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 173,
+    "fields": {
+      "text": "Y4Ia",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 174,
+    "fields": {
+      "text": "-hbo",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 175,
+    "fields": {
+      "text": "3_hY5K",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 176,
+    "fields": {
+      "text": "hiaX8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 177,
+    "fields": {
+      "text": "uiyp",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 178,
+    "fields": {
+      "text": "Y#_jmrB",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 179,
+    "fields": {
+      "text": "741coV%",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 180,
+    "fields": {
+      "text": "UCJWoZ",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 181,
+    "fields": {
+      "text": "!^GK",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 182,
+    "fields": {
+      "text": "hyG$",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 183,
+    "fields": {
+      "text": "lqPVT",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 184,
+    "fields": {
+      "text": "^uoF",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 185,
+    "fields": {
+      "text": "_Y-j#",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 186,
+    "fields": {
+      "text": "_6e%q",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 187,
+    "fields": {
+      "text": "nnK3L",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 188,
+    "fields": {
+      "text": "U0NW",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 189,
+    "fields": {
+      "text": "P7dG",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 190,
+    "fields": {
+      "text": "jRDl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 191,
+    "fields": {
+      "text": "4s08",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 192,
+    "fields": {
+      "text": "B1zC#g",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 193,
+    "fields": {
+      "text": "_SFv",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 194,
+    "fields": {
+      "text": "uefN9M",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 195,
+    "fields": {
+      "text": "3LB$",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 196,
+    "fields": {
+      "text": "PuU0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 197,
+    "fields": {
+      "text": "YfP5",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 198,
+    "fields": {
+      "text": "C-vczvtiN9",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 199,
+    "fields": {
+      "text": "hXN04",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 200,
+    "fields": {
+      "text": "Hhrt",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 201,
+    "fields": {
+      "text": "vLvTs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 202,
+    "fields": {
+      "text": "I5OS2u",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 203,
+    "fields": {
+      "text": "_JLzQ",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 204,
+    "fields": {
+      "text": "3HzFP",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 205,
+    "fields": {
+      "text": "W$3D",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 206,
+    "fields": {
+      "text": "R43$l-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 207,
+    "fields": {
+      "text": "C7Lg",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 208,
+    "fields": {
+      "text": "jfYY1",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 209,
+    "fields": {
+      "text": "%%#3",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 210,
+    "fields": {
+      "text": "VkvY",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 211,
+    "fields": {
+      "text": "c-VCO",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 212,
+    "fields": {
+      "text": "tV%z",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 213,
+    "fields": {
+      "text": "x_vG8MN",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 214,
+    "fields": {
+      "text": "2546",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 215,
+    "fields": {
+      "text": "U1ALp",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 216,
+    "fields": {
+      "text": "gJdIzyJ",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 217,
+    "fields": {
+      "text": "yGfc",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 218,
+    "fields": {
+      "text": "DZuhED",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 219,
+    "fields": {
+      "text": "u9Ec4",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 220,
+    "fields": {
+      "text": "38qk",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 221,
+    "fields": {
+      "text": "vfbfUe",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 222,
+    "fields": {
+      "text": "gN$jJ",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 223,
+    "fields": {
+      "text": "51xwTs",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 224,
+    "fields": {
+      "text": "MIqN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 225,
+    "fields": {
+      "text": "gnC4",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 226,
+    "fields": {
+      "text": "8^BZ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 227,
+    "fields": {
+      "text": "NYTi",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 228,
+    "fields": {
+      "text": "ju5zyZ7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 229,
+    "fields": {
+      "text": "hzACC",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 230,
+    "fields": {
+      "text": "MUZflY",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 231,
+    "fields": {
+      "text": "J3T%",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 232,
+    "fields": {
+      "text": "Eeew",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 233,
+    "fields": {
+      "text": "vjYP",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 234,
+    "fields": {
+      "text": "3^KNtfqN",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 235,
+    "fields": {
+      "text": "1dp0",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 236,
+    "fields": {
+      "text": "%xZ1",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 237,
+    "fields": {
+      "text": "I96V",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 238,
+    "fields": {
+      "text": "2Qi0$%1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 239,
+    "fields": {
+      "text": "@D!^",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 240,
+    "fields": {
+      "text": "J@0qDr-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 241,
+    "fields": {
+      "text": "cz3P_",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 242,
+    "fields": {
+      "text": "W4KM3",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 243,
+    "fields": {
+      "text": "4H0I",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 244,
+    "fields": {
+      "text": "nDR4i",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 245,
+    "fields": {
+      "text": "#VPx@S",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 246,
+    "fields": {
+      "text": "70%J",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 247,
+    "fields": {
+      "text": "305w",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 248,
+    "fields": {
+      "text": "W#rqT",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 249,
+    "fields": {
+      "text": "JR!tEv",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 250,
+    "fields": {
+      "text": "Lqb6",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 251,
+    "fields": {
+      "text": "PT2#",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 252,
+    "fields": {
+      "text": "-AA3%gwy1f",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 253,
+    "fields": {
+      "text": "YEFF",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 254,
+    "fields": {
+      "text": "7Q_tndD",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 255,
+    "fields": {
+      "text": "rqQ#",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 256,
+    "fields": {
+      "text": "6-k5u",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 257,
+    "fields": {
+      "text": "30eTB",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 258,
+    "fields": {
+      "text": "NJAXw",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 259,
+    "fields": {
+      "text": "kr6Ej",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 260,
+    "fields": {
+      "text": "Fsi2x",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 261,
+    "fields": {
+      "text": "Di0YyT",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 262,
+    "fields": {
+      "text": "G%DXv%",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 263,
+    "fields": {
+      "text": "WD0b2pU",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 264,
+    "fields": {
+      "text": "6RTCC",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 265,
+    "fields": {
+      "text": "ox8bm",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 266,
+    "fields": {
+      "text": "@JQN$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 267,
+    "fields": {
+      "text": "c9DP",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 268,
+    "fields": {
+      "text": "QMjIwq43",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 269,
+    "fields": {
+      "text": "Bi!mV",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 270,
+    "fields": {
+      "text": "yrA-G",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 271,
+    "fields": {
+      "text": "2j3$",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 272,
+    "fields": {
+      "text": "JEX8rz",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 273,
+    "fields": {
+      "text": "WhLOA%i",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 274,
+    "fields": {
+      "text": "4uaO3",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 275,
+    "fields": {
+      "text": "EqkIe",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 276,
+    "fields": {
+      "text": "NROz",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 277,
+    "fields": {
+      "text": "Jm$fRW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 278,
+    "fields": {
+      "text": "U3vZ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 279,
+    "fields": {
+      "text": "DLW7",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 280,
+    "fields": {
+      "text": "zTgmA@",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 281,
+    "fields": {
+      "text": "q6sV",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 282,
+    "fields": {
+      "text": "DcJ#SN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 283,
+    "fields": {
+      "text": "Hm9c",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 284,
+    "fields": {
+      "text": "qMOu",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 285,
+    "fields": {
+      "text": "F^YW-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 286,
+    "fields": {
+      "text": "NCo5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 287,
+    "fields": {
+      "text": "Ciso",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 288,
+    "fields": {
+      "text": "veMwgO1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 289,
+    "fields": {
+      "text": "4QHu",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 290,
+    "fields": {
+      "text": "cWl6d",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 291,
+    "fields": {
+      "text": "AyTZ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 292,
+    "fields": {
+      "text": "p#9i",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 293,
+    "fields": {
+      "text": "jrM0kcCbh",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 294,
+    "fields": {
+      "text": "7QUV",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 295,
+    "fields": {
+      "text": "hZAU7",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 296,
+    "fields": {
+      "text": "80@VXiv",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 297,
+    "fields": {
+      "text": "vz4u",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 298,
+    "fields": {
+      "text": "Qof0D",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 299,
+    "fields": {
+      "text": "b!wk",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 300,
+    "fields": {
+      "text": "PFkj8",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 301,
+    "fields": {
+      "text": "uq!xB",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 302,
+    "fields": {
+      "text": "%N_dt",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 303,
+    "fields": {
+      "text": "wKM7r!ssq",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 304,
+    "fields": {
+      "text": "0a37",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 305,
+    "fields": {
+      "text": "s41G",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 306,
+    "fields": {
+      "text": "wdrqd",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 307,
+    "fields": {
+      "text": "x8O6",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 308,
+    "fields": {
+      "text": "kp8BQyR",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 309,
+    "fields": {
+      "text": "d4UAH5",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 310,
+    "fields": {
+      "text": "NDES",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 311,
+    "fields": {
+      "text": "#eH7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 312,
+    "fields": {
+      "text": "6N1zT",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 313,
+    "fields": {
+      "text": "_VerlNS^",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 314,
+    "fields": {
+      "text": "Qnon",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 315,
+    "fields": {
+      "text": "dMX8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 316,
+    "fields": {
+      "text": "JwEq",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 317,
+    "fields": {
+      "text": "ucbx",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 318,
+    "fields": {
+      "text": "Rq!GZ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 319,
+    "fields": {
+      "text": "v0@JhZWRXm",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 320,
+    "fields": {
+      "text": "-1Zg",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 321,
+    "fields": {
+      "text": "!L4wr_f2T",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 322,
+    "fields": {
+      "text": "80xw",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 323,
+    "fields": {
+      "text": "Ol-DQi",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 324,
+    "fields": {
+      "text": "MAArwH",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 325,
+    "fields": {
+      "text": "G1jrLil8D",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 326,
+    "fields": {
+      "text": "7G@h",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 327,
+    "fields": {
+      "text": "_Qw_",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 328,
+    "fields": {
+      "text": "_8fPw",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 329,
+    "fields": {
+      "text": "LHPe",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 330,
+    "fields": {
+      "text": "e9HB",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 331,
+    "fields": {
+      "text": "DZyxoTO",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 332,
+    "fields": {
+      "text": "mm5A",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 333,
+    "fields": {
+      "text": "yGtf-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 334,
+    "fields": {
+      "text": "%wmuL",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 335,
+    "fields": {
+      "text": "^4NL",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 336,
+    "fields": {
+      "text": "pO3lw",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 337,
+    "fields": {
+      "text": "F5#3",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 338,
+    "fields": {
+      "text": "052$XJA",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 339,
+    "fields": {
+      "text": "sTIOGx",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 340,
+    "fields": {
+      "text": "!0_m-",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 341,
+    "fields": {
+      "text": "oO$9",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 342,
+    "fields": {
+      "text": "_Z94e",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 343,
+    "fields": {
+      "text": "ddUgy",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 344,
+    "fields": {
+      "text": "-6ELf",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 345,
+    "fields": {
+      "text": "4u_sf",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 346,
+    "fields": {
+      "text": "izEE",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 347,
+    "fields": {
+      "text": "_-GZ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 348,
+    "fields": {
+      "text": "Ycz_L",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 349,
+    "fields": {
+      "text": "FcLx",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 350,
+    "fields": {
+      "text": "7@uW",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 351,
+    "fields": {
+      "text": "XFZ2",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 352,
+    "fields": {
+      "text": "sbN!F",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 353,
+    "fields": {
+      "text": "pm5T",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 354,
+    "fields": {
+      "text": "hkfU",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 355,
+    "fields": {
+      "text": "6EPEOn",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 356,
+    "fields": {
+      "text": "TyHdL^JOO",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 357,
+    "fields": {
+      "text": "eYz1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 358,
+    "fields": {
+      "text": "tTPg0y",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 359,
+    "fields": {
+      "text": "LLSf",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 360,
+    "fields": {
+      "text": "KlqT",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 361,
+    "fields": {
+      "text": "sEoc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 362,
+    "fields": {
+      "text": "nK0Y",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 363,
+    "fields": {
+      "text": "3$sG",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 364,
+    "fields": {
+      "text": "dUGq",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 365,
+    "fields": {
+      "text": "9Fmcl",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 366,
+    "fields": {
+      "text": "9krX4",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 367,
+    "fields": {
+      "text": "LE#w",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 368,
+    "fields": {
+      "text": "$m#Ij",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 369,
+    "fields": {
+      "text": "pltE",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 370,
+    "fields": {
+      "text": "^GWx1",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 371,
+    "fields": {
+      "text": "4Bdo",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 372,
+    "fields": {
+      "text": "8Zor",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 373,
+    "fields": {
+      "text": "mvF1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 374,
+    "fields": {
+      "text": "CdI--h",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 375,
+    "fields": {
+      "text": "rRXA",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 376,
+    "fields": {
+      "text": "kK%!jH",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 377,
+    "fields": {
+      "text": "#Guh",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 378,
+    "fields": {
+      "text": "OX!h",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 379,
+    "fields": {
+      "text": "ps@j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 380,
+    "fields": {
+      "text": "TNYiz",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 381,
+    "fields": {
+      "text": "jjPx",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 382,
+    "fields": {
+      "text": "YD_sk",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 383,
+    "fields": {
+      "text": "Kkwy16",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 384,
+    "fields": {
+      "text": "@CBwjRU",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 385,
+    "fields": {
+      "text": "OZBV",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 386,
+    "fields": {
+      "text": "r$B5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 387,
+    "fields": {
+      "text": "by-F",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 388,
+    "fields": {
+      "text": "Nrz^Xr6",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 389,
+    "fields": {
+      "text": "KI8o",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 390,
+    "fields": {
+      "text": "HF6Xh",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 391,
+    "fields": {
+      "text": "tgl%",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 392,
+    "fields": {
+      "text": "v7mK",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 393,
+    "fields": {
+      "text": "r-rj",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 394,
+    "fields": {
+      "text": "L95N",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 395,
+    "fields": {
+      "text": "p@ZG9",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 396,
+    "fields": {
+      "text": "_eHV",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 397,
+    "fields": {
+      "text": "htYy",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 398,
+    "fields": {
+      "text": "7p!a",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 399,
+    "fields": {
+      "text": "IkPA",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 400,
+    "fields": {
+      "text": "mi95$0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 401,
+    "fields": {
+      "text": "iHUM",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 402,
+    "fields": {
+      "text": "Lj1t",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 403,
+    "fields": {
+      "text": "ZQu$",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 404,
+    "fields": {
+      "text": "Fwpz",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 405,
+    "fields": {
+      "text": "U%FJg",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 406,
+    "fields": {
+      "text": "nkVROCW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 407,
+    "fields": {
+      "text": "uuPQ",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 408,
+    "fields": {
+      "text": "L%-Mc",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 409,
+    "fields": {
+      "text": "uwjD#",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 410,
+    "fields": {
+      "text": "-I9rf",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 411,
+    "fields": {
+      "text": "Axa9wS",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 412,
+    "fields": {
+      "text": "6aa#",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 413,
+    "fields": {
+      "text": "a1v%",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 414,
+    "fields": {
+      "text": "2Jf0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 415,
+    "fields": {
+      "text": "Yi3O",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 416,
+    "fields": {
+      "text": "NtbF1",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 417,
+    "fields": {
+      "text": "2B9h-",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 418,
+    "fields": {
+      "text": "I%e@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 419,
+    "fields": {
+      "text": "8OoXS",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 420,
+    "fields": {
+      "text": "r-2811Sd",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 421,
+    "fields": {
+      "text": "mHi3x",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 422,
+    "fields": {
+      "text": "b78j5",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 423,
+    "fields": {
+      "text": "jqB5",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 424,
+    "fields": {
+      "text": "p7glV5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 425,
+    "fields": {
+      "text": "M8^16O",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 426,
+    "fields": {
+      "text": "_$oC",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 427,
+    "fields": {
+      "text": "hvfDSdW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 428,
+    "fields": {
+      "text": "NOqV",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 429,
+    "fields": {
+      "text": "3hi!huJc",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 430,
+    "fields": {
+      "text": "e4VVjz",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 431,
+    "fields": {
+      "text": "VFax",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 432,
+    "fields": {
+      "text": "Dj7_",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 433,
+    "fields": {
+      "text": "wcGk0",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 434,
+    "fields": {
+      "text": "i-#2It",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 435,
+    "fields": {
+      "text": "uj-4",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 436,
+    "fields": {
+      "text": "88aLc",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 437,
+    "fields": {
+      "text": "lPr7",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 438,
+    "fields": {
+      "text": "UYRs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 439,
+    "fields": {
+      "text": "#mP!j$",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 440,
+    "fields": {
+      "text": "u@Ek",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 441,
+    "fields": {
+      "text": "t2yd%4",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 442,
+    "fields": {
+      "text": "R3Y$V",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 443,
+    "fields": {
+      "text": "97SpB",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 444,
+    "fields": {
+      "text": "%X4V",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 445,
+    "fields": {
+      "text": "as4Wa_B@",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 446,
+    "fields": {
+      "text": "^4h1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 447,
+    "fields": {
+      "text": "%jB$FK",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 448,
+    "fields": {
+      "text": "S8flu",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 449,
+    "fields": {
+      "text": "s1!Hn",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 450,
+    "fields": {
+      "text": "X5nf8i",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 451,
+    "fields": {
+      "text": "qD#$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 452,
+    "fields": {
+      "text": "F6bA",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 453,
+    "fields": {
+      "text": "o3wB",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 454,
+    "fields": {
+      "text": "ePU62",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 455,
+    "fields": {
+      "text": "vgo9s",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 456,
+    "fields": {
+      "text": "H-yPd",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 457,
+    "fields": {
+      "text": "77xMfn",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 458,
+    "fields": {
+      "text": "rJkt",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 459,
+    "fields": {
+      "text": "mbgwcrLdj6",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 460,
+    "fields": {
+      "text": "1iDQv5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 461,
+    "fields": {
+      "text": "6b$fjAsUr",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 462,
+    "fields": {
+      "text": "-lwv",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 463,
+    "fields": {
+      "text": "F3Q8",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 464,
+    "fields": {
+      "text": "vYaW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 465,
+    "fields": {
+      "text": "aBdJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 466,
+    "fields": {
+      "text": "Haq9",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 467,
+    "fields": {
+      "text": "baYs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 468,
+    "fields": {
+      "text": "Htbt$x",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 469,
+    "fields": {
+      "text": "7xls1",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 470,
+    "fields": {
+      "text": "Qm8j",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 471,
+    "fields": {
+      "text": "xXli3n",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 472,
+    "fields": {
+      "text": "_uIyv",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 473,
+    "fields": {
+      "text": "8tcWlJ",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 474,
+    "fields": {
+      "text": "Vad$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 475,
+    "fields": {
+      "text": "wtP!rnTH1G",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 476,
+    "fields": {
+      "text": "gDQ$0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 477,
+    "fields": {
+      "text": "^YFB1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 478,
+    "fields": {
+      "text": "YhI8",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 479,
+    "fields": {
+      "text": "FpvP",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 480,
+    "fields": {
+      "text": "zA5r",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 481,
+    "fields": {
+      "text": "bHjP",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 482,
+    "fields": {
+      "text": "@syf",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 483,
+    "fields": {
+      "text": "ZeJE",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 484,
+    "fields": {
+      "text": "eE8rl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 485,
+    "fields": {
+      "text": "UC5o",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 486,
+    "fields": {
+      "text": "bfx67j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 487,
+    "fields": {
+      "text": "w$_FL",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 488,
+    "fields": {
+      "text": "Ysns",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 489,
+    "fields": {
+      "text": "Mu#Ve",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 490,
+    "fields": {
+      "text": "y$_M3",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 491,
+    "fields": {
+      "text": "2Poo",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 492,
+    "fields": {
+      "text": "MQXlc3W",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 493,
+    "fields": {
+      "text": "N6T%bMN",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 494,
+    "fields": {
+      "text": "O8-vJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 495,
+    "fields": {
+      "text": "ZAr%^7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 496,
+    "fields": {
+      "text": "8c42j",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 497,
+    "fields": {
+      "text": "NpI!",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 498,
+    "fields": {
+      "text": "riAax",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 499,
+    "fields": {
+      "text": "1xye",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 500,
+    "fields": {
+      "text": "5gyB",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 501,
+    "fields": {
+      "text": "a216YWP",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 502,
+    "fields": {
+      "text": "j^MqJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 503,
+    "fields": {
+      "text": "VwNn@Wa",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 504,
+    "fields": {
+      "text": "5ZopjODp",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 505,
+    "fields": {
+      "text": "-8Al",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 506,
+    "fields": {
+      "text": "RdeT-Gc_5z",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 507,
+    "fields": {
+      "text": "kPxc",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 508,
+    "fields": {
+      "text": "n@pZGu",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 509,
+    "fields": {
+      "text": "DwPX",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 510,
+    "fields": {
+      "text": "m!fy",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 511,
+    "fields": {
+      "text": "yBTl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 512,
+    "fields": {
+      "text": "PhgDnx",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 513,
+    "fields": {
+      "text": "yBC%c",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 514,
+    "fields": {
+      "text": "UaNV",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 515,
+    "fields": {
+      "text": "Pfv9",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 516,
+    "fields": {
+      "text": "4qM2",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 517,
+    "fields": {
+      "text": "$Hg9",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 518,
+    "fields": {
+      "text": "UwaCei",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 519,
+    "fields": {
+      "text": "quO_0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 520,
+    "fields": {
+      "text": "m9K2",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 521,
+    "fields": {
+      "text": "3iWf",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 522,
+    "fields": {
+      "text": "xPXXo_m",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 523,
+    "fields": {
+      "text": "^@!r",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 524,
+    "fields": {
+      "text": "AstW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 525,
+    "fields": {
+      "text": "1BOC",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 526,
+    "fields": {
+      "text": "mB_buG",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 527,
+    "fields": {
+      "text": "jNJe6",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 528,
+    "fields": {
+      "text": "BpsV",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 529,
+    "fields": {
+      "text": "nLYOg",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 530,
+    "fields": {
+      "text": "Tw5H",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 531,
+    "fields": {
+      "text": "SVTM2Tf",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 532,
+    "fields": {
+      "text": "mD4DsE",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 533,
+    "fields": {
+      "text": "XYPDpH",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 534,
+    "fields": {
+      "text": "8hET",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 535,
+    "fields": {
+      "text": "BwyN",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 536,
+    "fields": {
+      "text": "CXFW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 537,
+    "fields": {
+      "text": "M5zU",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 538,
+    "fields": {
+      "text": "bDI_",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 539,
+    "fields": {
+      "text": "3XJf",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 540,
+    "fields": {
+      "text": "af$L",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 541,
+    "fields": {
+      "text": "THC2",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 542,
+    "fields": {
+      "text": "-tXllh",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 543,
+    "fields": {
+      "text": "LGqS",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 544,
+    "fields": {
+      "text": "V!-2",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 545,
+    "fields": {
+      "text": "79b6",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 546,
+    "fields": {
+      "text": "w4wiF",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 547,
+    "fields": {
+      "text": "jM@CJB",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 548,
+    "fields": {
+      "text": "C-h%",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 549,
+    "fields": {
+      "text": "4t_3",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 550,
+    "fields": {
+      "text": "MRHA",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 551,
+    "fields": {
+      "text": "6q8uNw%",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 552,
+    "fields": {
+      "text": "Pp0%",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 553,
+    "fields": {
+      "text": "^asQ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 554,
+    "fields": {
+      "text": "wdom",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 555,
+    "fields": {
+      "text": "p%$xi",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 556,
+    "fields": {
+      "text": "XVgs3A",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 557,
+    "fields": {
+      "text": "GIk84",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 558,
+    "fields": {
+      "text": "jKiJQZGtr",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 559,
+    "fields": {
+      "text": "#DxeY",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 560,
+    "fields": {
+      "text": "HXq2",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 561,
+    "fields": {
+      "text": "f0$98",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 562,
+    "fields": {
+      "text": "t2ev",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 563,
+    "fields": {
+      "text": "zx_GOt",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 564,
+    "fields": {
+      "text": "6w6A9U",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 565,
+    "fields": {
+      "text": "3t7#",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 566,
+    "fields": {
+      "text": "V-EY",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 567,
+    "fields": {
+      "text": "ag0H1x",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 568,
+    "fields": {
+      "text": "Ylhs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 569,
+    "fields": {
+      "text": "wOk2oKDY",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 570,
+    "fields": {
+      "text": "20D9",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 571,
+    "fields": {
+      "text": "5YZJO",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 572,
+    "fields": {
+      "text": "oQOy",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 573,
+    "fields": {
+      "text": "x0EQt",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 574,
+    "fields": {
+      "text": "i$Fok^",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 575,
+    "fields": {
+      "text": "pfEb",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 576,
+    "fields": {
+      "text": "PNdE",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 577,
+    "fields": {
+      "text": "ZmrA^",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 578,
+    "fields": {
+      "text": "LOW%4",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 579,
+    "fields": {
+      "text": "WY1Ye58",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 580,
+    "fields": {
+      "text": "oHHLm4",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 581,
+    "fields": {
+      "text": "q0xN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 582,
+    "fields": {
+      "text": "wEZu1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 583,
+    "fields": {
+      "text": "d$bj",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 584,
+    "fields": {
+      "text": "kRxc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 585,
+    "fields": {
+      "text": "V4uV",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 586,
+    "fields": {
+      "text": "l84m",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 587,
+    "fields": {
+      "text": "F5Y0",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 588,
+    "fields": {
+      "text": "AHbg",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 589,
+    "fields": {
+      "text": "1Az@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 590,
+    "fields": {
+      "text": "-Oi3",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 591,
+    "fields": {
+      "text": "p%GM",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 592,
+    "fields": {
+      "text": "WtRiXX^lgg",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 593,
+    "fields": {
+      "text": "OCB2iV",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 594,
+    "fields": {
+      "text": "UBjPw",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 595,
+    "fields": {
+      "text": "^hYD",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 596,
+    "fields": {
+      "text": "yWUhucY",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 597,
+    "fields": {
+      "text": "tDGTX3",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 598,
+    "fields": {
+      "text": "pFwkI",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 599,
+    "fields": {
+      "text": "8cFi",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 600,
+    "fields": {
+      "text": "A8ZuoM",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 601,
+    "fields": {
+      "text": "ytVkC",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 602,
+    "fields": {
+      "text": "Illl10in",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 603,
+    "fields": {
+      "text": "EDUz",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 604,
+    "fields": {
+      "text": "jNBI0#9K5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 605,
+    "fields": {
+      "text": "QRKQs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 606,
+    "fields": {
+      "text": "8l^xne",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 607,
+    "fields": {
+      "text": "-qZkl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 608,
+    "fields": {
+      "text": "8$8hJ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 609,
+    "fields": {
+      "text": "Xm1q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 610,
+    "fields": {
+      "text": "oc5Jd",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 611,
+    "fields": {
+      "text": "pP!cA",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 612,
+    "fields": {
+      "text": "RC1G_",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 613,
+    "fields": {
+      "text": "@P6S",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 614,
+    "fields": {
+      "text": "Kqpd0",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 615,
+    "fields": {
+      "text": "c6Qd25",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 616,
+    "fields": {
+      "text": "Qxjjr",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 617,
+    "fields": {
+      "text": "kLtxc",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 618,
+    "fields": {
+      "text": "wSTN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 619,
+    "fields": {
+      "text": "MY#@",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 620,
+    "fields": {
+      "text": "E5Bg",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 621,
+    "fields": {
+      "text": "ERS-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 622,
+    "fields": {
+      "text": "6eT7",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 623,
+    "fields": {
+      "text": "5B3q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 624,
+    "fields": {
+      "text": "kd87",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 625,
+    "fields": {
+      "text": "reYW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 626,
+    "fields": {
+      "text": "HEfB#",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 627,
+    "fields": {
+      "text": "jvjJW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 628,
+    "fields": {
+      "text": "#^cc",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 629,
+    "fields": {
+      "text": "eK0X",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 630,
+    "fields": {
+      "text": "Uv5@zqtg!",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 631,
+    "fields": {
+      "text": "nI9Xg-",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 632,
+    "fields": {
+      "text": "f7Jy",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 633,
+    "fields": {
+      "text": "Z9RQ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 634,
+    "fields": {
+      "text": "gbFQ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 635,
+    "fields": {
+      "text": "dO1C",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 636,
+    "fields": {
+      "text": "HqlC_w",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 637,
+    "fields": {
+      "text": "IQDUJ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 638,
+    "fields": {
+      "text": "^1xk",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 639,
+    "fields": {
+      "text": "YD@3",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 640,
+    "fields": {
+      "text": "NNG0",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 641,
+    "fields": {
+      "text": "s4m^^",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 642,
+    "fields": {
+      "text": "-ljbAaiS",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 643,
+    "fields": {
+      "text": "-f$e",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 644,
+    "fields": {
+      "text": "6@!4^",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 645,
+    "fields": {
+      "text": "N5uf#4g",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 646,
+    "fields": {
+      "text": "D1MS",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 647,
+    "fields": {
+      "text": "K5KH",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 648,
+    "fields": {
+      "text": "UBk%",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 649,
+    "fields": {
+      "text": "eEYu",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 650,
+    "fields": {
+      "text": "px6p8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 651,
+    "fields": {
+      "text": "nSw@",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 652,
+    "fields": {
+      "text": "Od8Z",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 653,
+    "fields": {
+      "text": "urD59_7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 654,
+    "fields": {
+      "text": "CoMHs2",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 655,
+    "fields": {
+      "text": "Nxyk9",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 656,
+    "fields": {
+      "text": "F0fpNb",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 657,
+    "fields": {
+      "text": "M3q3L",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 658,
+    "fields": {
+      "text": "!kjJ",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 659,
+    "fields": {
+      "text": "dy-o$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 660,
+    "fields": {
+      "text": "89OY",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 661,
+    "fields": {
+      "text": "R#MO8L",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 662,
+    "fields": {
+      "text": "-vU1",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 663,
+    "fields": {
+      "text": "48Eud",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 664,
+    "fields": {
+      "text": "2p0_l",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 665,
+    "fields": {
+      "text": "x%DE",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 666,
+    "fields": {
+      "text": "Jzus^Co",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 667,
+    "fields": {
+      "text": "wGCw",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 668,
+    "fields": {
+      "text": "ntUIgU",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 669,
+    "fields": {
+      "text": "GmhWz",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 670,
+    "fields": {
+      "text": "DI!^Z",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 671,
+    "fields": {
+      "text": "byO#a",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 672,
+    "fields": {
+      "text": "^1U-Ru",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 673,
+    "fields": {
+      "text": "fQy7DN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 674,
+    "fields": {
+      "text": "DiHy",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 675,
+    "fields": {
+      "text": "@cZEi",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 676,
+    "fields": {
+      "text": "lGou",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 677,
+    "fields": {
+      "text": "#%UB",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 678,
+    "fields": {
+      "text": "spdUy",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 679,
+    "fields": {
+      "text": "4CPq3",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 680,
+    "fields": {
+      "text": "AaXT",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 681,
+    "fields": {
+      "text": "bPMqs",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 682,
+    "fields": {
+      "text": "bqTXd",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 683,
+    "fields": {
+      "text": "lO3c",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 684,
+    "fields": {
+      "text": "_T$LI@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 685,
+    "fields": {
+      "text": "GUzSoU",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 686,
+    "fields": {
+      "text": "YMA3N",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 687,
+    "fields": {
+      "text": "Wrt71F",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 688,
+    "fields": {
+      "text": "wfh#p",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 689,
+    "fields": {
+      "text": "gKC#Aqp",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 690,
+    "fields": {
+      "text": "%-n_",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 691,
+    "fields": {
+      "text": "WJy8",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 692,
+    "fields": {
+      "text": "Zps6Yr",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 693,
+    "fields": {
+      "text": "LgIr",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 694,
+    "fields": {
+      "text": "mzf!q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 695,
+    "fields": {
+      "text": "tLTa",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 696,
+    "fields": {
+      "text": "UN3Q",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 697,
+    "fields": {
+      "text": "mocXB",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 698,
+    "fields": {
+      "text": "-6Qw",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 699,
+    "fields": {
+      "text": "@WYbM",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 700,
+    "fields": {
+      "text": "QtnJ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 701,
+    "fields": {
+      "text": "40VE",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 702,
+    "fields": {
+      "text": "KkLrZIHUd",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 703,
+    "fields": {
+      "text": "5hXt",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 704,
+    "fields": {
+      "text": "95dvxA",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 705,
+    "fields": {
+      "text": "bqcqk",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 706,
+    "fields": {
+      "text": "mKfo",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 707,
+    "fields": {
+      "text": "4x9V",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 708,
+    "fields": {
+      "text": "5hXJ",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 709,
+    "fields": {
+      "text": "L^yN",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 710,
+    "fields": {
+      "text": "CKSI_W$",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 711,
+    "fields": {
+      "text": "ixVw",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 712,
+    "fields": {
+      "text": "tJRn",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 713,
+    "fields": {
+      "text": "s^X_H",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 714,
+    "fields": {
+      "text": "%UNg",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 715,
+    "fields": {
+      "text": "ggOKP",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 716,
+    "fields": {
+      "text": "XseX",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 717,
+    "fields": {
+      "text": "plxEh",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 718,
+    "fields": {
+      "text": "E_RDXo",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 719,
+    "fields": {
+      "text": "GJUF",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 720,
+    "fields": {
+      "text": "y@KL",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 721,
+    "fields": {
+      "text": "Yl%xx",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 722,
+    "fields": {
+      "text": "wQc6U",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 723,
+    "fields": {
+      "text": "0SLAiy",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 724,
+    "fields": {
+      "text": "6H^R",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 725,
+    "fields": {
+      "text": "AW9BZQ",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 726,
+    "fields": {
+      "text": "r_c1",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 727,
+    "fields": {
+      "text": "#R5G",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 728,
+    "fields": {
+      "text": "#-9J",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 729,
+    "fields": {
+      "text": "jviF",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 730,
+    "fields": {
+      "text": "lLWQzUEe2s",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 731,
+    "fields": {
+      "text": "n1Q!",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 732,
+    "fields": {
+      "text": "edL_",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 733,
+    "fields": {
+      "text": "Z35Q",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 734,
+    "fields": {
+      "text": "gF5p",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 735,
+    "fields": {
+      "text": "aS%v",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 736,
+    "fields": {
+      "text": "Y3oK",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 737,
+    "fields": {
+      "text": "cdh$B5Y",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 738,
+    "fields": {
+      "text": "vlC2z",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 739,
+    "fields": {
+      "text": "qDhr8E",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 740,
+    "fields": {
+      "text": "75Sq1L%2Y",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 741,
+    "fields": {
+      "text": "gu^^",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 742,
+    "fields": {
+      "text": "$^Kye",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 743,
+    "fields": {
+      "text": "OBH_",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 744,
+    "fields": {
+      "text": "XU4m",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 745,
+    "fields": {
+      "text": "QaDU",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 746,
+    "fields": {
+      "text": "tUa0",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 747,
+    "fields": {
+      "text": "ZIn0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 748,
+    "fields": {
+      "text": "Hk1N",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 749,
+    "fields": {
+      "text": "vFR6",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 750,
+    "fields": {
+      "text": "WGFW",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 751,
+    "fields": {
+      "text": "0GJro",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 752,
+    "fields": {
+      "text": "yJ0$o",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 753,
+    "fields": {
+      "text": "wDQ5",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 754,
+    "fields": {
+      "text": "cG6T",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 755,
+    "fields": {
+      "text": "KXLoiN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 756,
+    "fields": {
+      "text": "^5R267",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 757,
+    "fields": {
+      "text": "LzJZ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 758,
+    "fields": {
+      "text": "!8PLj",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 759,
+    "fields": {
+      "text": "4KMw",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 760,
+    "fields": {
+      "text": "GEaBDIC",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 761,
+    "fields": {
+      "text": "^u-r",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 762,
+    "fields": {
+      "text": "zqIs9",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 763,
+    "fields": {
+      "text": "an0G",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 764,
+    "fields": {
+      "text": "-5Z7rR",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 765,
+    "fields": {
+      "text": "VWt7SRKoV",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 766,
+    "fields": {
+      "text": "7GD!gA",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 767,
+    "fields": {
+      "text": "99ybA",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 768,
+    "fields": {
+      "text": "VWmb",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 769,
+    "fields": {
+      "text": "rdjeu",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 770,
+    "fields": {
+      "text": "rUqd",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 771,
+    "fields": {
+      "text": "2-z_v",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 772,
+    "fields": {
+      "text": "kYSe4j!",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 773,
+    "fields": {
+      "text": "l0#z-lR",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 774,
+    "fields": {
+      "text": "Yiz8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 775,
+    "fields": {
+      "text": "3SSoX",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 776,
+    "fields": {
+      "text": "Fu2k",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 777,
+    "fields": {
+      "text": "FD^mp9JB",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 778,
+    "fields": {
+      "text": "Sezf",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 779,
+    "fields": {
+      "text": "hlJh",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 780,
+    "fields": {
+      "text": "okV0$",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 781,
+    "fields": {
+      "text": "P-gPi",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 782,
+    "fields": {
+      "text": "eCMk",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 783,
+    "fields": {
+      "text": "0JZF",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 784,
+    "fields": {
+      "text": "5vN!",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 785,
+    "fields": {
+      "text": "yRQH",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 786,
+    "fields": {
+      "text": "CgW2",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 787,
+    "fields": {
+      "text": "HzfHL",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 788,
+    "fields": {
+      "text": "Ph!98",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 789,
+    "fields": {
+      "text": "%t2ph",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 790,
+    "fields": {
+      "text": "-3JZh^",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 791,
+    "fields": {
+      "text": "n1C7",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 792,
+    "fields": {
+      "text": "7l23PSJ",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 793,
+    "fields": {
+      "text": "53GCEp@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 794,
+    "fields": {
+      "text": "hCaG",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 795,
+    "fields": {
+      "text": "Fui9!@V",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 796,
+    "fields": {
+      "text": "aOQVh1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 797,
+    "fields": {
+      "text": "rWnM",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 798,
+    "fields": {
+      "text": "StKkn",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 799,
+    "fields": {
+      "text": "C1zM8",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 800,
+    "fields": {
+      "text": "bWFC",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 801,
+    "fields": {
+      "text": "xwgM",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 802,
+    "fields": {
+      "text": "!pYz7t",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 803,
+    "fields": {
+      "text": "VaA0vd",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 804,
+    "fields": {
+      "text": "dpA4!^",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 805,
+    "fields": {
+      "text": "oy3I",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 806,
+    "fields": {
+      "text": "ftoG",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 807,
+    "fields": {
+      "text": "%fAx9",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 808,
+    "fields": {
+      "text": "5mR$H$j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 809,
+    "fields": {
+      "text": "W-@s",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 810,
+    "fields": {
+      "text": "A@L1",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 811,
+    "fields": {
+      "text": "i8Sp",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 812,
+    "fields": {
+      "text": "Ck9C",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 813,
+    "fields": {
+      "text": "z4D7",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 814,
+    "fields": {
+      "text": "n3IOi8wa",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 815,
+    "fields": {
+      "text": "SNUHBiWD",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 816,
+    "fields": {
+      "text": "GD%1JG%",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 817,
+    "fields": {
+      "text": "VLSj",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 818,
+    "fields": {
+      "text": "lINAgOj",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 819,
+    "fields": {
+      "text": "4ooMF",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 820,
+    "fields": {
+      "text": "pfly0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 821,
+    "fields": {
+      "text": "dvWT2LaXFq",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 822,
+    "fields": {
+      "text": "CsijIde",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 823,
+    "fields": {
+      "text": "4_$1",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 824,
+    "fields": {
+      "text": "5eh@",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 825,
+    "fields": {
+      "text": "JEOpo",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 826,
+    "fields": {
+      "text": "6RD@3#W4h",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 827,
+    "fields": {
+      "text": "rLfiMzg",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 828,
+    "fields": {
+      "text": "j8XYjKnkKq",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 829,
+    "fields": {
+      "text": "v%fwb",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 830,
+    "fields": {
+      "text": "bkCo4y",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 831,
+    "fields": {
+      "text": "xZs0S",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 832,
+    "fields": {
+      "text": "3dE3",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 833,
+    "fields": {
+      "text": "@xHh",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 834,
+    "fields": {
+      "text": "xbHi",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 835,
+    "fields": {
+      "text": "jW#F",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 836,
+    "fields": {
+      "text": "zUVN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 837,
+    "fields": {
+      "text": "R%s#",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 838,
+    "fields": {
+      "text": "tSau",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 839,
+    "fields": {
+      "text": "dEn_",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 840,
+    "fields": {
+      "text": "wX%F",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 841,
+    "fields": {
+      "text": "tXAG",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 842,
+    "fields": {
+      "text": "jl^j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 843,
+    "fields": {
+      "text": "BBYQxK8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 844,
+    "fields": {
+      "text": "_bWG4",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 845,
+    "fields": {
+      "text": "q3#CBb",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 846,
+    "fields": {
+      "text": "Q6ZPaJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 847,
+    "fields": {
+      "text": "Ok!V",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 848,
+    "fields": {
+      "text": "S5mT",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 849,
+    "fields": {
+      "text": "9GL7",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 850,
+    "fields": {
+      "text": "%##8U",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 851,
+    "fields": {
+      "text": "#zefnNo",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 852,
+    "fields": {
+      "text": "@6eHb85",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 853,
+    "fields": {
+      "text": "$$^E",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 854,
+    "fields": {
+      "text": "VNEE",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 855,
+    "fields": {
+      "text": "yKPO",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 856,
+    "fields": {
+      "text": "ohxmr7g",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 857,
+    "fields": {
+      "text": "U37g",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 858,
+    "fields": {
+      "text": "37rV",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 859,
+    "fields": {
+      "text": "8p%D",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 860,
+    "fields": {
+      "text": "yR@p",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 861,
+    "fields": {
+      "text": "JKtis9",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 862,
+    "fields": {
+      "text": "oEUq",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 863,
+    "fields": {
+      "text": "e7dYt",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 864,
+    "fields": {
+      "text": "xrHl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 865,
+    "fields": {
+      "text": "XOMl",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 866,
+    "fields": {
+      "text": "Y!2j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 867,
+    "fields": {
+      "text": "J13sw",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 868,
+    "fields": {
+      "text": "Lokc",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 869,
+    "fields": {
+      "text": "h#2QT1",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 870,
+    "fields": {
+      "text": "CEZOXeXXd",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 871,
+    "fields": {
+      "text": "D$RZ_H-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 872,
+    "fields": {
+      "text": "Dupk",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 873,
+    "fields": {
+      "text": "5tUG",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 874,
+    "fields": {
+      "text": "DGJT3",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 875,
+    "fields": {
+      "text": "7$Val",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 876,
+    "fields": {
+      "text": "Uacv",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 877,
+    "fields": {
+      "text": "Tjdxuj",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 878,
+    "fields": {
+      "text": "kSBN",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 879,
+    "fields": {
+      "text": "9581q",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 880,
+    "fields": {
+      "text": "rBHkEYp",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 881,
+    "fields": {
+      "text": "!$Yf",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 882,
+    "fields": {
+      "text": "zQ#Ee",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 883,
+    "fields": {
+      "text": "q#TR-%O",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 884,
+    "fields": {
+      "text": "Ijy%7N",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 885,
+    "fields": {
+      "text": "FQWO",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 886,
+    "fields": {
+      "text": "^Nbk-!%A",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 887,
+    "fields": {
+      "text": "0k%JGQ4",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 888,
+    "fields": {
+      "text": "GIrVcB0",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 889,
+    "fields": {
+      "text": "knb!",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 890,
+    "fields": {
+      "text": "rl0t^E",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 891,
+    "fields": {
+      "text": "!Tg%^",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 892,
+    "fields": {
+      "text": "6wn2",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 893,
+    "fields": {
+      "text": "gCH2e",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 894,
+    "fields": {
+      "text": "7^KH",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 895,
+    "fields": {
+      "text": "sEGP",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 896,
+    "fields": {
+      "text": "!_^$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 897,
+    "fields": {
+      "text": "%sSp",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 898,
+    "fields": {
+      "text": "22TY2",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 899,
+    "fields": {
+      "text": "2!2w",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 900,
+    "fields": {
+      "text": "GMUR",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 901,
+    "fields": {
+      "text": "UNq_",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 902,
+    "fields": {
+      "text": "GFl!!",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 903,
+    "fields": {
+      "text": "1eoPL",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 904,
+    "fields": {
+      "text": "A43S3P##GR",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 905,
+    "fields": {
+      "text": "!n3P6",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 906,
+    "fields": {
+      "text": "xWY$a",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 907,
+    "fields": {
+      "text": "!_3KC",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 908,
+    "fields": {
+      "text": "E!LN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 909,
+    "fields": {
+      "text": "oTya",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 910,
+    "fields": {
+      "text": "YCT_Y",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 911,
+    "fields": {
+      "text": "OVl-h",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 912,
+    "fields": {
+      "text": "lxRW",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 913,
+    "fields": {
+      "text": "MJUc",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 914,
+    "fields": {
+      "text": "GCM1",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 915,
+    "fields": {
+      "text": "B@t-OUPxU",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 916,
+    "fields": {
+      "text": "O3Wsg",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 917,
+    "fields": {
+      "text": "pYVU8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 918,
+    "fields": {
+      "text": "MI-I",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 919,
+    "fields": {
+      "text": "Sc#kI2N",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 920,
+    "fields": {
+      "text": "-Tt#6",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 921,
+    "fields": {
+      "text": "oTVVV",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 922,
+    "fields": {
+      "text": "Izxiz",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 923,
+    "fields": {
+      "text": "hkE6N71",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 924,
+    "fields": {
+      "text": "9pOFKXw5im",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 925,
+    "fields": {
+      "text": "b^s$",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 926,
+    "fields": {
+      "text": "1D5KLZmqz",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 927,
+    "fields": {
+      "text": "_CepBGv",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 928,
+    "fields": {
+      "text": "#Caeu",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 929,
+    "fields": {
+      "text": "$QLT",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 930,
+    "fields": {
+      "text": "4@dpo",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 931,
+    "fields": {
+      "text": "E-o2",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 932,
+    "fields": {
+      "text": "F0i1",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 933,
+    "fields": {
+      "text": "y_D-p",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 934,
+    "fields": {
+      "text": "xx6b",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 935,
+    "fields": {
+      "text": "u^4Z",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 936,
+    "fields": {
+      "text": "2lr2S",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 937,
+    "fields": {
+      "text": "C_@Zz",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 938,
+    "fields": {
+      "text": "4##7S",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 939,
+    "fields": {
+      "text": "Np@j",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 940,
+    "fields": {
+      "text": "H%cU",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 941,
+    "fields": {
+      "text": "iZC#",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 942,
+    "fields": {
+      "text": "FgnP@",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 943,
+    "fields": {
+      "text": "FpzHa",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 944,
+    "fields": {
+      "text": "i8nwFUH$",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 945,
+    "fields": {
+      "text": "ytFPH",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 946,
+    "fields": {
+      "text": "R5-T",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 947,
+    "fields": {
+      "text": "Ww7F",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 948,
+    "fields": {
+      "text": "4yve7",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 949,
+    "fields": {
+      "text": "6p%GhXv",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 950,
+    "fields": {
+      "text": "Ae2P",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 951,
+    "fields": {
+      "text": "hA_8",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 952,
+    "fields": {
+      "text": "PwHk",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 953,
+    "fields": {
+      "text": "V39To",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 954,
+    "fields": {
+      "text": "Z!Js",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 955,
+    "fields": {
+      "text": "FFi8eW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 956,
+    "fields": {
+      "text": "rEhb",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 957,
+    "fields": {
+      "text": "yPwR",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 958,
+    "fields": {
+      "text": "kCwn",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 959,
+    "fields": {
+      "text": "pkLV",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 960,
+    "fields": {
+      "text": "_@-eM",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 961,
+    "fields": {
+      "text": "GtCy6",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 962,
+    "fields": {
+      "text": "vx$-92",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 963,
+    "fields": {
+      "text": "bnYj6",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 964,
+    "fields": {
+      "text": "T7lW",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 965,
+    "fields": {
+      "text": "UVuL",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 966,
+    "fields": {
+      "text": "%6y9",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 967,
+    "fields": {
+      "text": "lZKF",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 968,
+    "fields": {
+      "text": "z-n8UHG",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 969,
+    "fields": {
+      "text": "4DP-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 970,
+    "fields": {
+      "text": "@w8rR",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 971,
+    "fields": {
+      "text": "h%EVkB",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 972,
+    "fields": {
+      "text": "01uK",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 973,
+    "fields": {
+      "text": "OM_oOx",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 974,
+    "fields": {
+      "text": "x!#hx",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 975,
+    "fields": {
+      "text": "nm1#",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 976,
+    "fields": {
+      "text": "TL3h",
+      "patternbit": "{2}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 977,
+    "fields": {
+      "text": "Xh!Kr",
+      "patternbit": "{3}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 978,
+    "fields": {
+      "text": "c7#k",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 979,
+    "fields": {
+      "text": "0dmO",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 980,
+    "fields": {
+      "text": "6LSH",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 981,
+    "fields": {
+      "text": "H_gTg",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 982,
+    "fields": {
+      "text": "xb6e",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 983,
+    "fields": {
+      "text": "so5T",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 984,
+    "fields": {
+      "text": "Fh3LmCX",
+      "patternbit": "[-_!@#$%^]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 985,
+    "fields": {
+      "text": "OZstM",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 986,
+    "fields": {
+      "text": "u0#s",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 987,
+    "fields": {
+      "text": "QTN4gG",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 988,
+    "fields": {
+      "text": "tPD7OT4@!#",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 989,
+    "fields": {
+      "text": "Ab^mh",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 990,
+    "fields": {
+      "text": "G9#$",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 991,
+    "fields": {
+      "text": "UKNfXN",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 992,
+    "fields": {
+      "text": "%U60w",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 993,
+    "fields": {
+      "text": "4xcP%BX",
+      "patternbit": "{5,}"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 994,
+    "fields": {
+      "text": "nT5I",
+      "patternbit": "[0-9]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 995,
+    "fields": {
+      "text": "qFaJ",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 996,
+    "fields": {
+      "text": "xQki",
+      "patternbit": "[A-Z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 997,
+    "fields": {
+      "text": "eUH8-",
+      "patternbit": "[a-z]"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 998,
+    "fields": {
+      "text": "F!ql",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 999,
+    "fields": {
+      "text": "$h_%",
+      "patternbit": "?"
+    }
+  },
+  {
+    "model": "regame.Card",
+    "pk": 1000,
+    "fields": {
+      "text": "!Ekk!",
+      "patternbit": "[a-z]"
+    }
+  }
+]
