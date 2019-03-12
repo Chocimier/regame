@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 from .forms import NewMatchForm
 from .models import Match, PossessedCard, CardLocation
 from .processes import creatematch, competitor
@@ -50,4 +51,13 @@ def match(request, no):
     return render(request, 'regame/match.html', context)
 
 def main(request):
-    return render(request, 'regame/main.html')
+    player = request.user
+    if player.is_authenticated:
+        matchlinks = [ {'match': i, 'competitor': competitor(i, player)}
+            for i in Match.objects.filter(Q(player1=player) | Q(player2=player))]
+    else:
+        matchlinks = []
+    context = {
+        'matchlinks': matchlinks
+    }
+    return render(request, 'regame/main.html', context)

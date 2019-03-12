@@ -10,4 +10,13 @@
 <p>Hello, stranger!</p>
 {% endif %}
 
+<h4>Matches</h4>
+<ul>
+{% for i in matchlinks %}
+<li>
+{% include "regame/matchlink.html" with match=i.match competitor=i.competitor %}
+</li>
+{% endfor %}
+</ul>
+
 {% endblock %}
