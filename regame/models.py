@@ -17,6 +17,12 @@ class CardLocation(Enum):
     TABLE = 't'
     HAND = 'h'
 
+def slotscount(location):
+    count = {
+        CardLocation.TABLE: 3,
+        CardLocation.HAND: 4,
+    }
+    return count[location]
 
 class PossessedCard(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE)

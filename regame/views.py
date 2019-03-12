@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import NewMatchForm
 from .models import Match, PossessedCard
+from .processes import creatematch
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -22,8 +23,7 @@ def newmatch(request):
             competitor = None
             context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
         if competitor:
-            match = Match(player1=request.user, player2=competitor)
-            match.save()
+            match = creatematch(request.user, competitor)
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
         form = NewMatchForm()
