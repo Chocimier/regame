@@ -1,0 +1,9 @@
+.card {
+	display: inline-block;
+	width: 8rem;
+	border: solid thin black;
+}
+
+.cardtext, .cardpattern {
+	text-align: center;
+}
