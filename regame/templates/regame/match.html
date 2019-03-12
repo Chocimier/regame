@@ -6,7 +6,20 @@
 
 <p>{{ player.username }} vs {{ competitor.username }}</p>
 
-{% for card in cards %}
+In hand:
+{% for card in ownhandcards %}
+{% include "regame/card.html" with card=card.card only %}
+<hr>
+{% endfor %}
+
+On table:
+{% for card in owntablecards %}
+{% include "regame/card.html" with card=card.card only %}
+<hr>
+{% endfor %}
+
+On table, competitor's:
+{% for card in competitortablecards %}
 {% include "regame/card.html" with card=card.card only %}
 <hr>
 {% endfor %}

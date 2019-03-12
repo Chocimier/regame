@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import NewMatchForm
-from .models import Match, PossessedCard
+from .models import Match, PossessedCard, CardLocation
 from .processes import creatematch
 
 def error(request, message, code=200):
@@ -38,10 +38,14 @@ def match(request, no):
         return error(request, 'No such match.', 404)
     if request.user != match.player1 and request.user != match.player2:
         return error(request, 'You do not play that match.', 403)
+    player = request.user
+    competitor = match.player1 if player == match.player2 else match.player2
     context = {
-        'player': match.player1,
-        'competitor': match.player2,
-        'cards': PossessedCard.objects.filter(match=match),
+        'player': player,
+        'competitor': competitor,
+        'ownhandcards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND),
+        'owntablecards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE),
+        'competitortablecards': PossessedCard.objects.filter(match=match, player=competitor, location=CardLocation.TABLE),
     }
     return render(request, 'regame/match.html', context)
 
