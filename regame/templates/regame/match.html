@@ -6,4 +6,9 @@
 
 <p>{{ player.username }} vs {{ competitor.username }}</p>
 
+{% for card in cards %}
+{% include "regame/card.html" with card=card.card only %}
+<hr>
+{% endfor %}
+
 {% endblock %}

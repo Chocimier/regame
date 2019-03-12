@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import NewMatchForm
-from .models import Match
+from .models import Match, PossessedCard
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -41,6 +41,7 @@ def match(request, no):
     context = {
         'player': match.player1,
         'competitor': match.player2,
+        'cards': PossessedCard.objects.filter(match=match),
     }
     return render(request, 'regame/match.html', context)
 
