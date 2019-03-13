@@ -13,18 +13,32 @@ In hand:
 {% endfor %}
 </div>
 
+<form method="post">
+{% csrf_token %}
 <div>
 On table:
-{% for card in owntablecards %}
-{% include "regame/card.html" with card=card.card only %}
+{% for cardpair in owntablecards %}
+<label class="movingcardlabel">
+{% include "regame/card.html" with card=cardpair.card.card only %}
+<br/>
+{{ cardpair.select }}
+</label>
 {% endfor %}
 </div>
 
 <div>
 On table, competitor's:
-{% for card in competitortablecards %}
-{% include "regame/card.html" with card=card.card only %}
+{% for cardpair in competitortablecards %}
+<label class="targetcardlabel">
+{{ cardpair.radio.tag }}
+<br/>
+{% include "regame/card.html" with card=cardpair.card.card only %}
+</label>
 {% endfor %}
 </div>
+
+<input type="submit" value="Move" />
+
+</form>
 
 {% endblock %}

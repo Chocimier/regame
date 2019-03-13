@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .forms import NewMatchForm
+from .forms import MoveForm, NewMatchForm
 from .models import Match, PossessedCard, CardLocation
 from .processes import creatematch, competitor
 
@@ -41,12 +41,18 @@ def match(request, no):
         return error(request, 'You do not play that match.', 403)
     player = request.user
     other = competitor(match, player)
+    moveform = MoveForm()
+    ownhandcards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')
+    owntablecards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')
+    owntableselects = moveform.ontablefields()
+    competitortablecards = PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE).order_by('index')
     context = {
         'player': player,
         'competitor': other,
-        'ownhandcards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND),
-        'owntablecards': PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE),
-        'competitortablecards': PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE),
+        'ownhandcards': ownhandcards,
+        'owntablecards': [{'card': card, 'select': owntableselects[i]} for i, card in enumerate(owntablecards)],
+        'competitortablecards': [{'card': card, 'radio': moveform['target_card'][i]} for i, card in enumerate(competitortablecards)],
+        'moveform': moveform,
     }
     return render(request, 'regame/match.html', context)
 

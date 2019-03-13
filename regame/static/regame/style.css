@@ -7,3 +7,7 @@
 .cardtext, .cardpattern {
 	text-align: center;
 }
+
+.targetcardlabel, .movingcardlabel {
+	display: inline-block;
+}
