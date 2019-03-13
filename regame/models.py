@@ -11,6 +11,10 @@ class Card(models.Model):
 class Match(models.Model):
     player1 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player1_set')
     player2 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player2_set')
+    current = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_current_set')
+    player1score = models.IntegerField(default=0)
+    player2score = models.IntegerField(default=0)
+    active = models.BooleanField(default=True)
 
 
 class CardLocation(Enum):

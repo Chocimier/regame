@@ -7,7 +7,7 @@ def randomcard():
     return Card.objects.all()[index]
 
 def creatematch(player1, player2):
-    match = Match(player1=player1, player2=player2)
+    match = Match(player1=player1, player2=player2, current=player2)
     match.save()
     for player in [player1, player2]:
         for location in CardLocation:
