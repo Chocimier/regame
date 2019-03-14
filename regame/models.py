@@ -39,4 +39,4 @@ class PossessedCard(models.Model):
     player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     location = EnumField(CardLocation, max_length=1)
     index = models.PositiveSmallIntegerField()
-    card = models.ForeignKey(Card, on_delete=models.PROTECT)
+    card = models.ForeignKey(Card, on_delete=models.PROTECT, null=True)

@@ -4,6 +4,10 @@
 	border: solid thin black;
 }
 
+.card.lacking {
+	border: none;
+}
+
 .cardtext, .cardpattern {
 	text-align: center;
 }

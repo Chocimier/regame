@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card {% if not card %}lacking{% endif %}">
 	<div class="cardtext">{{ card.text }}</div>
 	<div class="cardpattern">{{ card.patternbit }}</div>
 </div>

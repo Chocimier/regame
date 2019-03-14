@@ -23,7 +23,9 @@ On table:
 <label class="movingcardlabel">
 {% include "regame/card.html" with card=cardpair.card.card only %}
 <br/>
+{% if cardpair.card.card %}
 {{ cardpair.select }}
+{% endif %}
 </label>
 {% endfor %}
 </div>
@@ -32,7 +34,9 @@ On table:
 On table, competitor's:
 {% for cardpair in competitortablecards %}
 <label class="targetcardlabel">
+{% if cardpair.card.card %}
 {{ cardpair.radio.tag }}
+{% endif %}
 <br/>
 {% include "regame/card.html" with card=cardpair.card.card only %}
 </label>
