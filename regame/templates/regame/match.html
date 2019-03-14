@@ -15,7 +15,7 @@ In hand:
 {% endfor %}
 </div>
 
-<form method="post">
+<form method="post" action="{% url "match_attack" no=match.id %}">
 {% csrf_token %}
 <div>
 On table:
