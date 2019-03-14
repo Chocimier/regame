@@ -43,4 +43,7 @@ def move(match, player, order, target):
         match.player2score += score_increase
     match.current = competitor(match, player)
     match.save()
+    if score_increase > 0:
+        targetcard.card = None
+        targetcard.save()
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
