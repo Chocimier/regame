@@ -56,6 +56,8 @@ def match(request, no):
     context.update({
         'player': player,
         'competitor': other,
+        'playerscore': match.result(player),
+        'competitorscore': match.result(other),
         'ownhandcards': ownhandcards,
         'owntablecards': [{'card': card, 'select': owntableselects[i]} for i, card in enumerate(owntablecards)],
         'competitortablecards': [{'card': card, 'radio': moveform['target_card'][i]} for i, card in enumerate(competitortablecards)],

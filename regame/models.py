@@ -16,6 +16,12 @@ class Match(models.Model):
     player2score = models.IntegerField(default=0)
     active = models.BooleanField(default=True)
 
+    def result(self, player):
+        if player == self.player1:
+            return self.player1score
+        else:
+            return self.player2score
+
 
 class CardLocation(Enum):
     TABLE = 't'
