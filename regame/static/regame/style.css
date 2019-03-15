@@ -10,8 +10,14 @@
 
 .cardtext, .cardpattern {
 	text-align: center;
+	font-family: monospace;
+	font-size: 1.1rem;
 }
 
 .targetcardlabel, .movingcardlabel, .ownhandcardlabel {
 	display: inline-block;
+}
+
+[type="submit"] {
+	min-height: 2.5rem;
 }
