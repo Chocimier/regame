@@ -1,3 +1,4 @@
+from collections import defaultdict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
@@ -56,11 +57,12 @@ def match(request, no):
         return error(request, 'You do not play that match.', 403)
     player = request.user
     other = competitor(match, player)
-    moveform = MoveForm()
+    form = MoveForm()
     ownhandcards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')
     owntablecards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')
-    owntableselects = moveform.ontablefields()
     competitortablecards = PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE).order_by('index')
+    owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
+    competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)
     context = {
         'match': match,
         'player': player,
@@ -68,9 +70,9 @@ def match(request, no):
         'playerscore': match.result(player),
         'competitorscore': match.result(other),
         'ownhandcards': ownhandcards,
-        'moveform': moveform,
-        'owntablecards': [{'card': card, 'widget': owntableselects[i]} for i, card in enumerate(owntablecards)],
-        'competitortablecards': [{'card': card, 'widget': moveform['target_card'][i]} for i, card in enumerate(competitortablecards)],
+        'owntablecards': [{'card': card, 'widget': owntablewidgets[i]} for i, card in enumerate(owntablecards)],
+        'competitortablecards': [{'card': card, 'widget': competitortablewidgets[i]} for i, card in enumerate(competitortablecards)],
+        'form': form,
     }
     return render(request, 'regame/match.html', context)
 

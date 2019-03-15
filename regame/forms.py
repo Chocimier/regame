@@ -1,5 +1,6 @@
 from django import forms
 from .models import CardLocation, slotscount
+from collections import defaultdict
 
 class NewMatchForm(forms.Form):
     other_player = forms.CharField(label='Who do you want to play with?', max_length=200)
@@ -37,3 +38,11 @@ class MoveForm(forms.Form):
             if cardorder:
                 order[cardorder-1] = cardindex
         return [i for i in order if i is not None]
+
+    def widgetsfor(self, location, *, competitor):
+        if not competitor and location == CardLocation.TABLE:
+            return self.ontablefields()
+        elif competitor and location == CardLocation.TABLE:
+            return [i.tag for i in self['target_card']]
+        else:
+            return defaultdict(lambda: None)
