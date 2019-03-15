@@ -8,7 +8,7 @@
 <p>{{ playerscore }} : {{ competitorscore }}</p>
 <p> It's {{ match.current.username }} turn.</p>
 
-<form method="post" action="{% url "match_attack" no=match.id %}">
+<form method="post" action="{{ actionurl }}">
 {% csrf_token %}
 <div>
 In hand:

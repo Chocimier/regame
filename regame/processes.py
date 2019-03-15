@@ -1,3 +1,5 @@
+from django.urls import reverse
+from .forms import MoveForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount
 import random
 import re
@@ -47,3 +49,9 @@ def move(match, player, order, target):
         targetcard.card = None
         targetcard.save()
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
+
+def formfor(match, player):
+     if match.current != player:
+         return (None, '')
+     else:
+         return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import MoveForm, NewMatchForm
 from .models import Match, PossessedCard, CardLocation
-from .processes import creatematch, competitor, move
+from .processes import creatematch, competitor, formfor, move
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -57,7 +57,7 @@ def match(request, no):
         return error(request, 'You do not play that match.', 403)
     player = request.user
     other = competitor(match, player)
-    form = MoveForm()
+    form, actionurl = formfor(match, player)
     ownhandcards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')
     owntablecards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')
     competitortablecards = PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE).order_by('index')
@@ -65,6 +65,7 @@ def match(request, no):
     owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
     competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)
     context = {
+        'actionurl': actionurl,
         'match': match,
         'player': player,
         'competitor': other,
