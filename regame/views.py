@@ -68,9 +68,9 @@ def match(request, no):
         'playerscore': match.result(player),
         'competitorscore': match.result(other),
         'ownhandcards': ownhandcards,
-        'owntablecards': [{'card': card, 'select': owntableselects[i]} for i, card in enumerate(owntablecards)],
-        'competitortablecards': [{'card': card, 'radio': moveform['target_card'][i]} for i, card in enumerate(competitortablecards)],
         'moveform': moveform,
+        'owntablecards': [{'card': card, 'widget': owntableselects[i]} for i, card in enumerate(owntablecards)],
+        'competitortablecards': [{'card': card, 'widget': moveform['target_card'][i]} for i, card in enumerate(competitortablecards)],
     }
     return render(request, 'regame/match.html', context)
 
