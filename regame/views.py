@@ -90,6 +90,7 @@ def match(request, no):
         'owntablecards': [{'card': card, 'widget': owntablewidgets[i]} for i, card in enumerate(owntablecards)],
         'competitortablecards': [{'card': card, 'widget': competitortablewidgets[i]} for i, card in enumerate(competitortablecards)],
         'form': form,
+        'reloading': (not actionurl),
     }
     return render(request, 'regame/match.html', context)
 

@@ -2,6 +2,12 @@
 
 {% block title %}{{ competitor.username }} vs {{ player.username }} match{% endblock %}
 
+{% block head_tags %}
+{% if reloading %}
+<meta http-equiv="refresh" content="3" />
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
 <p>{{ player.username }} vs {{ competitor.username }}</p>
