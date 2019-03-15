@@ -3,6 +3,7 @@ from .forms import MoveForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount
 import random
 import re
+import sre_constants
 
 def randomcard():
     count = Card.objects.count()
@@ -24,7 +25,10 @@ def competitor(match, player):
     return match.player1 if player == match.player2 else match.player2
 
 def score(text, pattern):
-    match = re.search(pattern, text)
+    try:
+        match = re.search(pattern, text)
+    except sre_constants.error:
+        match = None
     return len(match.group(0)) if match else 0
 
 def ontotable(match, player, index):
