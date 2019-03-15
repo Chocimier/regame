@@ -12,6 +12,6 @@
 	text-align: center;
 }
 
-.targetcardlabel, .movingcardlabel {
+.targetcardlabel, .movingcardlabel, .ownhandcardlabel {
 	display: inline-block;
 }

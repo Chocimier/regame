@@ -5,9 +5,9 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .forms import MoveForm, NewMatchForm
+from .forms import MoveForm, NewMatchForm, OntoTableForm
 from .models import Match, PossessedCard, CardLocation
-from .processes import creatematch, competitor, formfor, move
+from .processes import creatematch, competitor, formfor, move, ontotable
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -31,6 +31,21 @@ def newmatch(request):
         form = NewMatchForm()
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
+
+@login_required()
+def refill(request, no):
+    try:
+        match = Match.objects.get(id=no)
+    except Match.DoesNotExist:
+        return error(request, 'No such match.', 404)
+    if request.user != match.player1 and request.user != match.player2:
+        return error(request, 'You do not play that match.', 403)
+    player = request.user
+    if request.method == 'POST':
+        form = OntoTableForm(request.POST)
+        if form.is_valid():
+            ontotable(match, player, form.cleaned_data['put_card'])
+    return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
 
 @login_required()
 def attack(request, no):

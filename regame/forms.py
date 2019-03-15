@@ -11,6 +11,17 @@ MOVE_CARD_ORDER_CHOICES = [
 ] + [(str(i), str(i)) for i in range(1, slotscount(CardLocation.TABLE)+1)]
 
 MOVE_TARGET_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.TABLE))]
+HAND_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.HAND))]
+
+
+class OntoTableForm(forms.Form):
+    put_card = forms.TypedChoiceField(choices=HAND_CARD_CHOICES, coerce=int, empty_value=None, widget=forms.RadioSelect)
+
+    def widgetsfor(self, location, *, competitor):
+        if not competitor and location == CardLocation.HAND:
+            return [i.tag for i in self['put_card']]
+        else:
+            return defaultdict(lambda: None)
 
 
 class MoveForm(forms.Form):

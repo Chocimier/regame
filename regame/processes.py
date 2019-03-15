@@ -1,5 +1,5 @@
 from django.urls import reverse
-from .forms import MoveForm
+from .forms import MoveForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount
 import random
 import re
@@ -27,6 +27,16 @@ def score(text, pattern):
     match = re.search(pattern, text)
     return len(match.group(0)) if match else 0
 
+def ontotable(match, player, index):
+    if player != match.current:
+        return None
+    gap = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, card=None)[0]
+    put_card = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND, index=index)[0]
+    gap.card = put_card.card
+    put_card.card = randomcard()
+    gap.save()
+    put_card.save()
+
 def move(match, player, order, target):
     if player != match.current:
         return None
@@ -53,5 +63,7 @@ def move(match, player, order, target):
 def formfor(match, player):
      if match.current != player:
          return (None, '')
+     elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
+         return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
      else:
          return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))
