@@ -27,11 +27,13 @@ class Match(models.Model):
 class CardLocation(Enum):
     TABLE = 't'
     HAND = 'h'
+    REMOVED = 'r'
 
 def slotscount(location):
     count = {
         CardLocation.TABLE: 3,
         CardLocation.HAND: 4,
+        CardLocation.REMOVED: 1,
     }
     return count[location]
 

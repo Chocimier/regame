@@ -15,6 +15,8 @@ def creatematch(player1, player2):
     match.save()
     for player in [player1, player2]:
         for location in CardLocation:
+            if location == CardLocation.REMOVED:
+                continue
             for i in range(slotscount(location)):
                 card = randomcard()
                 posessed = PossessedCard(match=match, player=player, location=location, index=i, card=card)
@@ -73,6 +75,9 @@ def move(match, player, order, target):
     match.current = competitorplayer
     match.save()
     if score_increase > 0:
+        PossessedCard.objects.update_or_create(
+            match=match, player=competitorplayer, location=CardLocation.REMOVED, index=0,
+            defaults={'card': targetcard.card})
         targetcard.card = None
         targetcard.save()
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
@@ -87,3 +92,7 @@ def formfor(match, player):
         return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
     else:
         return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))
+
+def removedcard(match, player):
+    posessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()
+    return posessed.card if posessed else None

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import MoveForm, NewMatchForm, OntoTableForm
 from .models import Match, PossessedCard, CardLocation
-from .processes import creatematch, competitor, formfor, move, ontotable
+from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -86,6 +86,8 @@ def match(request, no):
         'competitor': other,
         'playerscore': match.result(player),
         'competitorscore': match.result(other),
+        'yourremovedcard': removedcard(match, player),
+        'competitorsremovedcard': removedcard(match, other),
         'ownhandcards': [{'card': card, 'widget': ownhandwidgets[i]} for i, card in enumerate(ownhandcards)],
         'owntablecards': [{'card': card, 'widget': owntablewidgets[i]} for i, card in enumerate(owntablecards)],
         'competitortablecards': [{'card': card, 'widget': competitortablewidgets[i]} for i, card in enumerate(competitortablecards)],

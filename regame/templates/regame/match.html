@@ -60,6 +60,24 @@ On table, competitor's:
 
 <input type="submit" value="Move" />
 
+{% if yourremovedcard or competitorsremovedcard %}
+<div>
+Recently removed cards:
+{% if yourremovedcard %}
+<div class="cardslot">
+Your:<br/>
+{% include "regame/card.html" with card=yourremovedcard only %}
+</div>
+{% endif %}
+{% if competitorsremovedcard %}
+<div class="cardslot">
+Competitor's:<br/>
+{% include "regame/card.html" with card=competitorsremovedcard only %}
+</div>
+{% endif %}
+</div>
+{% endif %}
+
 </form>
 
 {{ movedesc }}
