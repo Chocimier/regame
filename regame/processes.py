@@ -65,9 +65,9 @@ def move(match, player, order, target):
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 def formfor(match, player):
-     if match.current != player:
-         return (None, '')
-     elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
-         return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
-     else:
-         return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))
+    if match.current != player:
+        return (None, '')
+    elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
+        return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
+    else:
+        return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))
