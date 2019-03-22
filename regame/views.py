@@ -100,7 +100,7 @@ def main(request):
     player = request.user
     if player.is_authenticated:
         matchlinks = [ {'match': i, 'competitor': competitor(i, player)}
-            for i in Match.objects.filter(Q(player1=player) | Q(player2=player))]
+            for i in Match.objects.filter(Q(player1=player) | Q(player2=player), active=True).order_by('-pk')]
     else:
         matchlinks = []
     context = {

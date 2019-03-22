@@ -1,6 +1,11 @@
 {% extends "regame/base.html" %}
 
-{% block title %}{{ competitor.username }} vs {{ player.username }} match{% endblock %}
+{% block title %}
+{% if player == match.current %}
+[*]
+{% endif %}
+{{ competitor.username }} vs {{ player.username }} match
+{% endblock %}
 
 {% block head_tags %}
 {% if reloading %}
@@ -19,10 +24,10 @@
 <p>The match ended.</p>
 {% endif %}
 
-<form method="post" action="{{ actionurl }}">
+<form method="post" action="{{ actionurl }}" class="{% if player == match.current %}active{% endif %}">
 {% csrf_token %}
 <div>
-In hand:
+<p>In hand:</p>
 {% for cardpair in ownhandcards %}
 <label class="cardslot">
 {% include "regame/card.html" with card=cardpair.card.card only %}
@@ -33,7 +38,7 @@ In hand:
 </div>
 
 <div>
-On table:
+<p>On table:</p>
 {% for cardpair in owntablecards %}
 <label class="cardslot">
 {% include "regame/card.html" with card=cardpair.card.card only %}
@@ -46,7 +51,7 @@ On table:
 </div>
 
 <div>
-On table, competitor's:
+<p>On table, competitor's:</p>
 {% for cardpair in competitortablecards %}
 <label class="cardslot">
 {% if cardpair.card.card %}
@@ -58,11 +63,13 @@ On table, competitor's:
 {% endfor %}
 </div>
 
+{%if actionurl %}
 <input type="submit" value="Move" />
+{% endif %}
 
 {% if yourremovedcard or competitorsremovedcard %}
 <div>
-Recently removed cards:
+<p>Recently removed cards:</p>
 {% if yourremovedcard %}
 <div class="cardslot">
 Your:<br/>

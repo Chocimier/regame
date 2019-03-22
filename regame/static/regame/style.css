@@ -20,5 +20,11 @@
 }
 
 [type="submit"] {
-	min-height: 2.5rem;
+	min-height: 3em;
+	min-width: 6em;
+}
+
+.active {
+	background: powderblue;
+	color: black;
 }
