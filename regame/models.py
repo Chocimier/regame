@@ -4,8 +4,8 @@ from enumfields import EnumField
 from enum import Enum
 
 class Card(models.Model):
-    text = models.CharField(max_length=10)
-    patternbit = models.CharField(max_length=10)
+    text = models.CharField(max_length=12)
+    patternbit = models.CharField(max_length=12)
 
 
 class Match(models.Model):

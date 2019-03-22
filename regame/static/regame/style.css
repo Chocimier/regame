@@ -1,6 +1,9 @@
 .card {
+	font-family: monospace;
+	font-size: 1.1rem;
 	display: inline-block;
-	width: 8rem;
+	min-width: 15ex;
+	line-height: 1.5;
 	border: solid thin black;
 }
 
@@ -10,8 +13,6 @@
 
 .cardtext, .cardpattern {
 	text-align: center;
-	font-family: monospace;
-	font-size: 1.1rem;
 }
 
 .targetcardlabel, .movingcardlabel, .ownhandcardlabel {
