@@ -31,7 +31,15 @@ def score(text, pattern):
         match = None
     return len(match.group(0)) if match else 0
 
+def scoreof(match, player):
+    if player == match.player1:
+        return match.player1score
+    else:
+        return match.player2score
+
 def ontotable(match, player, index):
+    if not match.active:
+        return None
     if player != match.current:
         return None
     gap = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, card=None)[0]
@@ -42,6 +50,8 @@ def ontotable(match, player, index):
     put_card.save()
 
 def move(match, player, order, target):
+    if not match.active:
+        return None
     if player != match.current:
         return None
     if not order:
@@ -57,6 +67,8 @@ def move(match, player, order, target):
         match.player1score += score_increase
     else:
         match.player2score += score_increase
+    if scoreof(match, player) >= match.score_to_win:
+        match.active = False
     match.current = competitor(match, player)
     match.save()
     if score_increase > 0:
@@ -65,8 +77,11 @@ def move(match, player, order, target):
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 def formfor(match, player):
+    noneform = (None, '')
+    if not match.active:
+        return noneform
     if match.current != player:
-        return (None, '')
+        return noneform
     elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
         return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
     else:

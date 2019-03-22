@@ -15,6 +15,7 @@ class Match(models.Model):
     player1score = models.IntegerField(default=0)
     player2score = models.IntegerField(default=0)
     active = models.BooleanField(default=True)
+    score_to_win = models.PositiveSmallIntegerField(default=40)
 
     def result(self, player):
         if player == self.player1:

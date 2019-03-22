@@ -12,7 +12,12 @@
 
 <p>{{ player.username }} vs {{ competitor.username }}</p>
 <p>{{ playerscore }} : {{ competitorscore }}</p>
+
+{% if match.active %}
 <p> It's {{ match.current.username }}'s turn.</p>
+{% else %}
+<p>The match ended.</p>
+{% endif %}
 
 <form method="post" action="{{ actionurl }}">
 {% csrf_token %}
