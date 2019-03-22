@@ -56,7 +56,8 @@ def move(match, player, order, target):
         return None
     if not order:
         return None
-    targetcard = PossessedCard.objects.filter(match=match, player=competitor(match, player), location=CardLocation.TABLE, index=target)[0]
+    competitorplayer = competitor(match, player)
+    targetcard = PossessedCard.objects.filter(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target)[0]
     targettext = targetcard.card.text
     pattern = ''
     for i in order:
@@ -69,7 +70,7 @@ def move(match, player, order, target):
         match.player2score += score_increase
     if scoreof(match, player) >= match.score_to_win:
         match.active = False
-    match.current = competitor(match, player)
+    match.current = competitorplayer
     match.save()
     if score_increase > 0:
         targetcard.card = None
