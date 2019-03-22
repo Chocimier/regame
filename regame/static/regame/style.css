@@ -15,7 +15,7 @@
 	text-align: center;
 }
 
-.targetcardlabel, .movingcardlabel, .ownhandcardlabel {
+.cardslot {
 	display: inline-block;
 }
 

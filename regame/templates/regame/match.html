@@ -24,7 +24,7 @@
 <div>
 In hand:
 {% for cardpair in ownhandcards %}
-<label class="ownhandcardlabel">
+<label class="cardslot">
 {% include "regame/card.html" with card=cardpair.card.card only %}
 <br/>
 {{ cardpair.widget | default_if_none:"" }}
@@ -35,7 +35,7 @@ In hand:
 <div>
 On table:
 {% for cardpair in owntablecards %}
-<label class="movingcardlabel">
+<label class="cardslot">
 {% include "regame/card.html" with card=cardpair.card.card only %}
 <br/>
 {% if cardpair.card.card %}
@@ -48,7 +48,7 @@ On table:
 <div>
 On table, competitor's:
 {% for cardpair in competitortablecards %}
-<label class="targetcardlabel">
+<label class="cardslot">
 {% if cardpair.card.card %}
 {{ cardpair.widget | default_if_none:"" }}
 {% endif %}
