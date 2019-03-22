@@ -7,7 +7,35 @@ import string
 
 class Command(BaseCommand):
     help = 'Generates fixture of cards'
-    specialchars = '-_!@#$%^'
+    specialchars = '-_!@#$%^,:'
+    patterns = []
+    weights = []
+
+    def __init__(self):
+        super().__init__()
+        pattern_weights = {}
+        # single
+        pattern_weights['[a-z]'] = len(string.ascii_lowercase)
+        pattern_weights['[A-Z]'] = len(string.ascii_uppercase)
+        pattern_weights['\\d'] = len(string.digits)
+        pattern_weights['\\W'] = len(self.specialchars)-1
+        # alternative
+        pattern_weights['(\\d|\\W)'] = len(string.digits)/2
+        pattern_weights['(\\W|[a-z])'] = len(string.digits)/2
+        pattern_weights['[A-Z0-9_]'] = len(string.digits)/2
+        pattern_weights['\\w'] = 2
+        # consecutive
+        pattern_weights['([a-z]\\d)'] = len(string.digits)/2
+        pattern_weights['(\\W[A-Z])'] = len(string.digits)/2
+        pattern_weights['([a-z][A-Z])'] = len(string.digits)/2
+        # others
+        pattern_weights['[AEIOUaeiou]'] = len(string.digits)/2
+        # repetition
+        for i in range(2,4):
+            pattern_weights['{' + str(i) + '}'] = 3
+        pattern_weights['{5,}'] = 4
+        self.patterns = list(pattern_weights.keys())
+        self.weights = list(map(pattern_weights.get, self.patterns))
 
     def add_arguments(self, parser):
         parser.add_argument('--count', type=int)
@@ -23,18 +51,7 @@ class Command(BaseCommand):
         print(json.dumps(cards, indent=2))
 
     def randompatternbit(self):
-        pattern_weights = {}
-        pattern_weights['[a-z]'] = len(string.ascii_lowercase)
-        pattern_weights['[A-Z]'] = len(string.ascii_uppercase)
-        pattern_weights['[0-9]'] = len(string.digits)
-        pattern_weights['[' + self.specialchars + ']'] = len(self.specialchars)
-        pattern_weights['?'] = 3
-        for i in range(2,4):
-            pattern_weights['{' + str(i) + '}'] = 2
-        pattern_weights['{5,}'] = 3
-        patterns = list(pattern_weights.keys())
-        weights = list(map(pattern_weights.get, patterns))
-        return random.choices(patterns, weights=weights)[0]
+        return random.choices(self.patterns, weights=self.weights)[0]
 
     def randomchar(self):
         chars = string.ascii_letters + string.digits + self.specialchars
@@ -42,13 +59,8 @@ class Command(BaseCommand):
 
     def randomtext(self):
         text = ''
-        for i in range(4):
+        for i in range(random.randint(3,12)):
             text += self.randomchar()
-        for i in range(6):
-            if random.random() < 0.5:
-                text += self.randomchar()
-            else:
-                break
         return text
 
     def randomcard(self, pk):
