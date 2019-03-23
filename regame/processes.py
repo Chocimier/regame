@@ -1,5 +1,5 @@
 from django.urls import reverse
-from .forms import MoveForm, OntoTableForm
+from .forms import AttackForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount
 import random
 import re
@@ -91,7 +91,7 @@ def formfor(match, player):
     elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
         return (OntoTableForm(), reverse('match_refill', kwargs={'no': match.id}))
     else:
-        return (MoveForm(), reverse('match_attack', kwargs={'no': match.id}))
+        return (AttackForm(), reverse('match_attack', kwargs={'no': match.id}))
 
 def removedcard(match, player):
     posessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()

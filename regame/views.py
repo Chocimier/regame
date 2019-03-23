@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .forms import MoveForm, NewMatchForm, OntoTableForm
+from .forms import AttackForm, NewMatchForm, OntoTableForm
 from .models import Match, PossessedCard, CardLocation
 from .players import enforceuser
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
@@ -51,7 +51,7 @@ def attack(request, no):
         return error(request, 'You do not play that match.', 403)
     player = request.user
     if request.method == 'POST':
-        moveformreceived = MoveForm(request.POST)
+        moveformreceived = AttackForm(request.POST)
         if moveformreceived.is_valid():
             move(match, player, moveformreceived.order(), moveformreceived.cleaned_data['target_card'])
     return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))

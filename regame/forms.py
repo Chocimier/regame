@@ -33,7 +33,7 @@ class OntoTableForm(forms.Form):
             return defaultdict(lambda: None)
 
 
-class MoveForm(forms.Form):
+class AttackForm(forms.Form):
     on_table_first = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
     on_table_second = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
     on_table_third = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
