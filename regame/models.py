@@ -54,6 +54,8 @@ class UserProfile(models.Model):
     def display_name(self):
         if self.user.first_name:
             return self.user.first_name
+        elif self.user.userprofile.temporary:
+            return "a stranger"
         else:
             return self.user.username
 

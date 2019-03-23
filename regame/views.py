@@ -7,12 +7,12 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import MoveForm, NewMatchForm, OntoTableForm
 from .models import Match, PossessedCard, CardLocation
+from .players import enforceuser
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
 
-@login_required()
 def newmatch(request):
     context = {}
     if request.method == 'POST':
@@ -25,6 +25,7 @@ def newmatch(request):
             competitor = None
             context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
         if competitor:
+            enforceuser(request)
             match = creatematch(request.user, competitor)
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:

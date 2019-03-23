@@ -9,13 +9,20 @@
 	<body>
 		<header id="top_bar">
 <a href="{% url 'main' %}">Main page</a>
-{% if user.is_authenticated %}
-<a href="{% url 'logout' %}">Sign out</a>
-Signed in as {{ user.userprofile.display_name }}.
+{% if user.is_authenticated and user.userprofile.temporary %}
+	You play as a stranger.
+	You can <a href="{% url 'login' %}">Sign in</a>
+	or
+	<a href="{% url 'django_registration_register' %}">Sign up</a>
+	after you end your matches.
+	<a href="{% url 'logout' %}">Forget me.</a>
+{% elif user.is_authenticated %}
+	Signed in as {{ user.userprofile.display_name }}.
+	<a href="{% url 'logout' %}">Sign out</a>
 {% else %}
-<a href="{% url 'login' %}">Sign in</a>
-or
-<a href="{% url 'django_registration_register' %}">Sign up</a>
+	<a href="{% url 'login' %}">Sign in</a>
+	or
+	<a href="{% url 'django_registration_register' %}">Sign up</a>
 {% endif %}
 		</header>
 		{% block content %}{% endblock %}
