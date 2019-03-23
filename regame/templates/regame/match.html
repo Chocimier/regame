@@ -26,6 +26,7 @@
 
 <form method="post" action="{{ actionurl }}" class="{% if player == match.current %}active{% endif %}">
 {% csrf_token %}
+{{ form.action }}
 <div>
 <p>In hand:</p>
 {% for cardpair in ownhandcards %}

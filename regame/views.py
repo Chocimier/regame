@@ -64,6 +64,16 @@ def match(request, no):
         return error(request, 'No such match.', 404)
     if request.user != match.player1 and request.user != match.player2:
         return error(request, 'You do not play that match.', 403)
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'attack':
+            response = attack(request, no)
+        elif action == 'refill':
+            response = refill(request, no)
+        else:
+            return HttpResponseRedirect(reverse('match', kwargs={'no': no}))
+        if response:
+            return response
     player = request.user
     other = competitor(match, player)
     form, actionurl = formfor(match, player)

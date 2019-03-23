@@ -25,6 +25,7 @@ HAND_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.H
 
 class OntoTableForm(forms.Form):
     put_card = forms.TypedChoiceField(choices=HAND_CARD_CHOICES, coerce=int, empty_value=None, widget=forms.RadioSelect)
+    action = forms.CharField(initial='refill', widget=forms.HiddenInput)
 
     def widgetsfor(self, location, *, competitor):
         if not competitor and location == CardLocation.HAND:
@@ -38,6 +39,7 @@ class AttackForm(forms.Form):
     on_table_second = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
     on_table_third = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
     target_card = forms.TypedChoiceField(choices=MOVE_TARGET_CARD_CHOICES, coerce=int, empty_value=None, widget=forms.RadioSelect)
+    action = forms.CharField(initial='attack', widget=forms.HiddenInput)
 
     _tablefieldnames = ('on_table_first', 'on_table_second', 'on_table_third')
 
