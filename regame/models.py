@@ -1,7 +1,9 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
 from enumfields import EnumField
 from enum import Enum
+from django.db.models.signals import post_save
 
 class Card(models.Model):
     text = models.CharField(max_length=12)
@@ -43,3 +45,22 @@ class PossessedCard(models.Model):
     location = EnumField(CardLocation, max_length=1)
     index = models.PositiveSmallIntegerField()
     card = models.ForeignKey(Card, on_delete=models.PROTECT, null=True)
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    temporary = models.BooleanField(default=False)
+    sound = models.BooleanField(default=False)
+
+    def display_name(self):
+        if self.user.first_name:
+            return self.user.first_name
+        else:
+            return self.user.username
+
+
+def create_profile(sender, *, created=False, instance=None, **kwargs):
+    if created:
+        user_profile = UserProfile(user=instance)
+        user_profile.save()
+
+post_save.connect(create_profile, sender=User)

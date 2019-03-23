@@ -4,7 +4,7 @@
 {% if player == match.current %}
 [*]
 {% endif %}
-{{ competitor.username }} vs {{ player.username }} match
+{{ competitor.userprofile.display_name }} vs {{ player.userprofile.display_name }} match
 {% endblock %}
 
 {% block head_tags %}
@@ -15,11 +15,11 @@
 
 {% block content %}
 
-<p>{{ player.username }} vs {{ competitor.username }}</p>
+<p>{{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}</p>
 <p>{{ playerscore }} : {{ competitorscore }}</p>
 
 {% if match.active %}
-<p> It's {{ match.current.username }}'s turn.</p>
+<p> It's {{ match.current.userprofile.display_name }}'s turn.</p>
 {% else %}
 <p>The match ended.</p>
 {% endif %}

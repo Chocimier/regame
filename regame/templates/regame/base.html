@@ -10,8 +10,8 @@
 		<header id="top_bar">
 <a href="{% url 'main' %}">Main page</a>
 {% if user.is_authenticated %}
-Signed in as {{ user.username }}.
 <a href="{% url 'logout' %}">Sign out</a>
+Signed in as {{ user.userprofile.display_name }}.
 {% else %}
 <a href="{% url 'login' %}">Sign in</a>
 or

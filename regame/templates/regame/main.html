@@ -3,9 +3,9 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<p>Nice to see you again, {{ user.username }}!</p>
 
 <a href="{% url 'new_match' %}">Challenge someone.</a>
+<p>Nice to see you again, {{ user.userprofile.display_name }}!</p>
 {% else %}
 <p>Hello, stranger!</p>
 {% endif %}
