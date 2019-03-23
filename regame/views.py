@@ -2,7 +2,6 @@ from collections import defaultdict
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
-from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import MoveForm, NewMatchForm, OntoTableForm
@@ -17,15 +16,9 @@ def newmatch(request):
     context = {}
     if request.method == 'POST':
         form = NewMatchForm(request.POST)
-        if not form.is_valid():
-            return error(request, 'Something went wrong.')
-        try:
-            competitor = get_user_model().objects.get(username=form.cleaned_data['other_player'])
-        except get_user_model().DoesNotExist:
-            competitor = None
-            context['error'] = 'I do not know who {} is.'.format(form.cleaned_data['other_player'])
-        if competitor:
+        if form.is_valid():
             enforceuser(request)
+            competitor = form.cleaned_data['competitor']
             match = creatematch(request.user, competitor)
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
