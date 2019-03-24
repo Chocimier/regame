@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import AttackForm, NewMatchForm, OntoTableForm
 from .models import Match, PossessedCard, CardLocation
-from .players import enforceuser
+from .players import enforceuser, markactive
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
 def error(request, message, code=200):
@@ -103,6 +103,7 @@ def match(request, no):
 def main(request):
     player = request.user
     if player.is_authenticated:
+        markactive(player)
         matchlinks = [ {'match': i, 'competitor': competitor(i, player)}
             for i in Match.objects.filter(Q(player1=player) | Q(player2=player), active=True).order_by('-pk')]
     else:

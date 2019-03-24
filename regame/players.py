@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 import secrets
 import string
 import uuid
+from datetime import datetime
 
 def enforceuser(request):
     if request.user.is_authenticated:
@@ -18,3 +19,6 @@ def enforceuser(request):
     login(request, user)
     request.session.set_expiry(0)
     return user
+
+def markactive(user):
+    user.userprofile.lastseen = datetime.now()
