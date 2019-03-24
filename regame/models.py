@@ -50,6 +50,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     temporary = models.BooleanField(default=False)
     sound = models.BooleanField(default=False)
+    hidden = models.BooleanField(default=False)
     lastseen = models.DateTimeField(auto_now_add=True, null=True)
 
     def display_name(self):

@@ -7,4 +7,5 @@ urlpatterns = [
    path('match/<int:no>', views.match, name='match'),
    path('match/<int:no>/attack', views.attack, name='match_attack'),
    path('match/<int:no>/refill', views.refill, name='match_refill'),
+   path('players/hidden', views.playerhidden, name='player_hidden'),
 ]

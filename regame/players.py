@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import secrets
 import string
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 def enforceuser(request):
     if request.user.is_authenticated:
@@ -20,5 +20,16 @@ def enforceuser(request):
     request.session.set_expiry(0)
     return user
 
+def activeusers():
+    return (User.objects
+                .filter(userprofile__lastseen__gte=datetime.now() - timedelta(hours=8))
+                .filter(userprofile__hidden=False)
+                .order_by('-userprofile__lastseen')
+                [:40])
+
 def markactive(user):
-    user.userprofile.lastseen = datetime.now()
+    if not user.userprofile.hidden:
+        sinceupdate = datetime.now(timezone.utc) - user.userprofile.lastseen
+        if sinceupdate >= timedelta(minutes=5):
+            user.userprofile.lastseen = datetime.now(timezone.utc)
+            user.userprofile.save()

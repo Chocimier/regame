@@ -4,9 +4,9 @@ from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .forms import AttackForm, NewMatchForm, OntoTableForm
+from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
 from .models import Match, PossessedCard, CardLocation
-from .players import enforceuser, markactive
+from .players import activeusers, enforceuser, markactive
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
 def error(request, message, code=200):
@@ -22,7 +22,7 @@ def newmatch(request):
             match = creatematch(request.user, competitor)
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
-        form = NewMatchForm()
+        form = NewMatchForm(initial=request.GET)
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
 
@@ -100,6 +100,8 @@ def match(request, no):
     }
     return render(request, 'regame/match.html', context)
 
+
+
 def main(request):
     player = request.user
     if player.is_authenticated:
@@ -108,7 +110,24 @@ def main(request):
             for i in Match.objects.filter(Q(player1=player) | Q(player2=player), active=True).order_by('-pk')]
     else:
         matchlinks = []
+    users = ({
+        'displayname': user.userprofile.display_name(),
+        'lastseen': user.userprofile.lastseen,
+        'username': user.username,
+    } for user in activeusers())
     context = {
-        'matchlinks': matchlinks
+        'matchlinks': matchlinks,
+        'activeusers': users,
     }
+    if request.user.is_authenticated:
+        context['hideform'] = HideForm(instance=request.user.userprofile, initial={'hidden': not request.user.userprofile.hidden})
     return render(request, 'regame/main.html', context)
+
+
+@login_required()
+def playerhidden(request):
+    if request.method == 'POST':
+        form = HideForm(request.POST, instance=request.user.userprofile)
+        if form.is_valid():
+            form.save()
+    return HttpResponseRedirect(reverse('main'))

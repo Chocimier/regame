@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import CardLocation, slotscount
+from .models import CardLocation, slotscount, UserProfile
 from collections import defaultdict
 
 class NewMatchForm(forms.Form):
@@ -68,3 +68,16 @@ class AttackForm(forms.Form):
             return [i.tag for i in self['target_card']]
         else:
             return defaultdict(lambda: None)
+
+class HideForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['hidden']
+        widgets = {
+            'hidden': forms.HiddenInput(),
+        }
+
+    def submittext(self):
+        if self['hidden'].value():
+            return "Don't show me to others"
+        return 'Show me to others'
