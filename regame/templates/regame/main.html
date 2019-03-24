@@ -1,5 +1,9 @@
 {% extends "regame/base.html" %}
 
+{% block head_tags %}
+    <meta http-equiv="refresh" content="180" />
+{% endblock %}
+
 {% block content %}
 
 {% if user.is_authenticated and not user.userprofile.temporary %}
