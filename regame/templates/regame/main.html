@@ -24,6 +24,12 @@
 </ul>
 {% endif %}
 
+{% if user.is_authenticated %}
+    <div>
+    <a href="{% url "main" %}">check if someone challenged me</a>
+    </div>
+{% endif %}
+
 {% include "regame/activeusers.html" %}
 
 {% endblock %}
