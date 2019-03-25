@@ -1,9 +1,6 @@
 from collections import defaultdict, namedtuple
 
-from django.contrib.auth import get_user_model
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
@@ -24,7 +21,7 @@ def newmatch(request):
         if form.is_valid():
             enforceuser(request)
             match = creatematch(request.user, form)
-            return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+            return redirect('match', no=match.id)
     else:
         initial = {k: request.GET[k] for k in request.GET}
         if 'player2' in initial:
@@ -46,7 +43,7 @@ def refill(request, no):
         form = OntoTableForm(request.POST)
         if form.is_valid():
             ontotable(match, player, form.cleaned_data['put_card'])
-    return MoveResult(response=HttpResponseRedirect(reverse('match', kwargs={'no': match.id})))
+    return MoveResult(response=redirect('match', no=match.id))
 
 @login_required()
 def attack(request, no):
@@ -63,7 +60,7 @@ def attack(request, no):
             move(match, player, moveformreceived.order(), moveformreceived.cleaned_data['target_card'])
         else:
             return MoveResult(form=moveformreceived)
-    return MoveResult(response=HttpResponseRedirect(reverse('match', kwargs={'no': match.id})))
+    return MoveResult(response=redirect('match', no=match.id))
 
 @login_required()
 def match(request, no):
@@ -71,9 +68,10 @@ def match(request, no):
         match = Match.objects.get(id=no)
     except Match.DoesNotExist:
         return error(request, 'No such match.', 404)
-    if request.user != match.player1 and request.user != match.player2:
-        return error(request, 'You do not play that match.', 403)
+    player = request.user
     form = None
+    if player != match.player1 and player != match.player2:
+        return error(request, 'You do not play that match.', 403)
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'attack':
@@ -81,12 +79,11 @@ def match(request, no):
         elif action == 'refill':
             result = refill(request, no)
         else:
-            return HttpResponseRedirect(reverse('match', kwargs={'no': no}))
+            return redirect('match', no=no)
         if result.response:
             return result.response
         elif result.form:
             form = result.form
-    player = request.user
     other = competitor(match, player)
     cleanform, actionurl = formfor(match, player)
     if not form:
@@ -144,4 +141,4 @@ def playerhidden(request):
         form = HideForm(request.POST, instance=request.user.userprofile)
         if form.is_valid():
             form.save()
-    return HttpResponseRedirect(reverse('main'))
+    return redirect('main')

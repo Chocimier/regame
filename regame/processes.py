@@ -42,11 +42,11 @@ def scoreof(match, player):
 
 def ontotable(match, player, index):
     if not match.active:
-        return None
+        return
     if player != match.current:
-        return None
-    gap = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, card=None)[0]
-    put_card = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND, index=index)[0]
+        return
+    gap = PossessedCard.objects.get(match=match, player=player, location=CardLocation.TABLE, card=None)
+    put_card = PossessedCard.objects.get(match=match, player=player, location=CardLocation.HAND, index=index)
     gap.card = put_card.card
     put_card.card = randomcard()
     gap.save()
@@ -60,11 +60,11 @@ def move(match, player, order, target):
     if not order:
         return None
     competitorplayer = competitor(match, player)
-    targetcard = PossessedCard.objects.filter(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target)[0]
+    targetcard = PossessedCard.objects.get(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target)
     targettext = targetcard.card.text
     pattern = ''
     for i in order:
-        card = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, index=i)[0].card
+        card = PossessedCard.objects.get(match=match, player=player, location=CardLocation.TABLE, index=i).card
         pattern += card.patternbit
     score_increase = score(targettext, pattern)
     if player == match.player1:
@@ -89,11 +89,11 @@ def formfor(match, player):
         return noneform
     if match.current != player:
         return noneform
-    elif PossessedCard.objects.filter(match=match, player=player, card=None).count() > 0:
+    elif PossessedCard.objects.filter(match=match, player=player, card=None).exists():
         return (OntoTableForm(), reverse('match', kwargs={'no': match.id}))
     else:
         return (AttackForm(), reverse('match', kwargs={'no': match.id}))
 
 def removedcard(match, player):
-    posessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()
-    return posessed.card if posessed else None
+    possessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()
+    return possessed.card if possessed else None
