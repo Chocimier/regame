@@ -1,0 +1,10 @@
+{% load mathfilters %}
+{% if match.winconditiontype == WinConditionType.POINTS_GET %}
+    Get {{ match.winconditionnumber }} points to win.
+{% elif match.winconditiontype == WinConditionType.POINTS_AHEAD %}
+    Get {{ match.winconditionnumber }} more points than {{ competitor.userprofile.display_name }} to win.
+{% elif match.winconditiontype == WinConditionType.TURNS %}
+    Have more points in {{ match.winconditionnumber|sub:match.turnspassed }} turns to win.
+{% else %}
+    This is eternal match.
+{% endif %}

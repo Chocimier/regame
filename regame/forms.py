@@ -17,7 +17,11 @@ class NewMatchForm(forms.ModelForm):
     )
     class Meta:
         model = Match
-        fields = ['player2']
+        fields = ['player2', 'winconditiontype', 'winconditionnumber']
+        labels = {
+            'winconditiontype': 'Winner is one who',
+            'winconditionnumber': 'How many to win?'
+        }
 
 MOVE_CARD_ORDER_CHOICES = [
     ('0', '-')

@@ -15,7 +15,12 @@
 
 {% block content %}
 
-<p>{{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}</p>
+<p>
+    {{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}.
+    {% if match.active %}
+        {% include "regame/wincondition.html" %}
+    {% endif %}
+</p>
 <p>{{ playerscore }} : {{ competitorscore }}</p>
 
 {% if match.active %}

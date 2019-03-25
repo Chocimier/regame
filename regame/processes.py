@@ -1,6 +1,6 @@
 from django.urls import reverse
 from .forms import AttackForm, OntoTableForm
-from .models import Card, Match, PossessedCard, CardLocation, slotscount
+from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType
 import random
 import re
 import sre_constants
@@ -52,6 +52,15 @@ def ontotable(match, player, index):
     gap.save()
     put_card.save()
 
+def matchwon(match):
+    if match.winconditiontype == WinConditionType.POINTS_GET and max(match.player1score, match.player2score) >= match.winconditionnumber:
+        return True
+    if match.winconditiontype == WinConditionType.POINTS_AHEAD and abs(match.player1score - match.player2score) >= match.winconditionnumber:
+        return True
+    if match.winconditiontype == WinConditionType.TURNS and match.turnspassed >= match.winconditionnumber:
+        return True
+    return False
+
 def move(match, player, order, target):
     if not match.active:
         return None
@@ -69,9 +78,10 @@ def move(match, player, order, target):
     score_increase = score(targettext, pattern)
     if player == match.player1:
         match.player1score += score_increase
+        match.turnspassed += 1
     else:
         match.player2score += score_increase
-    if scoreof(match, player) >= match.score_to_win:
+    if matchwon(match):
         match.active = False
     match.current = competitorplayer
     match.save()

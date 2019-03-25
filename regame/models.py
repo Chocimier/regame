@@ -1,13 +1,24 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
-from enumfields import EnumField
+from enumfields import EnumField, Enum as LabeledEnum
 from enum import Enum
 from django.db.models.signals import post_save
 
 class Card(models.Model):
     text = models.CharField(max_length=12)
     patternbit = models.CharField(max_length=12)
+
+
+class WinConditionType(LabeledEnum):
+    POINTS_GET = 'g'
+    POINTS_AHEAD = 'a'
+    TURNS = 't'
+
+    class Labels:
+        POINTS_GET = 'get that many points'
+        POINTS_AHEAD = 'get that many more points'
+        TURNS = 'after that many turns'
 
 
 class Match(models.Model):
@@ -17,7 +28,9 @@ class Match(models.Model):
     player1score = models.IntegerField(default=0)
     player2score = models.IntegerField(default=0)
     active = models.BooleanField(default=True)
-    score_to_win = models.PositiveSmallIntegerField(default=40)
+    winconditiontype = EnumField(WinConditionType, max_length=1, default=WinConditionType.POINTS_GET)
+    winconditionnumber = models.PositiveSmallIntegerField(default=40)
+    turnspassed = models.PositiveIntegerField(default=0)
 
     def result(self, player):
         if player == self.player1:
