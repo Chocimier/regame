@@ -33,6 +33,7 @@
 <form method="post" action="{{ actionurl }}" class="{% if player == match.current %}active{% endif %}">
 {% if form.header %}
 <h4>{{ form.header }}</h4>
+    {{ form.non_field_errors }}
 {% endif %}
 {% csrf_token %}
 {{ form.action }}

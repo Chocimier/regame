@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
@@ -11,6 +11,9 @@ from .processes import creatematch, competitor, formfor, move, ontotable, remove
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
+
+MoveResult = namedtuple('MoveResult', ['form', 'response'])
+MoveResult.__new__.__defaults__ = (None,) * len(MoveResult._fields)
 
 def newmatch(request):
     context = {}
@@ -40,7 +43,7 @@ def refill(request, no):
         form = OntoTableForm(request.POST)
         if form.is_valid():
             ontotable(match, player, form.cleaned_data['put_card'])
-    return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+    return MoveResult(response=HttpResponseRedirect(reverse('match', kwargs={'no': match.id})))
 
 @login_required()
 def attack(request, no):
@@ -55,7 +58,9 @@ def attack(request, no):
         moveformreceived = AttackForm(request.POST)
         if moveformreceived.is_valid():
             move(match, player, moveformreceived.order(), moveformreceived.cleaned_data['target_card'])
-    return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
+        else:
+            return MoveResult(form=moveformreceived)
+    return MoveResult(response=HttpResponseRedirect(reverse('match', kwargs={'no': match.id})))
 
 @login_required()
 def match(request, no):
@@ -65,19 +70,24 @@ def match(request, no):
         return error(request, 'No such match.', 404)
     if request.user != match.player1 and request.user != match.player2:
         return error(request, 'You do not play that match.', 403)
+    form = None
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'attack':
-            response = attack(request, no)
+            result = attack(request, no)
         elif action == 'refill':
-            response = refill(request, no)
+            result = refill(request, no)
         else:
             return HttpResponseRedirect(reverse('match', kwargs={'no': no}))
-        if response:
-            return response
+        if result.response:
+            return result.response
+        elif result.form:
+            form = result.form
     player = request.user
     other = competitor(match, player)
-    form, actionurl = formfor(match, player)
+    cleanform, actionurl = formfor(match, player)
+    if not form:
+        form = cleanform
     ownhandcards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')
     owntablecards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')
     competitortablecards = PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE).order_by('index')
