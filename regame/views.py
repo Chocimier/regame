@@ -1,5 +1,6 @@
 from collections import defaultdict, namedtuple
 
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -142,4 +143,13 @@ def playerhidden(request):
         form = HideForm(request.POST, instance=request.user.userprofile)
         if form.is_valid():
             form.save()
+    return redirect('main')
+
+def forget(request):
+    if not request.user.is_authenticated:
+        return redirect('main')
+    player = request.user
+    logout(request)
+    if player.userprofile.temporary:
+        player.delete()
     return redirect('main')

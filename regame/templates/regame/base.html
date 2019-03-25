@@ -15,7 +15,7 @@
 	or
 	<a href="{% url 'django_registration_register' %}">Sign up</a>
 	after you end your matches.
-	<a href="{% url 'logout' %}">Forget me.</a>
+	<a href="{% url 'forget' %}">Forget me.</a>
 {% elif user.is_authenticated %}
 	Signed in as {{ user.userprofile.display_name }}.
 	<a href="{% url 'logout' %}">Sign out</a>
