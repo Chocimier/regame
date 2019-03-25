@@ -17,16 +17,17 @@ MoveResult.__new__.__defaults__ = (None,) * len(MoveResult._fields)
 def newmatch(request):
     context = {}
     if request.method == 'POST':
-        form = NewMatchForm(request.POST)
+        form = NewMatchForm(request.user, request.POST)
         if form.is_valid():
             enforceuser(request)
             match = creatematch(request.user, form)
-            return redirect('match', no=match.id)
+            if match:
+                return redirect('match', no=match.id)
     else:
         initial = {k: request.GET[k] for k in request.GET}
         if 'player2' in initial:
             initial['player2'] = toplayer(initial['player2'])
-        form = NewMatchForm(initial=initial)
+        form = NewMatchForm(request.user, initial=initial)
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
 

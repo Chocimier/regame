@@ -24,6 +24,18 @@ class NewMatchForm(forms.ModelForm):
             'winconditionnumber': 'How many to win?'
         }
 
+
+    def __init__(self, sender, *args, **kwargs):
+        super(NewMatchForm, self).__init__(*args, **kwargs)
+        self._sender = sender
+
+
+    def clean_player2(self):
+        if self.cleaned_data['player2'] == self._sender:
+            raise forms.ValidationError("You can't play a match with yourself", code='yourself')
+        return self.cleaned_data['player2']
+
+
 MOVE_CARD_ORDER_CHOICES = [
     ('0', '-')
 ] + [(str(i), str(i)) for i in range(1, slotscount(CardLocation.TABLE)+1)]

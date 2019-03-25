@@ -10,9 +10,15 @@
 <table>
 {% for user in activeusers %}
     <tr>
-        <th>{{ user.displayname }}</th>
+        <th>
+            {% if user.username == player.username %}
+                you
+            {% else %}
+                {{ user.displayname }}
+            {% endif %}
+        </th>
         <td>{{ user.lastseen | naturaltime }}</td>
-        <td><a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a></td>
+        <td>{% if user.username != player.username %}<a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a>{% endif %}</td>
     </tr>
 {% endfor %}
 

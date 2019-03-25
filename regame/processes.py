@@ -12,6 +12,8 @@ def randomcard():
 
 def creatematch(player1, form):
     player2 = form.cleaned_data['player2']
+    if player1 == player2:
+        return None
     match = Match(**form.cleaned_data, player1=player1, current=player2)
     match.save()
     for player in [player1, player2]:
