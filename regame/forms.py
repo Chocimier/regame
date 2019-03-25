@@ -1,19 +1,19 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import CardLocation, slotscount, UserProfile
+from .models import CardLocation, slotscount, UserProfile, Match
 from collections import defaultdict
 
-class NewMatchForm(forms.Form):
-    other_player = forms.CharField(label='Who do you want to play with?', max_length=200)
-
-    def clean_other_player(self):
-        username = self.cleaned_data['other_player']
-        if not username:
-            raise forms.ValidationError('Type in username')
-        other_player = get_user_model().objects.filter(username=username).first()
-        if not other_player:
-            raise forms.ValidationError('I do not know who {} is.'.format(username))
-        self.cleaned_data['competitor'] = other_player
+class NewMatchForm(forms.ModelForm):
+    player2 = forms.ModelChoiceField(
+        queryset=get_user_model().objects.all(),
+        to_field_name='username',
+        widget=forms.TextInput(),
+        label='Who do you want to challenge?',
+        error_messages = {'invalid_choice': 'I do not know him'}
+    )
+    class Meta:
+        model = Match
+        fields = ['player2']
 
 MOVE_CARD_ORDER_CHOICES = [
     ('0', '-')

@@ -18,11 +18,12 @@ def newmatch(request):
         form = NewMatchForm(request.POST)
         if form.is_valid():
             enforceuser(request)
-            competitor = form.cleaned_data['competitor']
-            match = creatematch(request.user, competitor)
+            match = creatematch(request.user, form)
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
-        form = NewMatchForm(initial=request.GET)
+        initial = {k: request.GET[k] for k in request.GET}
+        # why do initial=request.GET result in quoting username?
+        form = NewMatchForm(initial=initial)
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
 

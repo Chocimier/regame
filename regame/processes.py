@@ -10,8 +10,9 @@ def randomcard():
     index = random.randint(0, count-1)
     return Card.objects.all()[index]
 
-def creatematch(player1, player2):
-    match = Match(player1=player1, player2=player2, current=player2)
+def creatematch(player1, form):
+    player2 = form.cleaned_data['player2']
+    match = Match(**form.cleaned_data, player1=player1, current=player2)
     match.save()
     for player in [player1, player2]:
         for location in CardLocation:

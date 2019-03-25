@@ -12,7 +12,7 @@
     <tr>
         <th>{{ user.displayname }}</th>
         <td>{{ user.lastseen | naturaltime }}</td>
-        <td><a href="{% url "new_match" %}?other_player={{ user.username }}">challenge</a></td>
+        <td><a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a></td>
     </tr>
 {% endfor %}
 
