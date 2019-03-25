@@ -19,7 +19,13 @@
 <p>{{ playerscore }} : {{ competitorscore }}</p>
 
 {% if match.active %}
-<p> It's {{ match.current.userprofile.display_name }}'s turn.</p>
+<p> It'
+ {% if user == match.current %}
+     your
+ {% else %}
+    {{ match.current.userprofile.display_name }}'s
+ {%  endif %}
+    turn.</p>
 {% else %}
 <p>The match ended.</p>
 {% endif %}
