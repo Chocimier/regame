@@ -119,17 +119,24 @@ def main(request):
     player = request.user
     if player.is_authenticated:
         markactive(player)
-        matchlinks = [ {'match': i, 'competitor': competitor(i, player)}
-            for i in Match.objects.filter(Q(player1=player) | Q(player2=player), status__in=Match.activestates()).order_by('-pk')]
+        freshmatches = [ {'match': i, 'competitor': competitor(i, player)}
+                           for i in Match.objects.filter(player2=player, status=MatchStatus.FRESH).order_by('-pk')]
+        pendingmatches = [ {'match': i, 'competitor': competitor(i, player)}
+            for i in Match.objects.filter(
+                Q(Q(player1=player) | Q(player2=player), status=MatchStatus.PENDING) |
+                Q(player1=player, status=MatchStatus.FRESH)
+            ).order_by('-pk')]
     else:
-        matchlinks = []
+        freshmatches = []
+        pendingmatches = []
     users = ({
         'displayname': user.userprofile.display_name(),
         'lastseen': user.userprofile.lastseen,
         'username': user.username,
     } for user in activeusers())
     context = {
-        'matchlinks': matchlinks,
+        'freshmatches': freshmatches,
+        'pendingmatches': pendingmatches,
         'activeusers': users,
     }
     if request.user.is_authenticated:

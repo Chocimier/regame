@@ -1,0 +1,10 @@
+{% if list %}
+<h4>{{ header }}</h4>
+<ul>
+{% for i in list %}
+<li>
+{% include "regame/matchlink.html" with match=i.match competitor=i.competitor %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}

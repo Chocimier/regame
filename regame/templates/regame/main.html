@@ -11,18 +11,10 @@
 {% else %}
 <p>Hello, stranger!</p>
 {% endif %}
-<a href="{% url 'new_match' %}">Challenge someone.</a>
 
-{% if matchlinks %}
-<h4>Matches</h4>
-<ul>
-{% for i in matchlinks %}
-<li>
-{% include "regame/matchlink.html" with match=i.match competitor=i.competitor %}
-</li>
-{% endfor %}
-</ul>
-{% endif %}
+{%  include "regame/matchlist.html" with list=freshmatches header="New challenges" %}
+
+{%  include "regame/matchlist.html" with list=pendingmatches header="Pending matches" %}
 
 {% if user.is_authenticated %}
     <div>
@@ -31,5 +23,7 @@
 {% endif %}
 
 {% include "regame/activeusers.html" with player=user %}
+
+Or <a href="{% url 'new_match' %}">Challenge someone you know</a>.
 
 {% endblock %}

@@ -20,6 +20,11 @@
         <td>{{ user.lastseen | naturaltime }}</td>
         <td>{% if user.username != player.username %}<a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a>{% endif %}</td>
     </tr>
+{% empty %}
+    <p>Noone is here.</p>
+    {% if user.is_authenticated and user.userprofile.hidden %}
+        <p>Maybe they are hiding, just like you?</p>
+    {% endif %}
 {% endfor %}
 
 </table>
