@@ -33,6 +33,12 @@ class OntoTableForm(forms.Form):
         else:
             return defaultdict(lambda: None)
 
+    def header(self):
+        return "Select card in hand and put it onto table."
+
+    def submittext(self):
+        return "Put"
+
 
 class AttackForm(forms.Form):
     on_table_first = forms.TypedChoiceField(choices=MOVE_CARD_ORDER_CHOICES, coerce=int, empty_value=0)
@@ -68,6 +74,12 @@ class AttackForm(forms.Form):
             return [i.tag for i in self['target_card']]
         else:
             return defaultdict(lambda: None)
+
+    def header(self):
+        return "Select what regexp bits placed on card go first, second and third. Then choose which text on opponent's card match with."
+
+    def submittext(self):
+        return "Attack"
 
 class HideForm(forms.ModelForm):
     class Meta:

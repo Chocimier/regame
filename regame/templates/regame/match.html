@@ -25,6 +25,9 @@
 {% endif %}
 
 <form method="post" action="{{ actionurl }}" class="{% if player == match.current %}active{% endif %}">
+{% if form.header %}
+<h4>{{ form.header }}</h4>
+{% endif %}
 {% csrf_token %}
 {{ form.action }}
 <div>
@@ -65,7 +68,7 @@
 </div>
 
 {%if actionurl %}
-<input type="submit" value="Move" />
+<input type="submit" value="{{ form.submittext | default_if_none:"Move" }}" />
 {% endif %}
 
 {% if yourremovedcard or competitorsremovedcard %}
