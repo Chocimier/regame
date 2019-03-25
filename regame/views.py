@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
 from .models import Match, PossessedCard, CardLocation
-from .players import activeusers, enforceuser, markactive
+from .players import activeusers, enforceuser, markactive, toplayer
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
 def error(request, message, code=200):
@@ -28,7 +28,7 @@ def newmatch(request):
     else:
         initial = {k: request.GET[k] for k in request.GET}
         if 'player2' in initial:
-            initial['player2'] = get_user_model().objects.get(username=initial['player2'])
+            initial['player2'] = toplayer(initial['player2'])
         form = NewMatchForm(initial=initial)
     context['form'] = form
     return render(request, 'regame/new_match.html', context)

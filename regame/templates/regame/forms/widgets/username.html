@@ -1,0 +1,7 @@
+{% load regame %}
+{% if widget.value|usernameispublic %}
+<input type="text" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %}/>
+{%  else %}
+<input type="hidden" name="{{ widget.name }}"{% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %}/>
+<span>{{ widget.value|displayname }}</span>
+{% endif %}

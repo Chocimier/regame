@@ -3,11 +3,15 @@ from django.contrib.auth import get_user_model
 from .models import CardLocation, slotscount, UserProfile, Match
 from collections import defaultdict
 
+class UsernameInput(forms.widgets.Input):
+    input_type = 'text'
+    template_name = 'regame/forms/widgets/username.html'
+
 class NewMatchForm(forms.ModelForm):
     player2 = forms.ModelChoiceField(
         queryset=get_user_model().objects.all(),
         to_field_name='username',
-        widget=forms.TextInput(),
+        widget=UsernameInput(),
         label='Who do you want to challenge?',
         error_messages = {'invalid_choice': 'I do not know him'}
     )

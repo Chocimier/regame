@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, get_user_model
 from django.contrib.auth.models import User
 import secrets
 import string
@@ -33,3 +33,16 @@ def markactive(user):
         if sinceupdate >= timedelta(minutes=5):
             user.userprofile.lastseen = datetime.now(timezone.utc)
             user.userprofile.save()
+
+def toplayer(player):
+    if isinstance(player, str):
+        return get_user_model().objects.filter(username=player).first()
+    return player
+
+def displayname(player):
+    return toplayer(player).userprofile.display_name()
+
+def usernameispublic(player):
+    if not player:
+        return True
+    return not toplayer(player).userprofile.temporary
