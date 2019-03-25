@@ -1,4 +1,6 @@
 from collections import defaultdict, namedtuple
+
+from django.contrib.auth import get_user_model
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
@@ -25,7 +27,8 @@ def newmatch(request):
             return HttpResponseRedirect(reverse('match', kwargs={'no': match.id}))
     else:
         initial = {k: request.GET[k] for k in request.GET}
-        # why do initial=request.GET result in quoting username?
+        if 'player2' in initial:
+            initial['player2'] = get_user_model().objects.get(username=initial['player2'])
         form = NewMatchForm(initial=initial)
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
