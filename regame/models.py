@@ -21,13 +21,20 @@ class WinConditionType(LabeledEnum):
         TURNS = 'after that many turns'
 
 
+class MatchStatus(Enum):
+    FRESH = 'f'
+    PENDING = 'p'
+    ENDED = 'e'
+    REJECTED = 'r'
+
+
 class Match(models.Model):
     player1 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player1_set')
     player2 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player2_set')
     current = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_current_set')
     player1score = models.IntegerField(default=0)
     player2score = models.IntegerField(default=0)
-    active = models.BooleanField(default=True)
+    status = EnumField(MatchStatus, default='f', max_length=1)
     winconditiontype = EnumField(WinConditionType, max_length=1, default=WinConditionType.POINTS_GET)
     winconditionnumber = models.PositiveSmallIntegerField(default=40)
     turnspassed = models.PositiveIntegerField(default=0)
@@ -37,6 +44,15 @@ class Match(models.Model):
             return self.player1score
         else:
             return self.player2score
+
+
+    @staticmethod
+    def activestates():
+        return (MatchStatus.FRESH, MatchStatus.PENDING)
+
+    @property
+    def active(self):
+        return self.status in self.activestates()
 
 
 class CardLocation(Enum):

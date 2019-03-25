@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
-from .models import Match, PossessedCard, CardLocation
+from .models import Match, PossessedCard, CardLocation, MatchStatus
 from .players import activeusers, enforceuser, markactive, toplayer
 from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
 
@@ -120,7 +120,7 @@ def main(request):
     if player.is_authenticated:
         markactive(player)
         matchlinks = [ {'match': i, 'competitor': competitor(i, player)}
-            for i in Match.objects.filter(Q(player1=player) | Q(player2=player), active=True).order_by('-pk')]
+            for i in Match.objects.filter(Q(player1=player) | Q(player2=player), status__in=Match.activestates()).order_by('-pk')]
     else:
         matchlinks = []
     users = ({
