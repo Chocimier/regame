@@ -55,6 +55,8 @@ class AttackForm(forms.Form):
         uniquecardorders = list(set(cardorders))
         if len(cardorders) != len(uniquecardorders):
             raise forms.ValidationError("You can't use two cards at same position")
+        if not cardorders:
+            raise forms.ValidationError("Select at least one card for pattern")
 
     def ontablefields(self):
         return [self[i] for i in self._tablefieldnames]
