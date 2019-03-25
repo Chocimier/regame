@@ -141,12 +141,14 @@ def main(request):
     }
     if request.user.is_authenticated:
         context['hideform'] = HideForm(instance=request.user.userprofile, initial={'hidden': not request.user.userprofile.hidden})
+    else:
+        context['hideform'] = HideForm(initial={'hidden': False})
     return render(request, 'regame/main.html', context)
 
 
-@login_required()
 def playerhidden(request):
     if request.method == 'POST':
+        enforceuser(request)
         form = HideForm(request.POST, instance=request.user.userprofile)
         if form.is_valid():
             form.save()
