@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from .models import CardLocation, slotscount, UserProfile, Match
+from django_registration.forms import RegistrationForm
 from collections import defaultdict
 
 class UsernameInput(forms.widgets.Input):
@@ -103,3 +104,10 @@ class HideForm(forms.ModelForm):
         if self['hidden'].value():
             return "Don't show me to others"
         return 'Show me to others'
+
+
+class NoEmailUserForm(RegistrationForm):
+    def __init__(self, *args, **kwargs):
+        super(NoEmailUserForm, self).__init__(*args, **kwargs)
+        email_field = get_user_model().get_email_field_name()
+        self.fields[email_field].required = False
