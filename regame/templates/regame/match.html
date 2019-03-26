@@ -43,48 +43,21 @@
 {% endif %}
 {% csrf_token %}
 {{ form.action }}
-<div>
-<p>In hand:</p>
-{% for cardpair in ownhandcards %}
-<label class="cardslot">
-{% include "regame/card.html" with card=cardpair.card.card only %}
-<br/>
-{{ cardpair.widget | default_if_none:"" }}
-</label>
-{% endfor %}
-</div>
 
-<div>
-<p>On table:</p>
-{% for cardpair in owntablecards %}
-<label class="cardslot">
-{% include "regame/card.html" with card=cardpair.card.card only %}
-<br/>
-{% if cardpair.card.card %}
-{{ cardpair.widget | default_if_none:"" }}
-{% endif %}
-</label>
-{% endfor %}
-</div>
-
-<div>
-<p>On table, competitor's:</p>
-{% for cardpair in competitortablecards %}
-<label class="cardslot">
-{% if cardpair.card.card %}
-{{ cardpair.widget | default_if_none:"" }}
-{% endif %}
-<br/>
-{% include "regame/card.html" with card=cardpair.card.card only %}
-</label>
-{% endfor %}
-</div>
-
-{{ form.non_field_errors }}
+{% include "regame/cardrow.html" with header="In hand, your:" cards=ownhandcards only %}
+{% include "regame/cardrow.html" with header="On table, your:" cards=owntablecards only %}
 
 {%if actionurl %}
+<div class="submitarea">
+{{ form.non_field_errors }}
+
 <input type="submit" value="{{ form.submittext | default_if_none:"Move" }}" />
+</div>
 {% endif %}
+
+{% include "regame/cardrow.html" with header="On table, competitor's:" cards=competitortablecards only %}
+{% include "regame/cardrow.html" with header="In hand, competitors's:" cards=ownhandcards empty=True cardclass="facedown" only %}
+</form>
 
 {% if yourremovedcard or competitorsremovedcard %}
 <div>
@@ -103,8 +76,6 @@ Competitor's:<br/>
 {% endif %}
 </div>
 {% endif %}
-
-</form>
 </div>
 <div class="column narrow">
     {% include "regame/reminder.html" %}
