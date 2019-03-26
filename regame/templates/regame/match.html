@@ -17,14 +17,13 @@
 
 <p>
     {{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}.
-    {% if match.active %}
-        {% include "regame/wincondition.html" %}
-    {% endif %}
 </p>
-<p>{{ playerscore }} : {{ competitorscore }}</p>
+<p>
+    Current score: <strong>{{ playerscore }} : {{ competitorscore }}</strong>. {% if match.active %} {% include "regame/wincondition.html" %} {% endif %}
+</p>
 
 {% if match.active %}
-<p> It'
+<p> It's
  {% if user == match.current %}
      your
  {% else %}
@@ -35,10 +34,9 @@
 <p>The match ended.</p>
 {% endif %}
 
-<form method="post" action="{{ actionurl }}" class="{% if player == match.current %}active{% endif %}">
+<form method="post" action="{{ actionurl }}" class="{% if player == match.current and match.active %}active{% endif %}">
 {% if form.header %}
 <h4>{{ form.header }}</h4>
-    {{ form.non_field_errors }}
 {% endif %}
 {% csrf_token %}
 {{ form.action }}
@@ -78,6 +76,8 @@
 </label>
 {% endfor %}
 </div>
+
+{{ form.non_field_errors }}
 
 {%if actionurl %}
 <input type="submit" value="{{ form.submittext | default_if_none:"Move" }}" />
