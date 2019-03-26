@@ -3,11 +3,11 @@ from collections import defaultdict, namedtuple
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
-from .models import Match, PossessedCard, CardLocation, MatchStatus
-from .players import activeusers, enforceuser, markactive, toplayer
-from .processes import creatematch, competitor, formfor, move, ontotable, removedcard
+from .models import Match, PossessedCard, CardLocation
+from .players import activeusers, enforceuser, markactive, toplayer, isbot
+from .processes import creatematch, competitor, formfor, freshmatches, move, ontotable, pendingmatches, removedcard
+
 
 def error(request, message, code=200):
     return render(request, 'regame/error.html', {'message': message}, status=code)
@@ -96,6 +96,7 @@ def match(request, no):
     ownhandwidgets = form.widgetsfor(CardLocation.HAND, competitor=False) if form else defaultdict(lambda: None)
     owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
     competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)
+    fresh = freshmatches(player) if isbot(competitor(match, player)) else []
     context = {
         'actionurl': actionurl,
         'match': match,
@@ -110,6 +111,7 @@ def match(request, no):
         'competitortablecards': [{'card': card, 'widget': competitortablewidgets[i]} for i, card in enumerate(competitortablecards)],
         'form': form,
         'reloading': (match.active and not actionurl),
+        'freshmatches': fresh,
     }
     return render(request, 'regame/match.html', context)
 
@@ -119,24 +121,19 @@ def main(request):
     player = request.user
     if player.is_authenticated:
         markactive(player)
-        freshmatches = [ {'match': i, 'competitor': competitor(i, player)}
-                           for i in Match.objects.filter(player2=player, status=MatchStatus.FRESH).order_by('-pk')]
-        pendingmatches = [ {'match': i, 'competitor': competitor(i, player)}
-            for i in Match.objects.filter(
-                Q(Q(player1=player) | Q(player2=player), status=MatchStatus.PENDING) |
-                Q(player1=player, status=MatchStatus.FRESH)
-            ).order_by('-pk')]
+        fresh = freshmatches(player)
+        pending = pendingmatches(player)
     else:
-        freshmatches = []
-        pendingmatches = []
+        fresh = []
+        pending = []
     users = ({
         'displayname': user.userprofile.display_name(),
         'lastseen': user.userprofile.lastseen,
         'username': user.username,
     } for user in activeusers())
     context = {
-        'freshmatches': freshmatches,
-        'pendingmatches': pendingmatches,
+        'freshmatches': fresh,
+        'pendingmatches': pending,
         'activeusers': users,
     }
     if request.user.is_authenticated:

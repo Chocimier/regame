@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.urls import reverse
 
 from .bot import handle as bot_handle
@@ -128,3 +129,17 @@ def formfor(match, player):
 def removedcard(match, player):
     possessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()
     return possessed.card if possessed else None
+
+def freshmatches(player):
+    return [
+        {'match': i, 'competitor': competitor(i, player)}
+        for i in Match.objects.filter(player2=player, status=MatchStatus.FRESH).order_by('-pk')
+    ]
+
+def pendingmatches(player):
+    return [
+        {'match': i, 'competitor': competitor(i, player)}
+        for i in Match.objects.filter(
+            Q(Q(player1=player) | Q(player2=player), status=MatchStatus.PENDING) |
+            Q(player1=player, status=MatchStatus.FRESH) ).order_by('-pk')
+    ]
