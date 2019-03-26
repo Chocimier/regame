@@ -1,6 +1,9 @@
 from django.urls import reverse
+
+from .bot import handle as bot_handle
 from .forms import AttackForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus
+from .players import isbot
 import random
 import re
 import sre_constants
@@ -24,6 +27,8 @@ def creatematch(player1, form):
                 card = randomcard()
                 posessed = PossessedCard(match=match, player=player, location=location, index=i, card=card)
                 posessed.save()
+    if isbot(match.current):
+        bot_handle(match, match.current)
     return match
 
 def competitor(match, player):
@@ -105,6 +110,8 @@ def move(match, player, order, target):
         targetcard.card = None
         targetcard.save()
     match.save()
+    if match.active and isbot(match.current):
+        bot_handle(match, match.current)
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 def formfor(match, player):

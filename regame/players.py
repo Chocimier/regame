@@ -41,4 +41,10 @@ def displayname(player):
 def usernameispublic(player):
     if not player:
         return True
-    return not toplayer(player).userprofile.temporary
+    player = toplayer(player)
+    if player.username == 'bot':
+        return False
+    return not player.userprofile.temporary
+
+def isbot(player):
+    return player.username == 'bot'

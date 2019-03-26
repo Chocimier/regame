@@ -24,6 +24,7 @@
 
 {% include "regame/activeusers.html" with player=user %}
 
-Or <a href="{% url 'new_match' %}">Challenge someone you know</a>.
+<p>Or <a href="{% url 'new_match' %}">Challenge someone you know</a>.</p>
+<p>You can also wait for others <a href="{% url 'new_match' %}?player2=bot">playing with a bot</a>.</p>
 
 {% endblock %}
