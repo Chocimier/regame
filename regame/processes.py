@@ -47,8 +47,12 @@ def ontotable(match, player, index):
         return
     if player != match.current:
         return
-    gap = PossessedCard.objects.get(match=match, player=player, location=CardLocation.TABLE, card=None)
-    put_card = PossessedCard.objects.get(match=match, player=player, location=CardLocation.HAND, index=index)
+    gap = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, card=None).first()
+    if not gap:
+        return
+    put_card = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND, index=index).first()
+    if not put_card:
+        return
     gap.card = put_card.card
     put_card.card = randomcard()
     gap.save()
@@ -73,12 +77,16 @@ def move(match, player, order, target):
     if not order:
         return None
     competitorplayer = competitor(match, player)
-    targetcard = PossessedCard.objects.get(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target)
+    targetcard = PossessedCard.objects.filter(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target).first()
+    if not targetcard:
+        return
     targettext = targetcard.card.text
     pattern = ''
     for i in order:
-        card = PossessedCard.objects.get(match=match, player=player, location=CardLocation.TABLE, index=i).card
-        pattern += card.patternbit
+        possessedcard = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, index=i).first()
+        if not possessedcard:
+            return
+        pattern += possessedcard.card.patternbit
     score_increase = score(targettext, pattern)
     if player == match.player1:
         match.player1score += score_increase
@@ -90,13 +98,13 @@ def move(match, player, order, target):
     else:
         match.status = MatchStatus.PENDING
     match.current = competitorplayer
-    match.save()
     if score_increase > 0:
         PossessedCard.objects.update_or_create(
             match=match, player=competitorplayer, location=CardLocation.REMOVED, index=0,
             defaults={'card': targetcard.card})
         targetcard.card = None
         targetcard.save()
+    match.save()
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 def formfor(match, player):
