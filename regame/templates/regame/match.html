@@ -15,6 +15,7 @@
 
 {% block content %}
 
+<div class="column">
 <p>
     {{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}.
 </p>
@@ -36,7 +37,7 @@
 
 <form method="post" action="{{ actionurl }}" class="{% if player == match.current and match.active %}active{% endif %}">
 {% if form.header %}
-<h4>{{ form.header }}</h4>
+<h4 class="preline">{{ form.header }}</h4>
 {% endif %}
 {% csrf_token %}
 {{ form.action }}
@@ -102,6 +103,10 @@ Competitor's:<br/>
 {% endif %}
 
 </form>
+</div>
+<div class="column">
+    {% include "regame/reminder.html" %}
+</div>
 
 {{ movedesc }}
 

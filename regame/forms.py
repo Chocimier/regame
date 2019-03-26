@@ -99,7 +99,8 @@ class AttackForm(forms.Form):
             return defaultdict(lambda: None)
 
     def header(self):
-        return "Select what regexp bits placed on card go first, second and third. Then choose which text on opponent's card match with."
+        return ("Select what regexp bits placed on card go first, second and third." + "\n" +
+               "Then choose which text on opponent's card match with.")
 
     def submittext(self):
         return "Attack"

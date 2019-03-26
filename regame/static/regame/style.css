@@ -28,3 +28,16 @@
 	background: powderblue;
 	color: black;
 }
+
+form h4 {
+	display: inline;
+}
+
+.preline {
+	white-space: pre-line;
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+}
