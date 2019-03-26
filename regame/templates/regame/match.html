@@ -1,4 +1,5 @@
 {% extends "regame/base.html" %}
+{% load static %}
 
 {% block title %}
 {% if player == match.current %}
@@ -84,4 +85,8 @@ Competitor's:<br/>
 
 {{ movedesc }}
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "regame/scripts/match.js" %}"></script>
 {% endblock %}
