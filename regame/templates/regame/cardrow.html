@@ -1,6 +1,6 @@
 <div>
 <p>{{ header }}</p>
-<div class="cardrow">
+<div class="cardrow {{ rowclass }}">
 {% for cardpair in cards %}
 {% if empty %}
     <div class="cardslot">

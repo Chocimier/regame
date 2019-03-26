@@ -45,8 +45,8 @@
 {% csrf_token %}
 {{ form.action }}
 
-{% include "regame/cardrow.html" with header="In hand, your:" cards=ownhandcards only %}
-{% include "regame/cardrow.html" with header="On table, your:" cards=owntablecards only %}
+{% include "regame/cardrow.html" with header="In hand, your:" cards=ownhandcards rowclass="yourhandrow" only %}
+{% include "regame/cardrow.html" with header="On table, your:" cards=owntablecards rowclass="yourtablerow" only %}
 
 {%if actionurl %}
 <div class="submitarea">
@@ -56,8 +56,8 @@
 </div>
 {% endif %}
 
-{% include "regame/cardrow.html" with header="On table, competitor's:" cards=competitortablecards only %}
-{% include "regame/cardrow.html" with header="In hand, competitors's:" cards=ownhandcards empty=True cardclass="facedown" only %}
+{% include "regame/cardrow.html" with header="On table, competitor's:" cards=competitortablecards rowclass="competitortablerow" only %}
+{% include "regame/cardrow.html" with header="In hand, competitors's:" cards=ownhandcards rowclass="competitorhandrow" cardclass="facedown" empty=True only %}
 </form>
 
 {% if yourremovedcard or competitorsremovedcard %}
