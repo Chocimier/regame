@@ -28,6 +28,9 @@ class MatchStatus(Enum):
     REJECTED = 'r'
 
 
+DEFAULT_WIN_CONDITION_NUMBER = 21
+
+
 class Match(models.Model):
     player1 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player1_set')
     player2 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player2_set')
@@ -36,7 +39,7 @@ class Match(models.Model):
     player2score = models.IntegerField(default=0)
     status = EnumField(MatchStatus, default='f', max_length=1)
     winconditiontype = EnumField(WinConditionType, max_length=1, default=WinConditionType.POINTS_GET)
-    winconditionnumber = models.PositiveSmallIntegerField(default=40)
+    winconditionnumber = models.PositiveSmallIntegerField(default=DEFAULT_WIN_CONDITION_NUMBER)
     turnspassed = models.PositiveIntegerField(default=0)
 
     def result(self, player):
