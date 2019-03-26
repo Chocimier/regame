@@ -58,7 +58,7 @@ class OntoTableForm(forms.Form):
         return "Select card in hand and put it onto table."
 
     def submittext(self):
-        return "Put"
+        return 'Resupply'
 
 
 class AttackForm(forms.Form):

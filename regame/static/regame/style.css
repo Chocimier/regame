@@ -1,3 +1,7 @@
+p {
+	text-align: justify;
+}
+
 .card {
 	font-family: monospace;
 	font-size: 1.1rem;
@@ -40,4 +44,8 @@ form h4 {
 .column {
 	display: inline-block;
 	vertical-align: top;
+}
+
+.narrow {
+	max-width: 32ex;
 }

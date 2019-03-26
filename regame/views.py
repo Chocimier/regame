@@ -159,3 +159,7 @@ def forget(request):
     if player.userprofile.temporary:
         player.delete()
     return redirect('main')
+
+
+def helppage(request):
+    return render(request, 'regame/helppage.html')
