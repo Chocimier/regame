@@ -17,6 +17,8 @@ class Command(BaseCommand):
         ]
         for username in reserved:
             try:
-                get_user_model().objects.create_user(username=username)
+                player = get_user_model().objects.create_user(username=username)
             except IntegrityError:
-                pass
+                player = get_user_model().objects.get(username=username)
+            player.userprofile.hidden = True
+            player.userprofile.save()
