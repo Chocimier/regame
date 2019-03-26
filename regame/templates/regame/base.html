@@ -11,10 +11,10 @@
 <a href="{% url 'main' %}">Main page</a>
 {% if user.is_authenticated and user.userprofile.temporary %}
 	You play as a stranger.
-	You can <a href="{% url 'login' %}">Sign in</a>
+	After you end your matches,
+	you can <a href="{% url 'login' %}">sign in</a>
 	or
-	<a href="{% url 'django_registration_register' %}">Sign up</a>
-	after you end your matches.
+	<a href="{% url 'django_registration_register' %}">sign up</a>.
 	<a href="{% url 'forget' %}">Forget me.</a>
 {% elif user.is_authenticated %}
 	Signed in as {{ user.userprofile.display_name }}.
@@ -22,7 +22,7 @@
 {% else %}
 	<a href="{% url 'login' %}">Sign in</a>
 	or
-	<a href="{% url 'django_registration_register' %}">Sign up</a>
+	<a href="{% url 'django_registration_register' %}">sign up</a>.
 {% endif %}
 		</header>
 		{% block content %}{% endblock %}

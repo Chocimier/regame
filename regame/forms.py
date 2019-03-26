@@ -21,7 +21,7 @@ class NewMatchForm(forms.ModelForm):
         fields = ['player2', 'winconditiontype', 'winconditionnumber']
         labels = {
             'winconditiontype': 'Winner is one who',
-            'winconditionnumber': 'How many to win?'
+            'winconditionnumber': 'How many?'
         }
 
 

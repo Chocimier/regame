@@ -1,3 +1,8 @@
+html {
+	background: azure;
+	color: black;
+}
+
 p {
 	text-align: justify;
 }

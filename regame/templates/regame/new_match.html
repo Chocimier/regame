@@ -11,11 +11,9 @@
 <form method="post" action="{% url 'new_match' %}">
 {% csrf_token %}
 <table>
-    <td>{{ form }}</td>
+    {{ form }}
 </table>
 
 <input type="submit" value="Challenge">
 </form>
-<p><a href="{% url 'login' %}">Sign in</a></p>
-
 {% endblock %}

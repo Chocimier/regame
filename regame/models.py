@@ -18,7 +18,7 @@ class WinConditionType(LabeledEnum):
     class Labels:
         POINTS_GET = 'get that many points'
         POINTS_AHEAD = 'get that many more points'
-        TURNS = 'after that many turns'
+        TURNS = 'have more points after that many turns'
 
 
 class MatchStatus(Enum):

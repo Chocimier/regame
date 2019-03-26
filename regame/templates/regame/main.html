@@ -18,14 +18,14 @@
 
 {% if user.is_authenticated %}
     <div>
-    <a href="{% url "main" %}">check if someone challenged me</a>
+    <a href="{% url "main" %}">Reload to check if someone challenged me</a>
     </div>
 {% endif %}
 
 {% include "regame/activeusers.html" with player=user %}
 
-<p>Or <a href="{% url 'new_match' %}">Challenge someone you know</a>.</p>
-<p>You can also wait for others <a href="{% url 'new_match' %}?player2=bot">playing with a bot</a>.</p>
+<p><a href="{% url 'new_match' %}">Challenge someone you know</a>.</p>
+<p>You can also <a href="{% url 'new_match' %}?player2=bot">play with a bot</a>, while waiting for others.</p>
 <p><a href="{% url 'helppage' %}">How to play?</a></p>
 
 {% endblock %}
