@@ -17,10 +17,10 @@ class Command(BaseCommand):
         # single
         pattern_weights['[a-z]'] = len(string.ascii_lowercase)
         pattern_weights['[A-Z]'] = len(string.ascii_uppercase)
-        pattern_weights['\\d'] = len(string.digits)
+        pattern_weights['[0-9]'] = len(string.digits)
         pattern_weights['\\W'] = len(self.specialchars)-1
         # alternative
-        pattern_weights['(\\d|\\W)'] = len(string.digits)/2
+        pattern_weights['([0-9]|\\W)'] = len(string.digits)/2
         pattern_weights['(\\W|[a-z])'] = len(string.digits)/2
         pattern_weights['[A-Z0-9_]'] = len(string.digits)/2
         pattern_weights['\\w'] = 2
