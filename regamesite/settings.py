@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_registration',
     'mathfilters',
+    'channels',
     'regame',
 ]
 
@@ -73,6 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'regamesite.wsgi.application'
 
+ASGI_APPLICATION = 'regamesite.routing.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -84,6 +86,19 @@ DATABASES = {
     }
 }
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('localhost', 6379)]
+        },
+    },
+}
+
+if 'CHANNEL_LAYER_INMEMORY' in os.environ:
+    CHANNEL_LAYERS['default'] = {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

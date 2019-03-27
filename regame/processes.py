@@ -1,3 +1,5 @@
+from asgiref.sync import async_to_sync
+from channels import layers
 from django.db.models import Q
 from django.urls import reverse
 
@@ -65,6 +67,7 @@ def ontotable(match, player, index):
     put_card.save()
     match.status = MatchStatus.PENDING
     match.save()
+    notify_moved(match, player)
 
 def matchwon(match):
     if match.winconditiontype == WinConditionType.POINTS_GET and max(match.player1score, match.player2score) >= match.winconditionnumber:
@@ -113,6 +116,7 @@ def move(match, player, order, target):
     match.save()
     if match.active and isbot(match.current):
         bot_handle(match, match.current)
+    notify_moved(match, player)
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 def formfor(match, player):
@@ -143,3 +147,22 @@ def pendingmatches(player):
             Q(Q(player1=player) | Q(player2=player), status=MatchStatus.PENDING) |
             Q(player1=player, status=MatchStatus.FRESH) ).order_by('-pk')
     ]
+
+
+def channelgroupname(match):
+    if isinstance(match, Match):
+        match = match.id
+    return 'match_{}'.format(match)
+
+
+def notify_moved(match, player):
+    channel_layer = layers.get_channel_layer()
+    group = channelgroupname(match)
+    content = {
+            'type': 'notify.move',
+            'player': player.username,
+        }
+    async_to_sync(channel_layer.group_send)(
+        group,
+        content
+    )
