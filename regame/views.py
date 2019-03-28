@@ -4,13 +4,10 @@ from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
-from .models import Match, PossessedCard, CardLocation
+from .models import PossessedCard, CardLocation
 from .players import activeusers, enforceuser, markactive, toplayer, isbot
-from .processes import creatematch, competitor, formfor, freshmatches, move, ontotable, pendingmatches, removedcard
+from .processes import creatematch, competitor, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard
 
-
-def error(request, message, code=200):
-    return render(request, 'regame/error.html', {'message': message}, status=code)
 
 MoveResult = namedtuple('MoveResult', ['form', 'response'])
 MoveResult.__new__.__defaults__ = (None,) * len(MoveResult._fields)
@@ -34,12 +31,7 @@ def newmatch(request):
 
 @login_required()
 def refill(request, no):
-    try:
-        match = Match.objects.get(id=no)
-    except Match.DoesNotExist:
-        return error(request, 'No such match.', 404)
-    if request.user != match.player1 and request.user != match.player2:
-        return error(request, 'You do not play that match.', 403)
+    match = match_or_error(no, request)
     player = request.user
     if request.method == 'POST':
         form = OntoTableForm(request.POST)
@@ -49,12 +41,7 @@ def refill(request, no):
 
 @login_required()
 def attack(request, no):
-    try:
-        match = Match.objects.get(id=no)
-    except Match.DoesNotExist:
-        return error(request, 'No such match.', 404)
-    if request.user != match.player1 and request.user != match.player2:
-        return error(request, 'You do not play that match.', 403)
+    match = match_or_error(no, request)
     player = request.user
     if request.method == 'POST':
         moveformreceived = AttackForm(request.POST)
@@ -64,16 +51,11 @@ def attack(request, no):
             return MoveResult(form=moveformreceived)
     return MoveResult(response=redirect('match', no=match.id))
 
-@login_required()
+
 def match(request, no):
-    try:
-        match = Match.objects.get(id=no)
-    except Match.DoesNotExist:
-        return error(request, 'No such match.', 404)
+    match = match_or_error(no, request)
     player = request.user
     form = None
-    if player != match.player1 and player != match.player2:
-        return error(request, 'You do not play that match.', 403)
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'attack':

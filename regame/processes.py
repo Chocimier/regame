@@ -1,6 +1,8 @@
 from asgiref.sync import async_to_sync
 from channels import layers
+from django.core.exceptions import PermissionDenied
 from django.db.models import Q
+from django.http import Http404
 from django.urls import reverse
 
 from .bot import handle as bot_handle
@@ -166,3 +168,13 @@ def notify_moved(match, player):
         group,
         content
     )
+
+
+def match_or_error(no, request):
+    try:
+        match = Match.objects.get(id=no)
+    except Match.DoesNotExist:
+        raise Http404('No such match.')
+    if request.user not in (match.player1, match.player2):
+        raise PermissionDenied('You do not play that match.')
+    return match
