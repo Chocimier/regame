@@ -1,1 +1,5 @@
 Webbrowser multiplayer card game involving regular expressions, strongly inspired by https://mekagem.itch.io/regxkcd
+
+Play it here: https://xregame.herokuapp.com
+
+Game follows progressive enhancement principle, thus is playable in lynx.
