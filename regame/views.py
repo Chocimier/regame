@@ -145,3 +145,7 @@ def forget(request):
 
 def helppage(request):
     return render(request, 'regame/helppage.html')
+
+
+def contactpage(request):
+    return render(request, 'regame/contact.html')

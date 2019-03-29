@@ -10,4 +10,5 @@ urlpatterns = [
    path('players/hidden', views.playerhidden, name='player_hidden'),
    path('forget', views.forget, name='forget'),
    path('howtoplay', views.helppage, name='helppage'),
+   path('contact', views.contactpage, name='contactpage'),
 ]
