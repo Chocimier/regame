@@ -29,9 +29,11 @@ class MatchStatus(Enum):
 
 
 DEFAULT_WIN_CONDITION_NUMBER = 21
+PLAYER_INDEX_CHOICES = [(i, i) for i in (0, 1)]
 
 
 class Match(models.Model):
+    currentparticipant = models.PositiveSmallIntegerField(choices=PLAYER_INDEX_CHOICES, null=True)
     player1 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player1_set')
     player2 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player2_set')
     current = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_current_set')
@@ -58,6 +60,20 @@ class Match(models.Model):
         return self.status in self.activestates()
 
 
+class MatchParticipant(models.Model):
+    match = models.ForeignKey(Match, on_delete=models.CASCADE, related_name='participants')
+    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    index = models.PositiveSmallIntegerField()
+    score = models.IntegerField(default=0)
+    activity = models.TextField()
+    chat = models.CharField(max_length=200)
+    drawoffer = models.BooleanField(default=False)
+
+
+    def cards(self, location, **kwargs):
+        return PossessedCard.objects.filter(participant=self, location=location, **kwargs)
+
+
 class CardLocation(Enum):
     TABLE = 't'
     HAND = 'h'
@@ -72,6 +88,7 @@ def slotscount(location):
     return count[location]
 
 class PossessedCard(models.Model):
+    participant = models.ForeignKey(MatchParticipant, on_delete=models.CASCADE, null=True, related_name='cards')
     match = models.ForeignKey(Match, on_delete=models.CASCADE)
     player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     location = EnumField(CardLocation, max_length=1)
