@@ -34,15 +34,36 @@ PLAYER_INDEX_CHOICES = [(i, i) for i in (0, 1)]
 
 class Match(models.Model):
     currentparticipant = models.PositiveSmallIntegerField(choices=PLAYER_INDEX_CHOICES, null=True)
-    player1 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player1_set')
-    player2 = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_player2_set')
-    current = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='match_as_current_set')
-    player1score = models.IntegerField(default=0)
-    player2score = models.IntegerField(default=0)
     status = EnumField(MatchStatus, default='f', max_length=1)
     winconditiontype = EnumField(WinConditionType, max_length=1, default=WinConditionType.POINTS_GET)
     winconditionnumber = models.PositiveSmallIntegerField(default=DEFAULT_WIN_CONDITION_NUMBER)
     turnspassed = models.PositiveIntegerField(default=0)
+
+
+    @property
+    def player1(self):
+        return self.participants.get(index=0).player
+
+
+    @property
+    def player2(self):
+        return self.participants.get(index=1).player
+
+
+    @property
+    def current(self):
+        return self.participants.get(index=self.currentparticipant).player
+
+
+    @property
+    def player1score(self):
+        return self.participants.get(index=0).score
+
+
+    @property
+    def player2score(self):
+        return self.participants.get(index=1).score
+
 
     def result(self, player):
         if player == self.player1:
@@ -91,8 +112,6 @@ def slotscount(location):
 
 class PossessedCard(models.Model):
     participant = models.ForeignKey(MatchParticipant, on_delete=models.CASCADE, null=True, related_name='cards')
-    match = models.ForeignKey(Match, on_delete=models.CASCADE)
-    player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     location = EnumField(CardLocation, max_length=1)
     index = models.PositiveSmallIntegerField()
     card = models.ForeignKey(Card, on_delete=models.PROTECT, null=True)
