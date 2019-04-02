@@ -60,6 +60,12 @@ class Match(models.Model):
         return self.status in self.activestates()
 
 
+    def activatenextparticipant(self):
+        if self.currentparticipant == 0:
+            self.turnspassed += 1
+        self.currentparticipant = (self.currentparticipant + 1) % 2
+
+
 class MatchParticipant(models.Model):
     match = models.ForeignKey(Match, on_delete=models.CASCADE, related_name='participants')
     player = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -68,10 +74,6 @@ class MatchParticipant(models.Model):
     activity = models.TextField()
     chat = models.CharField(max_length=200)
     drawoffer = models.BooleanField(default=False)
-
-
-    def cards(self, location, **kwargs):
-        return PossessedCard.objects.filter(participant=self, location=location, **kwargs)
 
 
 class CardLocation(Enum):

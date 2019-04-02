@@ -4,7 +4,7 @@ from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
-from .models import PossessedCard, CardLocation
+from .models import CardLocation
 from .players import activeusers, enforceuser, markactive, toplayer, isbot
 from .processes import creatematch, competitor, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard
 
@@ -72,9 +72,11 @@ def match(request, no):
     cleanform, actionurl = formfor(match, player)
     if not form:
         form = cleanform
-    ownhandcards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')
-    owntablecards = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')
-    competitortablecards = PossessedCard.objects.filter(match=match, player=other, location=CardLocation.TABLE).order_by('index')
+    participant = match.participants.get(player=player)
+    competitorparticipant = match.participants.exclude(player=player).get()
+    ownhandcards = participant.cards.filter(location=CardLocation.HAND).order_by('index')
+    owntablecards = participant.cards.filter(location=CardLocation.TABLE).order_by('index')
+    competitortablecards = competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')
     ownhandwidgets = form.widgetsfor(CardLocation.HAND, competitor=False) if form else defaultdict(lambda: None)
     owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
     competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)

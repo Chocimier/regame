@@ -9,9 +9,11 @@ def handle(match, player):
     move(match, player)
 
 def ontotable(match, player):
-    ontablecards = [i.card for i in PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')]
-    inhandcards = [i.card for i in PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND).order_by('index')]
-    competitorcards = [i.card for i in PossessedCard.objects.filter(match=match, player=processes.competitor(match, player), location=CardLocation.TABLE).order_by('index')]
+    participant = match.participants.get(player=player)
+    competitorparticipant = match.participants.exclude(player=player).get()
+    ontablecards = [i.card for i in participant.cards.filter(location=CardLocation.TABLE).order_by('index')]
+    inhandcards = [i.card for i in participant.cards.filter(location=CardLocation.HAND).order_by('index')]
+    competitorcards = [i.card for i in competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')]
     bestscore = -1
     bestcard = 0
     for i, newcard in enumerate(inhandcards):
@@ -43,7 +45,9 @@ def bestmove(owncards, competitorcards):
     return BestMoveResult(order, target, max_score)
 
 def move(match, player):
-    owncards = [i.card for i in PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE).order_by('index')]
-    competitorcards = [i.card for i in PossessedCard.objects.filter(match=match, player=processes.competitor(match, player), location=CardLocation.TABLE).order_by('index')]
+    participant = match.participants.get(player=player)
+    competitorparticipant = match.participants.exclude(player=player).get()
+    owncards = [i.card for i in participant.cards.filter(location=CardLocation.TABLE).order_by('index')]
+    competitorcards = [i.card for i in competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')]
     best = bestmove(owncards, competitorcards)
     processes.move(match, player, best.order, best.target)

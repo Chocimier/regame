@@ -7,7 +7,7 @@ from django.urls import reverse
 
 from .bot import handle as bot_handle
 from .forms import AttackForm, OntoTableForm
-from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus
+from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus, MatchParticipant
 from .players import isbot
 import random
 import re
@@ -19,18 +19,21 @@ def randomcard():
     return Card.objects.all()[index]
 
 def creatematch(player1, form):
-    player2 = form.cleaned_data['player2']
+    cleaned_data = {**form.cleaned_data}
+    player2 = cleaned_data.pop('player2')
     if player1 == player2:
         return None
-    match = Match(**form.cleaned_data, player1=player1, current=player2)
+    match = Match(**cleaned_data, currentparticipant=1)
     match.save()
-    for player in [player1, player2]:
+    for i, player in enumerate([player1, player2]):
+        participant = MatchParticipant(match=match, player=player, index=i)
+        participant.save()
         for location in CardLocation:
             if location == CardLocation.REMOVED:
                 continue
             for i in range(slotscount(location)):
                 card = randomcard()
-                posessed = PossessedCard(match=match, player=player, location=location, index=i, card=card)
+                posessed = PossessedCard(participant=participant, location=location, index=i, card=card)
                 posessed.save()
     if isbot(match.current):
         bot_handle(match, match.current)
@@ -57,10 +60,11 @@ def ontotable(match, player, index):
         return
     if player != match.current:
         return
-    gap = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, card=None).first()
+    participant = match.participants.get(player=player)
+    gap = participant.cards.filter(location=CardLocation.TABLE, card=None).first()
     if not gap:
         return
-    put_card = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.HAND, index=index).first()
+    put_card = participant.cards.filter(location=CardLocation.HAND, index=index).first()
     if not put_card:
         return
     gap.card = put_card.card
@@ -88,33 +92,32 @@ def move(match, player, order, target):
     if not order:
         return None
     competitorplayer = competitor(match, player)
-    targetcard = PossessedCard.objects.filter(match=match, player=competitorplayer, location=CardLocation.TABLE, index=target).first()
+    participant = match.participants.get(player=player)
+    competitorparticipant = match.participants.get(player=competitorplayer)
+    targetcard = competitorparticipant.cards.filter(location=CardLocation.TABLE, index=target).first()
     if not targetcard:
         return
     targettext = targetcard.card.text
     pattern = ''
     for i in order:
-        possessedcard = PossessedCard.objects.filter(match=match, player=player, location=CardLocation.TABLE, index=i).first()
+        possessedcard = participant.cards.filter(location=CardLocation.TABLE, index=i).first()
         if not possessedcard:
             return
         pattern += possessedcard.card.patternbit
     score_increase = score(targettext, pattern)
-    if player == match.player1:
-        match.player1score += score_increase
-        match.turnspassed += 1
-    else:
-        match.player2score += score_increase
+    participant.score += score_increase
+    participant.save()
+    if score_increase > 0:
+        PossessedCard.objects.update_or_create(
+            participant=competitorparticipant, location=CardLocation.REMOVED, index=0,
+            defaults={'card': targetcard.card})
+        targetcard.card = None
+        targetcard.save()
+    match.activatenextparticipant()
     if matchwon(match):
         match.status = MatchStatus.ENDED
     else:
         match.status = MatchStatus.PENDING
-    match.current = competitorplayer
-    if score_increase > 0:
-        PossessedCard.objects.update_or_create(
-            match=match, player=competitorplayer, location=CardLocation.REMOVED, index=0,
-            defaults={'card': targetcard.card})
-        targetcard.card = None
-        targetcard.save()
     match.save()
     if match.active and isbot(match.current):
         bot_handle(match, match.current)
@@ -125,29 +128,29 @@ def formfor(match, player):
     noneform = (None, '')
     if not match.active:
         return noneform
-    if match.current != player:
+    elif match.current != player:
         return noneform
-    elif PossessedCard.objects.filter(match=match, player=player, card=None).exists():
+    elif match.participants.get(player=player).cards.filter(card=None).exists():
         return (OntoTableForm(), reverse('match', kwargs={'no': match.id}))
     else:
         return (AttackForm(), reverse('match', kwargs={'no': match.id}))
 
 def removedcard(match, player):
-    possessed = PossessedCard.objects.filter(match=match, location=CardLocation.REMOVED, player=player).first()
+    possessed = match.participants.get(player=player).cards.filter(location=CardLocation.REMOVED).first()
     return possessed.card if possessed else None
 
 def freshmatches(player):
     return [
-        {'match': i, 'competitor': competitor(i, player)}
-        for i in Match.objects.filter(player2=player, status=MatchStatus.FRESH).order_by('-pk')
+        {'match': i.match, 'competitor': competitor(i.match, player)}
+        for i in player.matchparticipant_set.filter(index=1, match__status=MatchStatus.FRESH).order_by('-pk')
     ]
 
 def pendingmatches(player):
     return [
-        {'match': i, 'competitor': competitor(i, player)}
-        for i in Match.objects.filter(
-            Q(Q(player1=player) | Q(player2=player), status=MatchStatus.PENDING) |
-            Q(player1=player, status=MatchStatus.FRESH) ).order_by('-pk')
+        {'match': i.match, 'competitor': competitor(i.match, player)}
+        for i in player.matchparticipant_set.filter(
+            Q(match__status=MatchStatus.PENDING) |
+            Q(index=0, match__status=MatchStatus.FRESH) ).order_by('-pk')
     ]
 
 
