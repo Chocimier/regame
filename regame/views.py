@@ -3,14 +3,15 @@ from collections import defaultdict, namedtuple
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
-from .models import CardLocation
+from .forms import AttackForm, HideForm, MoveKindForm, NewMatchForm, OntoTableForm, ThrowOutForm
+from .models import CardLocation, nextmovekind, Match
 from .players import activeusers, competitor, enforceuser, markactive, toplayer, isbot, getparticipant
-from .processes import creatematch, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard
+from .processes import canchangemovekind, creatematch, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard, throwout
 
 
 MoveResult = namedtuple('MoveResult', ['form', 'response'])
 MoveResult.__new__.__defaults__ = (None,) * len(MoveResult._fields)
+
 
 def newmatch(request):
     context = {}
@@ -29,6 +30,7 @@ def newmatch(request):
     context['form'] = form
     return render(request, 'regame/new_match.html', context)
 
+
 @login_required()
 def refill(request, no):
     match = match_or_error(no, request)
@@ -38,6 +40,20 @@ def refill(request, no):
         if form.is_valid():
             ontotable(participant, form.cleaned_data['put_card'])
     return MoveResult(response=redirect('match', no=match.id))
+
+
+@login_required()
+def throwoutview(request, no):
+    match = match_or_error(no, request)
+    participant = getparticipant(match, request.user)
+    if request.method == 'POST':
+        form = ThrowOutForm(request.POST)
+        if form.is_valid():
+            throwout(participant, form.cleaned_data['indices'])
+        else:
+            return MoveResult(form=form)
+    return MoveResult(response=redirect('match', no=match.id))
+
 
 @login_required()
 def attack(request, no):
@@ -52,6 +68,17 @@ def attack(request, no):
     return MoveResult(response=redirect('match', no=match.id))
 
 
+@login_required()
+def movekind(request, no):
+    if request.method == 'POST':
+        match = match_or_error(no, request)
+        participant = getparticipant(match, request.user)
+        form = MoveKindForm(request.POST, instance=participant)
+        if form.is_valid():
+            form.save()
+    return MoveResult(response=redirect('match', no=match.id))
+
+
 def match(request, no):
     match = match_or_error(no, request)
     form = None
@@ -61,6 +88,10 @@ def match(request, no):
             result = attack(request, no)
         elif action == 'refill':
             result = refill(request, no)
+        elif action == 'throwout':
+            result = throwoutview(request, no)
+        elif action == 'changemovekind':
+            result = movekind(request, no)
         else:
             return redirect('match', no=no)
         if result.response:
@@ -79,6 +110,9 @@ def match(request, no):
     owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
     competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)
     fresh = freshmatches(participant.player) if isbot(competitorparticipant.player) else []
+    movekindform = None
+    if canchangemovekind(participant):
+        movekindform = MoveKindForm(initial={'movekind': nextmovekind(participant.movekind)})
     context = {
         'actionurl': actionurl,
         'match': match,
@@ -94,6 +128,7 @@ def match(request, no):
         'form': form,
         'reloading': (match.active and not actionurl),
         'freshmatches': fresh,
+        'movekindform': movekindform,
     }
     return render(request, 'regame/match.html', context)
 
@@ -132,6 +167,7 @@ def playerhidden(request):
         if form.is_valid():
             form.save()
     return redirect('main')
+
 
 def forget(request):
     if not request.user.is_authenticated:

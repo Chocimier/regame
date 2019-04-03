@@ -1,12 +1,6 @@
 {% load regame %}
 <h4>Recently seen</h4>
-{% if hideform %}
-    <form action="{% url "player_hidden" %}" method="post">
-    {% csrf_token %}
-    {{ hideform }}
-    <input type="submit" value="{{ hideform.submittext }}">
-    </form>
-{%  endif %}
+{% include "regame/maybeform.html" with csrf_token=csrf_token form=hideform viewname="player_hidden" only %}
 <table>
 {% for user in activeusers %}
     <tr>

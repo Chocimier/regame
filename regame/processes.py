@@ -6,8 +6,8 @@ from django.http import Http404
 from django.urls import reverse
 
 from .bot import handle as bot_handle
-from .forms import AttackForm, OntoTableForm
-from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus, MatchParticipant
+from .forms import AttackForm, OntoTableForm, ThrowOutForm
+from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus, MatchParticipant, MoveKind
 from .players import competitor, getparticipant, isbot, havemove
 import random
 import re
@@ -78,6 +78,18 @@ def matchwon(match):
     return False
 
 
+def throwout(participant, indices):
+    if not havemove(participant):
+        return
+    chosen = participant.cards.filter(location=CardLocation.TABLE, index__in=indices)
+    if not chosen:
+        return
+    for p in chosen:
+        p.card = randomcard()
+        p.save()
+    finish_move(participant, 0)
+
+
 def move(participant, order, target):
     if not havemove(participant):
         return None
@@ -95,21 +107,27 @@ def move(participant, order, target):
             return
         pattern += possessedcard.card.patternbit
     score_increase = score(targettext, pattern)
-    participant.score += score_increase
-    participant.save()
     if score_increase > 0:
         PossessedCard.objects.update_or_create(
             participant=competitorparticipant, location=CardLocation.REMOVED, index=0,
             defaults={'card': targetcard.card})
         targetcard.card = None
         targetcard.save()
+    finish_move(participant, score_increase)
+
+
+def finish_move(participant, score_increase):
+    competitorparticipant = competitor(participant)
+    if score_increase > 0:
+        participant.score += score_increase
+    participant.movekind = MoveKind.ATTACK
+    participant.save()
     participant.match.activatenextparticipant()
     participant.match.status = MatchStatus.ENDED if matchwon(participant.match) else MatchStatus.PENDING
     participant.match.save()
     if participant.match.active and isbot(competitorparticipant.player):
         bot_handle(competitorparticipant)
     notify_moved(participant)
-    return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
 
 def formfor(participant):
@@ -117,8 +135,14 @@ def formfor(participant):
         return (None, '')
     elif participant.cards.filter(card=None).exists():
         return (OntoTableForm(), reverse('match', kwargs={'no': participant.match_id}))
+    elif participant.movekind == MoveKind.THROWOUT:
+        return (ThrowOutForm(), reverse('match', kwargs={'no': participant.match_id}))
     else:
         return (AttackForm(), reverse('match', kwargs={'no': participant.match_id}))
+
+
+def canchangemovekind(participant):
+    return havemove(participant) and not participant.cards.filter(card=None).exists()
 
 
 def removedcard(participant):

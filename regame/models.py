@@ -28,6 +28,19 @@ class MatchStatus(Enum):
     REJECTED = 'r'
 
 
+class MoveKind(Enum):
+    ATTACK = 'a'
+    THROWOUT = 't'
+
+
+def nextmovekind(kind):
+    nextmap = {
+        MoveKind.ATTACK: MoveKind.THROWOUT,
+        MoveKind.THROWOUT: MoveKind.ATTACK,
+    }
+    return nextmap.get(kind, MoveKind.ATTACK)
+
+
 DEFAULT_WIN_CONDITION_NUMBER = 21
 PLAYER_INDEX_CHOICES = [(i, i) for i in (0, 1)]
 
@@ -95,6 +108,7 @@ class MatchParticipant(models.Model):
     activity = models.TextField()
     chat = models.CharField(max_length=200)
     drawoffer = models.BooleanField(default=False)
+    movekind = EnumField(MoveKind, max_length=1, default=MoveKind.ATTACK)
 
 
 class CardLocation(Enum):

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import CardLocation, slotscount, UserProfile, Match
+from .models import CardLocation, slotscount, UserProfile, Match, MatchParticipant, MoveKind
 from django_registration.forms import RegistrationForm
 from collections import defaultdict
 
@@ -42,6 +42,7 @@ MOVE_CARD_ORDER_CHOICES = [
 
 MOVE_TARGET_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.TABLE))]
 HAND_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.HAND))]
+TARGET_CARD_CHOICES = [(str(i), str(i+1)) for i in range(slotscount(CardLocation.TABLE))]
 
 
 class OntoTableForm(forms.Form):
@@ -104,6 +105,46 @@ class AttackForm(forms.Form):
 
     def submittext(self):
         return "Attack"
+
+
+class ThrowOutForm(forms.Form):
+    indices = forms.MultipleChoiceField(choices=TARGET_CARD_CHOICES, widget=forms.CheckboxSelectMultiple)
+    action = forms.CharField(initial='throwout', widget=forms.HiddenInput)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if 'indices' not in cleaned_data or not cleaned_data['indices']:
+            raise forms.ValidationError('Select at least one card to throw out')
+
+    def widgetsfor(self, location, *, competitor):
+        if not competitor and location == CardLocation.TABLE:
+            return [i.tag for i in self['indices']]
+        else:
+            return defaultdict(lambda: None)
+
+    def header(self):
+        return ("Select cards you want to replace with random ones.")
+
+    def submittext(self):
+        return "Throw out"
+
+
+class MoveKindForm(forms.ModelForm):
+    action = forms.CharField(initial='changemovekind', widget=forms.HiddenInput)
+    class Meta:
+        model = MatchParticipant
+        fields = ['movekind']
+        widgets = {
+            'movekind': forms.HiddenInput(),
+        }
+
+    def submittext(self):
+        if self['movekind'].value() == MoveKind.ATTACK.value:
+            return 'Attack this time'
+        elif self['movekind'].value() == MoveKind.THROWOUT.value:
+            return 'Throw out cards this time'
+        return '?'
+
 
 class HideForm(forms.ModelForm):
     class Meta:
