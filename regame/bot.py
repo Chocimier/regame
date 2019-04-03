@@ -2,16 +2,20 @@ import itertools
 from collections import namedtuple
 
 from . import processes
-from .models import CardLocation, PossessedCard, slotscount
+from .models import CardLocation, slotscount
+from .players import competitor
 
-def handle(match, player):
-    ontotable(match, player)
-    move(match, player)
 
-def ontotable(match, player):
-    participant = match.participants.get(player=player)
-    competitorparticipant = match.participants.exclude(player=player).get()
+def handle(participant):
+    ontotable(participant)
+    move(participant)
+
+
+def ontotable(participant):
     ontablecards = [i.card for i in participant.cards.filter(location=CardLocation.TABLE).order_by('index')]
+    if None not in ontablecards:
+        return
+    competitorparticipant = competitor(participant)
     inhandcards = [i.card for i in participant.cards.filter(location=CardLocation.HAND).order_by('index')]
     competitorcards = [i.card for i in competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')]
     bestscore = -1
@@ -22,9 +26,11 @@ def ontotable(match, player):
         if bestofhand.score > bestscore:
             bestscore = bestofhand.score
             bestcard = i
-    processes.ontotable(match, player, bestcard)
+    processes.ontotable(participant, bestcard)
+
 
 BestMoveResult = namedtuple('BestMoveResult', ['order', 'target', 'score'])
+
 
 def bestmove(owncards, competitorcards):
     order = range(slotscount(CardLocation.TABLE))
@@ -44,10 +50,10 @@ def bestmove(owncards, competitorcards):
                     target = t
     return BestMoveResult(order, target, max_score)
 
-def move(match, player):
-    participant = match.participants.get(player=player)
-    competitorparticipant = match.participants.exclude(player=player).get()
+
+def move(participant):
+    competitorparticipant = competitor(participant)
     owncards = [i.card for i in participant.cards.filter(location=CardLocation.TABLE).order_by('index')]
     competitorcards = [i.card for i in competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')]
     best = bestmove(owncards, competitorcards)
-    processes.move(match, player, best.order, best.target)
+    processes.move(participant, best.order, best.target)

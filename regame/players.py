@@ -48,3 +48,9 @@ def usernameispublic(player):
 
 def isbot(player):
     return player.username == 'bot'
+
+def getparticipant(match, player):
+    return match.participants.filter(player=player.id).first()
+
+def competitor(participant):
+    return participant.match.participants.exclude(id=participant.id).get()

@@ -5,8 +5,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import AttackForm, NewMatchForm, OntoTableForm, HideForm
 from .models import CardLocation
-from .players import activeusers, enforceuser, markactive, toplayer, isbot
-from .processes import creatematch, competitor, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard
+from .players import activeusers, competitor, enforceuser, markactive, toplayer, isbot, getparticipant
+from .processes import creatematch, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard
 
 
 MoveResult = namedtuple('MoveResult', ['form', 'response'])
@@ -32,21 +32,21 @@ def newmatch(request):
 @login_required()
 def refill(request, no):
     match = match_or_error(no, request)
-    player = request.user
+    participant = getparticipant(match, request.user)
     if request.method == 'POST':
         form = OntoTableForm(request.POST)
         if form.is_valid():
-            ontotable(match, player, form.cleaned_data['put_card'])
+            ontotable(participant, form.cleaned_data['put_card'])
     return MoveResult(response=redirect('match', no=match.id))
 
 @login_required()
 def attack(request, no):
     match = match_or_error(no, request)
-    player = request.user
+    participant = getparticipant(match, request.user)
     if request.method == 'POST':
         moveformreceived = AttackForm(request.POST)
         if moveformreceived.is_valid():
-            move(match, player, moveformreceived.order(), moveformreceived.cleaned_data['target_card'])
+            move(participant, moveformreceived.order(), moveformreceived.cleaned_data['target_card'])
         else:
             return MoveResult(form=moveformreceived)
     return MoveResult(response=redirect('match', no=match.id))
@@ -54,7 +54,6 @@ def attack(request, no):
 
 def match(request, no):
     match = match_or_error(no, request)
-    player = request.user
     form = None
     if request.method == 'POST':
         action = request.POST.get('action')
@@ -68,28 +67,27 @@ def match(request, no):
             return result.response
         elif result.form:
             form = result.form
-    other = competitor(match, player)
-    cleanform, actionurl = formfor(match, player)
+    participant = getparticipant(match, request.user)
+    cleanform, actionurl = formfor(participant)
     if not form:
         form = cleanform
-    participant = match.participants.get(player=player)
-    competitorparticipant = match.participants.exclude(player=player).get()
+    competitorparticipant = competitor(participant)
     ownhandcards = participant.cards.filter(location=CardLocation.HAND).order_by('index')
     owntablecards = participant.cards.filter(location=CardLocation.TABLE).order_by('index')
     competitortablecards = competitorparticipant.cards.filter(location=CardLocation.TABLE).order_by('index')
     ownhandwidgets = form.widgetsfor(CardLocation.HAND, competitor=False) if form else defaultdict(lambda: None)
     owntablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=False) if form else defaultdict(lambda: None)
     competitortablewidgets = form.widgetsfor(CardLocation.TABLE, competitor=True) if form else defaultdict(lambda: None)
-    fresh = freshmatches(player) if isbot(competitor(match, player)) else []
+    fresh = freshmatches(participant.player) if isbot(competitorparticipant.player) else []
     context = {
         'actionurl': actionurl,
         'match': match,
-        'player': player,
-        'competitor': other,
-        'playerscore': match.result(player),
-        'competitorscore': match.result(other),
-        'yourremovedcard': removedcard(match, player),
-        'competitorsremovedcard': removedcard(match, other),
+        'player': participant.player,
+        'competitor': competitorparticipant.player,
+        'playerscore': participant.score,
+        'competitorscore': competitorparticipant.score,
+        'yourremovedcard': removedcard(participant),
+        'competitorsremovedcard': removedcard(competitorparticipant),
         'ownhandcards': [{'card': card, 'widget': ownhandwidgets[i]} for i, card in enumerate(ownhandcards)],
         'owntablecards': [{'card': card, 'widget': owntablewidgets[i]} for i, card in enumerate(owntablecards)],
         'competitortablecards': [{'card': card, 'widget': competitortablewidgets[i]} for i, card in enumerate(competitortablecards)],

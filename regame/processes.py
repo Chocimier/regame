@@ -8,15 +8,17 @@ from django.urls import reverse
 from .bot import handle as bot_handle
 from .forms import AttackForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus, MatchParticipant
-from .players import isbot
+from .players import competitor, getparticipant, isbot
 import random
 import re
 import sre_constants
+
 
 def randomcard():
     count = Card.objects.count()
     index = random.randint(0, count-1)
     return Card.objects.all()[index]
+
 
 def creatematch(player1, form):
     cleaned_data = {**form.cleaned_data}
@@ -36,11 +38,9 @@ def creatematch(player1, form):
                 posessed = PossessedCard(participant=participant, location=location, index=i, card=card)
                 posessed.save()
     if isbot(match.current):
-        bot_handle(match, match.current)
+        bot_handle(getparticipant(match, match.current))
     return match
 
-def competitor(match, player):
-    return match.player1 if player == match.player2 else match.player2
 
 def score(text, pattern):
     try:
@@ -49,18 +49,12 @@ def score(text, pattern):
         match = None
     return len(match.group(0)) if match else 0
 
-def scoreof(match, player):
-    if player == match.player1:
-        return match.player1score
-    else:
-        return match.player2score
 
-def ontotable(match, player, index):
-    if not match.active:
+def ontotable(participant, index):
+    if not participant.match.active:
         return
-    if player != match.current:
+    if participant.index != participant.match.currentparticipant:
         return
-    participant = match.participants.get(player=player)
     gap = participant.cards.filter(location=CardLocation.TABLE, card=None).first()
     if not gap:
         return
@@ -71,9 +65,10 @@ def ontotable(match, player, index):
     put_card.card = randomcard()
     gap.save()
     put_card.save()
-    match.status = MatchStatus.PENDING
-    match.save()
-    notify_moved(match, player)
+    participant.match.status = MatchStatus.PENDING
+    participant.match.save()
+    notify_moved(participant)
+
 
 def matchwon(match):
     if match.winconditiontype == WinConditionType.POINTS_GET and max(match.player1score, match.player2score) >= match.winconditionnumber:
@@ -84,16 +79,15 @@ def matchwon(match):
         return True
     return False
 
-def move(match, player, order, target):
-    if not match.active:
+
+def move(participant, order, target):
+    if not participant.match.active:
         return None
-    if player != match.current:
+    if participant.index != participant.match.currentparticipant:
         return None
     if not order:
         return None
-    competitorplayer = competitor(match, player)
-    participant = match.participants.get(player=player)
-    competitorparticipant = match.participants.get(player=competitorplayer)
+    competitorparticipant = competitor(participant)
     targetcard = competitorparticipant.cards.filter(location=CardLocation.TABLE, index=target).first()
     if not targetcard:
         return
@@ -113,42 +107,43 @@ def move(match, player, order, target):
             defaults={'card': targetcard.card})
         targetcard.card = None
         targetcard.save()
-    match.activatenextparticipant()
-    if matchwon(match):
-        match.status = MatchStatus.ENDED
-    else:
-        match.status = MatchStatus.PENDING
-    match.save()
-    if match.active and isbot(match.current):
-        bot_handle(match, match.current)
-    notify_moved(match, player)
+    participant.match.activatenextparticipant()
+    participant.match.status = MatchStatus.ENDED if matchwon(participant.match) else MatchStatus.PENDING
+    participant.match.save()
+    if participant.match.active and isbot(competitorparticipant.player):
+        bot_handle(competitorparticipant)
+    notify_moved(participant)
     return "You attacked {} with {}". format(targettext, ''.join(pattern))
 
-def formfor(match, player):
-    noneform = (None, '')
-    if not match.active:
-        return noneform
-    elif match.current != player:
-        return noneform
-    elif match.participants.get(player=player).cards.filter(card=None).exists():
-        return (OntoTableForm(), reverse('match', kwargs={'no': match.id}))
-    else:
-        return (AttackForm(), reverse('match', kwargs={'no': match.id}))
 
-def removedcard(match, player):
-    possessed = match.participants.get(player=player).cards.filter(location=CardLocation.REMOVED).first()
+def formfor(participant):
+    noneform = (None, '')
+    if not participant.match.active:
+        return noneform
+    elif participant.index != participant.match.currentparticipant:
+        return noneform
+    elif participant.cards.filter(card=None).exists():
+        return (OntoTableForm(), reverse('match', kwargs={'no': participant.match_id}))
+    else:
+        return (AttackForm(), reverse('match', kwargs={'no': participant.match_id}))
+
+
+def removedcard(participant):
+    possessed = participant.cards.filter(location=CardLocation.REMOVED).first()
     return possessed.card if possessed else None
+
 
 def freshmatches(player):
     return [
-        {'match': i.match, 'competitor': competitor(i.match, player)}
-        for i in player.matchparticipant_set.filter(index=1, match__status=MatchStatus.FRESH).order_by('-pk')
+        {'match': p.match, 'competitor': competitor(p).player}
+        for p in player.matchparticipant_set.filter(index=1, match__status=MatchStatus.FRESH).order_by('-pk')
     ]
+
 
 def pendingmatches(player):
     return [
-        {'match': i.match, 'competitor': competitor(i.match, player)}
-        for i in player.matchparticipant_set.filter(
+        {'match': p.match, 'competitor': competitor(p).player}
+        for p in player.matchparticipant_set.filter(
             Q(match__status=MatchStatus.PENDING) |
             Q(index=0, match__status=MatchStatus.FRESH) ).order_by('-pk')
     ]
@@ -160,12 +155,12 @@ def channelgroupname(match):
     return 'match_{}'.format(match)
 
 
-def notify_moved(match, player):
+def notify_moved(participant):
     channel_layer = layers.get_channel_layer()
-    group = channelgroupname(match)
+    group = channelgroupname(participant.match_id)
     content = {
             'type': 'notify.move',
-            'player': player.username,
+            'player': participant.player.username,
         }
     async_to_sync(channel_layer.group_send)(
         group,
@@ -178,6 +173,6 @@ def match_or_error(no, request):
         match = Match.objects.get(id=no)
     except Match.DoesNotExist:
         raise Http404('No such match.')
-    if request.user not in (match.player1, match.player2):
+    if not match.participants.filter(player=request.user).exists():
         raise PermissionDenied('You do not play that match.')
     return match
