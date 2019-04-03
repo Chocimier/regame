@@ -8,7 +8,7 @@ from django.urls import reverse
 from .bot import handle as bot_handle
 from .forms import AttackForm, OntoTableForm
 from .models import Card, Match, PossessedCard, CardLocation, slotscount, WinConditionType, MatchStatus, MatchParticipant
-from .players import competitor, getparticipant, isbot
+from .players import competitor, getparticipant, isbot, havemove
 import random
 import re
 import sre_constants
@@ -51,9 +51,7 @@ def score(text, pattern):
 
 
 def ontotable(participant, index):
-    if not participant.match.active:
-        return
-    if participant.index != participant.match.currentparticipant:
+    if not havemove(participant):
         return
     gap = participant.cards.filter(location=CardLocation.TABLE, card=None).first()
     if not gap:
@@ -81,9 +79,7 @@ def matchwon(match):
 
 
 def move(participant, order, target):
-    if not participant.match.active:
-        return None
-    if participant.index != participant.match.currentparticipant:
+    if not havemove(participant):
         return None
     if not order:
         return None
@@ -117,11 +113,8 @@ def move(participant, order, target):
 
 
 def formfor(participant):
-    noneform = (None, '')
-    if not participant.match.active:
-        return noneform
-    elif participant.index != participant.match.currentparticipant:
-        return noneform
+    if not havemove(participant):
+        return (None, '')
     elif participant.cards.filter(card=None).exists():
         return (OntoTableForm(), reverse('match', kwargs={'no': participant.match_id}))
     else:

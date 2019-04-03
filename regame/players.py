@@ -52,5 +52,11 @@ def isbot(player):
 def getparticipant(match, player):
     return match.participants.filter(player=player.id).first()
 
+def havemove(participant):
+    return (
+        participant.match.active and
+        participant.index == participant.match.currentparticipant
+    )
+
 def competitor(participant):
     return participant.match.participants.exclude(id=participant.id).get()
