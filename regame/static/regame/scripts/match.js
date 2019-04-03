@@ -1,5 +1,10 @@
 (function () {
-    var cards = document.querySelectorAll('.yourtablerow label .card')
+    var form = document.querySelector("form.active")
+    var action = form.querySelector('input[name="action"]')
+    if (action.value != 'attack') {
+        return
+    }
+    var cards = form.querySelectorAll('.yourtablerow label .card')
     for (var i = 0; i < cards.length; ++i) {
         cards[i].addEventListener('click', function (ev) {
             var isEmpty = function(obj) {
