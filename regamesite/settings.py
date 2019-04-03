@@ -148,5 +148,5 @@ if 'DYNO' in os.environ:
     import dj_database_url
     import django_heroku
 
-    DATABASES['default'] = dj_database_url.config(ssl_require=True)
     django_heroku.settings(locals())
+    DATABASES['default'] = dj_database_url.config(ssl_require=True)
