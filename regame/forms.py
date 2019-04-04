@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import CardLocation, slotscount, UserProfile, Match, MatchParticipant, MoveKind
+from .models import CardLocation, slotscount, UserProfile, Match, MatchParticipant, MoveKind, MatchStatus
 from django_registration.forms import RegistrationForm
 from collections import defaultdict
 
@@ -144,6 +144,22 @@ class MoveKindForm(forms.ModelForm):
         elif self['movekind'].value() == MoveKind.THROWOUT.value:
             return 'Throw out cards this time'
         return '?'
+
+
+class ResignForm(forms.ModelForm):
+    action = forms.CharField(initial='resign', widget=forms.HiddenInput)
+    class Meta:
+        model = Match
+        fields = ['status']
+        widgets = {
+            'status': forms.HiddenInput(),
+        }
+
+    def clean(self):
+        return {'status': MatchStatus.REJECTED}
+
+    def submittext(self):
+        return 'Resign'
 
 
 class HideForm(forms.ModelForm):

@@ -3,7 +3,7 @@ from collections import defaultdict, namedtuple
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import AttackForm, HideForm, MoveKindForm, NewMatchForm, OntoTableForm, ThrowOutForm
+from .forms import AttackForm, HideForm, MoveKindForm, NewMatchForm, OntoTableForm, ThrowOutForm, ResignForm
 from .models import CardLocation, nextmovekind, Match
 from .players import activeusers, competitor, enforceuser, markactive, toplayer, isbot, getparticipant
 from .processes import canchangemovekind, creatematch, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard, throwout
@@ -79,6 +79,16 @@ def movekind(request, no):
     return MoveResult(response=redirect('match', no=match.id))
 
 
+@login_required()
+def resign(request, no):
+    if request.method == 'POST':
+        match = match_or_error(no, request)
+        form = ResignForm(request.POST, instance=match)
+        if form.is_valid():
+            form.save()
+    return MoveResult(response=redirect('match', no=match.id))
+
+
 def match(request, no):
     match = match_or_error(no, request)
     form = None
@@ -92,6 +102,8 @@ def match(request, no):
             result = throwoutview(request, no)
         elif action == 'changemovekind':
             result = movekind(request, no)
+        elif action == 'resign':
+            result = resign(request, no)
         else:
             return redirect('match', no=no)
         if result.response:
@@ -113,6 +125,9 @@ def match(request, no):
     movekindform = None
     if canchangemovekind(participant):
         movekindform = MoveKindForm(initial={'movekind': nextmovekind(participant.movekind)})
+    resignform = None
+    if match.active:
+        resignform = ResignForm()
     context = {
         'actionurl': actionurl,
         'match': match,
@@ -129,6 +144,7 @@ def match(request, no):
         'reloading': (match.active and not actionurl),
         'freshmatches': fresh,
         'movekindform': movekindform,
+        'resignform': resignform,
     }
     return render(request, 'regame/match.html', context)
 

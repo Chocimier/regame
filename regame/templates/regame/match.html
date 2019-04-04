@@ -60,10 +60,13 @@
 {% include "regame/cardrow.html" with header="In hand, competitors's:" cards=ownhandcards rowclass="competitorhandrow" cardclass="facedown" empty=True only %}
 </form>
 
+{%  if movekindform or resignform %}
 <div>
     <h4>Match control</h4>
     {% include "regame/maybeform.html" with csrf_token=csrf_token form=movekindform only %}
+    {% include "regame/maybeform.html" with csrf_token=csrf_token form=resignform only %}
 </div>
+{% endif %}
 
 {% if yourremovedcard or competitorsremovedcard %}
 <div>

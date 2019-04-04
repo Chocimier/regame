@@ -63,3 +63,7 @@ p {
 .narrow {
 	max-width: 32ex;
 }
+
+.buttononlyform {
+	display: inline;
+}
