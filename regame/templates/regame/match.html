@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-{% if player == match.current %}
+{% if actionurl %}
 [*]
 {% endif %}
 {{ competitor.userprofile.display_name }} vs {{ player.userprofile.display_name }} match
