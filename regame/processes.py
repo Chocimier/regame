@@ -193,3 +193,12 @@ def match_or_error(no, request):
     if not match.participants.filter(player=request.user).exists():
         raise PermissionDenied('You do not play that match.')
     return match
+
+
+def forget(player):
+    if not player.is_authenticated:
+        return
+    if not player.userprofile.temporary:
+        return
+    Match.objects.filter(participants__player=player).delete()
+    player.delete()

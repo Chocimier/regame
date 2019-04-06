@@ -8,7 +8,7 @@ urlpatterns = [
    path('match/<int:no>/attack', views.attack, name='match_attack'),
    path('match/<int:no>/refill', views.refill, name='match_refill'),
    path('players/hidden', views.playerhidden, name='player_hidden'),
-   path('forget', views.forget, name='forget'),
+   path('forget', views.forgetview, name='forget'),
    path('howtoplay', views.helppage, name='helppage'),
    path('contact', views.contactpage, name='contactpage'),
 ]

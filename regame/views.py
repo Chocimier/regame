@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import AttackForm, HideForm, MoveKindForm, NewMatchForm, OntoTableForm, ThrowOutForm, ResignForm
 from .models import CardLocation, nextmovekind, Match
 from .players import activeusers, competitor, enforceuser, markactive, toplayer, isbot, getparticipant
-from .processes import canchangemovekind, creatematch, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard, throwout
+from .processes import canchangemovekind, creatematch, forget, formfor, freshmatches, match_or_error, move, ontotable, pendingmatches, removedcard, throwout
 
 
 MoveResult = namedtuple('MoveResult', ['form', 'response'])
@@ -185,13 +185,9 @@ def playerhidden(request):
     return redirect('main')
 
 
-def forget(request):
-    if not request.user.is_authenticated:
-        return redirect('main')
-    player = request.user
+def forgetview(request):
+    forget(request.user)
     logout(request)
-    if player.userprofile.temporary:
-        player.delete()
     return redirect('main')
 
 
