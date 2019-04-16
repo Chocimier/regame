@@ -4,17 +4,17 @@
 {% include "regame/maybeform.html" with csrf_token=csrf_token form=hideform viewname="player_hidden" only %}
 {% if activeusers %}
 <table>
-{% for user in activeusers %}
+{% for activeuser in activeusers %}
     <tr>
         <th>
-            {% if user.username == player.username %}
+            {% if activeuser == user %}
                 you
             {% else %}
-                {{ user.displayname }}
+                {{ activeuser.displayname }}
             {% endif %}
         </th>
-        <td>{{ user.lastseen | naturaltime }}</td>
-        <td>{% if user.username != player.username %}<a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a>{% endif %}</td>
+        <td>{{ activeuser.lastseen | naturaltime }}</td>
+        <td>{% if activeuser != user %}<a href="{% url "new_match" %}?player2={{ activeuser.username }}">challenge</a>{% endif %}</td>
     </tr>
 {% endfor %}
 </table>
