@@ -190,6 +190,8 @@ def match_or_error(no, request):
         match = Match.objects.get(id=no)
     except Match.DoesNotExist:
         raise Http404('No such match.')
+    if not request.user.is_authenticated:
+        raise PermissionDenied('You do not play that match.')
     if not match.participants.filter(player=request.user).exists():
         raise PermissionDenied('You do not play that match.')
     return match
