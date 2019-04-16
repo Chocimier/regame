@@ -1,6 +1,8 @@
 {% load regame %}
+<section>
 <h4>Recently seen</h4>
 {% include "regame/maybeform.html" with csrf_token=csrf_token form=hideform viewname="player_hidden" only %}
+{% if activeusers %}
 <table>
 {% for user in activeusers %}
     <tr>
@@ -14,11 +16,13 @@
         <td>{{ user.lastseen | naturaltime }}</td>
         <td>{% if user.username != player.username %}<a href="{% url "new_match" %}?player2={{ user.username }}">challenge</a>{% endif %}</td>
     </tr>
-{% empty %}
-    <p>Noone is here.</p>
+{% endfor %}
+</table>
+{% else %}
+    <p>No one is here.</p>
     {% if user.is_authenticated and user.userprofile.hidden %}
         <p>Maybe they are hiding, just like you?</p>
     {% endif %}
-{% endfor %}
+{% endif %}
 
-</table>
+</section>

@@ -5,7 +5,9 @@ Can't show you that page
 {% endblock %}
 
 {% block content %}
+<main>
 <p>You can't see that page.</p>
 <p>Reason: {{ exception }}</p>
 <p>Come back to <a href="{% url "main" %}">main page</a>.</p>
+</main>
 {% endblock %}

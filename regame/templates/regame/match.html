@@ -16,7 +16,8 @@
 
 {% block content %}
 
-<div class="column">
+<main class="column">
+<section>
 <p>
     {{ player.userprofile.display_name }} vs {{ competitor.userprofile.display_name }}.
 </p>
@@ -35,6 +36,7 @@
 {% else %}
 <p>The match ended.</p>
 {% endif %}
+</section>
 
 {%  include "regame/matchlist.html" with list=freshmatches header="There are new challenges for you" %}
 
@@ -61,11 +63,11 @@
 </form>
 
 {%  if movekindform or resignform %}
-<div>
+<section>
     <h4>Match control</h4>
     {% include "regame/maybeform.html" with csrf_token=csrf_token form=movekindform only %}
     {% include "regame/maybeform.html" with csrf_token=csrf_token form=resignform only %}
-</div>
+</section>
 {% endif %}
 
 {% if yourremovedcard or competitorsremovedcard %}
@@ -85,11 +87,11 @@ Competitor's:<br/>
 {% endif %}
 </div>
 {% endif %}
-</div>
-<div class="column narrow">
+</main>
+<aside class="column narrow">
     {% include "regame/reminder.html" %}
     {% include "regame/howtoplay.html" %}
-</div>
+</aside>
 
 {{ movedesc }}
 

@@ -5,12 +5,15 @@
 {% endblock %}
 
 {% block content %}
+<main>
 
+<section>
 {% if user.is_authenticated and not user.userprofile.temporary %}
 <p>Nice to see you again, {{ user.userprofile.display_name }}!</p>
 {% else %}
 <p>Hello, stranger!</p>
 {% endif %}
+</section>
 
 {%  include "regame/matchlist.html" with list=freshmatches header="New challenges" %}
 
@@ -22,11 +25,18 @@
     </div>
 {% endif %}
 
+<section>
 {% include "regame/activeusers.html" with player=user %}
 
 <p><a href="{% url 'new_match' %}">Challenge someone you know</a>.</p>
 <p>You can also <a href="{% url 'new_match' %}?player2=bot">play with a bot</a>, while waiting for others.</p>
+</section>
+
+</main>
+
+<section>
 <p><a href="{% url 'helppage' %}">How to play?</a></p>
 <p><a href="{% url 'contactpage' %}">Contact author</a>.</p>
+</section>
 
 {% endblock %}
