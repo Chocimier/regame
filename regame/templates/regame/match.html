@@ -40,7 +40,14 @@
 
 {%  include "regame/matchlist.html" with list=freshmatches header="There are new challenges for you" %}
 
+<section>
+
+{% if actionurl %}
 <form method="post" action="{{ actionurl }}" class="{% if actionurl %}active{% endif %}">
+{% else %}
+<div>
+{% endif %}
+
 {% if form.header %}
 <h4 class="preline">{{ form.header }}</h4>
 {% endif %}
@@ -60,7 +67,14 @@
 
 {% include "regame/cardrow.html" with header="On table, competitor's:" cards=competitortablecards rowclass="competitortablerow" only %}
 {% include "regame/cardrow.html" with header="In hand, competitors's:" cards=ownhandcards rowclass="competitorhandrow" cardclass="facedown" empty=True only %}
+
+{% if actionurl %}
 </form>
+{% else %}
+</div>
+{% endif %}
+
+</section>
 
 {%  if movekindform or resignform %}
 <section>
@@ -89,8 +103,8 @@ Competitor's:<br/>
 {% endif %}
 </main>
 <aside class="column narrow">
-    {% include "regame/reminder.html" %}
-    {% include "regame/howtoplay.html" %}
+    <section>{% include "regame/reminder.html" %}</section>
+    <section>{% include "regame/howtoplay.html" %}</section>
 </aside>
 
 {{ movedesc }}
