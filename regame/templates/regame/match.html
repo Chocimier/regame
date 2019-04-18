@@ -40,7 +40,7 @@
 
 {%  include "regame/matchlist.html" with list=freshmatches header="There are new challenges for you" %}
 
-<form method="post" action="{{ actionurl }}" class="{% if player == match.current and match.active %}active{% endif %}">
+<form method="post" action="{{ actionurl }}" class="{% if actionurl %}active{% endif %}">
 {% if form.header %}
 <h4 class="preline">{{ form.header }}</h4>
 {% endif %}
