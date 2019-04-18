@@ -159,11 +159,11 @@ def main(request):
     else:
         fresh = []
         pending = []
-    users = ({
+    users = [{
         'displayname': user.userprofile.display_name(),
         'lastseen': user.userprofile.lastseen,
         'username': user.username,
-    } for user in activeusers())
+    } for user in activeusers()]
     context = {
         'freshmatches': fresh,
         'pendingmatches': pending,
